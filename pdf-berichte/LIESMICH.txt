@@ -1,0 +1,13 @@
+PDF-Spielberichte für Bundesliga und Jugendbundesliga
+
+Nach einem Spiel den offiziellen Spielbericht als PDF herunterladen und bei GitHub
+in den passenden Unterordner hochladen (Add file → Upload files):
+
+  maenner1/   1. Mannschaft, 2. Handball-Bundesliga
+  a-jugend/   männliche A-Jugend, Jugendbundesliga (HSG Dutenhofen/Münchholzhausen)
+  b-jugend/   männliche B-Jugend, Jugendbundesliga (HSG Dutenhofen/Münchholzhausen)
+
+Das Hochladen startet den Datenabruf automatisch. Nach wenigen Minuten steht das Spiel
+mit Torschützen, Siebenmetern und Zeitstrafen in der App. Der Dateiname ist egal.
+
+Hinweis: Das Projekt ist öffentlich. Auch die hochgeladenen PDFs sind damit für jeden sichtbar.

@@ -1,0 +1,57 @@
+{
+  "verein": "TV Hüttenberg",
+  "verein_id": "38447",
+  "titel": "Handball in Hüttenberg",
+  "leitsatz": "Für alle, die in Hüttenberg Handball leben: auf der Tribüne, an der Seitenlinie und vor allem für unsere Jugend. Ihr sorgt dafür, dass in unseren Hallen jedes Wochenende Leben ist.",
+  "sprueche": [
+    "Hier wird nicht nur gespielt. Hier wird Handball gelebt.",
+    "Jede große Karriere hat in der E-Jugend angefangen.",
+    "Laut sein für die Kleinen, stolz sein auf die Großen.",
+    "Ein Verein ist so stark wie seine Jugend.",
+    "Harz an den Händen, Herz auf dem Feld.",
+    "Nach dem Abpfiff zählt nicht das Ergebnis, sondern wer zusammensteht.",
+    "Die Halle ist unser Wohnzimmer, und jeder ist eingeladen."
+  ],
+  "verband_url": "https://hhv-handball.liga.nu",
+  "pause_zwischen_abrufen_sekunden": 3,
+
+  "mannschaften": [
+    {"id": "m2",   "name": "Männer II",               "kategorie": "Aktive",           "saison": "HHV 26/27",    "staffel": "492640", "name_in_tabelle": "TV Hüttenberg II"},
+    {"id": "m3",   "name": "Männer III",              "kategorie": "Aktive",           "saison": "Gießen 26/27", "staffel": "491948", "name_in_tabelle": "TV Hüttenberg III"},
+    {"id": "f1",   "name": "Frauen",                  "kategorie": "Aktive",           "saison": "HHV 26/27",    "staffel": "492566", "name_in_tabelle": "TV Hüttenberg"},
+    {"id": "f2",   "name": "Frauen II",               "kategorie": "Aktive",           "saison": "Gießen 26/27", "staffel": "491954", "name_in_tabelle": "TV Hüttenberg II"},
+
+    {"id": "mb1",  "name": "männliche B-Jugend",      "kategorie": "Männliche Jugend", "saison": "HHV 26/27",    "staffel": "492355", "name_in_tabelle": "TV Hüttenberg"},
+    {"id": "mb2",  "name": "männliche B-Jugend II",   "kategorie": "Männliche Jugend", "saison": "Gießen 26/27", "staffel": "492089", "name_in_tabelle": "TV Hüttenberg II"},
+    {"id": "mc1",  "name": "männliche C-Jugend",      "kategorie": "Männliche Jugend", "saison": "HHV 26/27",    "staffel": "492043", "name_in_tabelle": "TV Hüttenberg"},
+    {"id": "mc2",  "name": "männliche C-Jugend II",   "kategorie": "Männliche Jugend", "saison": "Gießen 26/27", "staffel": "491928", "name_in_tabelle": "TV Hüttenberg II"},
+    {"id": "mc3",  "name": "männliche C-Jugend III",  "kategorie": "Männliche Jugend", "saison": "Gießen 26/27", "staffel": "492706", "name_in_tabelle": "TV Hüttenberg III"},
+    {"id": "md1",  "name": "männliche D-Jugend",      "kategorie": "Männliche Jugend", "saison": "Gießen 26/27", "staffel": "491957", "name_in_tabelle": "TV Hüttenberg"},
+    {"id": "md2",  "name": "männliche D-Jugend II",   "kategorie": "Männliche Jugend", "saison": "Gießen 26/27", "staffel": "492447", "name_in_tabelle": "TV Hüttenberg II"},
+    {"id": "me1",  "name": "männliche E-Jugend",      "kategorie": "Männliche Jugend", "saison": "Gießen 26/27", "staffel": "524475", "name_in_tabelle": "TV Hüttenberg"},
+    {"id": "me2",  "name": "männliche E-Jugend II",   "kategorie": "Männliche Jugend", "saison": "Gießen 26/27", "staffel": "492431", "name_in_tabelle": "TV Hüttenberg II"},
+
+    {"id": "wa1",  "name": "weibliche A-Jugend",      "kategorie": "Weibliche Jugend", "saison": "HHV 26/27",    "staffel": "491897", "name_in_tabelle": "TV Hüttenberg"},
+    {"id": "wb1",  "name": "weibliche B-Jugend",      "kategorie": "Weibliche Jugend", "saison": "Gießen 26/27", "staffel": "491841", "name_in_tabelle": "TV Hüttenberg"},
+    {"id": "wc1",  "name": "weibliche C-Jugend",      "kategorie": "Weibliche Jugend", "saison": "Gießen 26/27", "staffel": "492192", "name_in_tabelle": "TV Hüttenberg"},
+    {"id": "wd1",  "name": "weibliche D-Jugend",      "kategorie": "Weibliche Jugend", "saison": "Gießen 26/27", "staffel": "491887", "name_in_tabelle": "TV Hüttenberg"},
+    {"id": "we1",  "name": "weibliche E-Jugend",      "kategorie": "Weibliche Jugend", "saison": "Gießen 26/27", "staffel": "492162", "name_in_tabelle": "TV Hüttenberg"},
+    {"id": "we2",  "name": "weibliche E-Jugend II",   "kategorie": "Weibliche Jugend", "saison": "Gießen 26/27", "staffel": "492770", "name_in_tabelle": "TV Hüttenberg II"}
+  ],
+
+  "extern": [
+    {"id": "m1",  "name": "Männer (1. Mannschaft)",   "kategorie": "Aktive",           "liga": "2. Handball-Bundesliga",
+     "pdf_ordner": "pdf-berichte/maenner1", "eigener_name": "Hüttenberg",
+     "hinweis": "Die Tabelle der 2. Bundesliga veröffentlicht die Handball-Bundesliga nur auf ihren eigenen Seiten.",
+     "links": [{"text": "Statistik der 2. HBL", "url": "https://www.opel-hbl.de/de/2-hbl/statistiken"}]},
+    {"id": "maj", "name": "männliche A-Jugend (JBL)", "kategorie": "Männliche Jugend", "liga": "Jugendbundesliga · HSG Dutenhofen/Münchholzhausen",
+     "pdf_ordner": "pdf-berichte/a-jugend", "eigener_name": "HSG Dutenhofen/Münchholzhausen",
+     "hinweis": "Spielt als HSG Dutenhofen/Münchholzhausen. Spielpläne und Tabellen der Jugendbundesliga erscheinen auf handball.net.",
+     "links": [{"text": "Spielkalender auf handball.net", "url": "https://www.handball.net/spielbetrieb/spielkalender?verband=1"},
+               {"text": "Tabellen beim DHB", "url": "https://www.dhb.de/wettbewerbe/jugendbundesliga-handball/jblh-a-jugend-maennlich"}]},
+    {"id": "mbj", "name": "männliche B-Jugend (JBL)", "kategorie": "Männliche Jugend", "liga": "Jugendbundesliga · HSG Dutenhofen/Münchholzhausen",
+     "pdf_ordner": "pdf-berichte/b-jugend", "eigener_name": "HSG Dutenhofen/Münchholzhausen",
+     "hinweis": "Spielt als HSG Dutenhofen/Münchholzhausen. Spielpläne und Tabellen der Jugendbundesliga erscheinen auf handball.net.",
+     "links": [{"text": "Spielkalender auf handball.net", "url": "https://www.handball.net/spielbetrieb/spielkalender?verband=1"}]}
+  ]
+}

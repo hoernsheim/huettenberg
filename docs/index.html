@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hüttenberg">
+<meta name="theme-color" content="#123128">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-180.png">
+<!--INHALT-START-->
+<title>Handball in Hüttenberg</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: Vereins-App – Startseite mit Leitsatz und Wochenende, Spielplan aller Teams, Mannschaften mit Detailansicht. Hallengrün + Harzgold. */
+:root{
+  --bg:#f1f2ee; --surface:#ffffff; --surface-2:#e6e9e2; --line:#d3d8cf;
+  --fg:#16211d; --muted:#5d6a63; --pitch:#123128; --pitch-2:#1c463a; --on-pitch:#f4f6f1;
+  --gold:#c98a1a; --gold-soft:color-mix(in srgb,var(--gold) 16%,transparent);
+  --win:#1f7a4d; --loss:#b3322b; --draw:#8a6d1a;
+  --display:"Big Shoulders Display","Arial Narrow",system-ui,sans-serif;
+  --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0c1411; --surface:#141f1b; --surface-2:#1b2a24; --line:#2a3a33;
+  --fg:#e6ece8; --muted:#97a69e; --pitch:#0f2620; --pitch-2:#173a30; --on-pitch:#eef3ef;
+  --gold:#e7ad48; --win:#52c48d; --loss:#f07a72; --draw:#e0c35a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c1411; --surface:#141f1b; --surface-2:#1b2a24; --line:#2a3a33;
+  --fg:#e6ece8; --muted:#97a69e; --pitch:#0f2620; --pitch-2:#173a30; --on-pitch:#eef3ef;
+  --gold:#e7ad48; --win:#52c48d; --loss:#f07a72; --draw:#e0c35a; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--fg);font:16px/1.45 var(--body);-webkit-font-smoothing:antialiased;
+  padding-bottom:calc(74px + env(safe-area-inset-bottom,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--pitch)}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.num{font-variant-numeric:tabular-nums}
+h2{font:800 17px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.note{font-size:14px;color:var(--muted);background:var(--surface-2);border-radius:var(--r);padding:10px 12px}
+main.wrap{padding-block:16px 24px;display:grid;gap:14px}
+
+/* Kopf */
+header.bar{background:var(--pitch);color:var(--on-pitch)}
+header.bar .wrap{display:flex;align-items:center;gap:12px;padding-block:12px}
+.logo{width:40px;height:40px;flex:none;border-radius:10px;overflow:hidden;display:grid;place-items:center}
+.logo img{width:100%;height:100%;object-fit:contain}
+.bar .t{font:800 22px/1 var(--display);letter-spacing:.03em;text-transform:uppercase;min-width:0}
+.bar .s{font-size:12px;opacity:.75;margin-top:3px}
+.back{background:none;border:0;color:var(--on-pitch);font-size:15px;font-weight:600;padding:6px 0;cursor:pointer;display:flex;align-items:center;gap:4px}
+
+/* Start */
+.hero{background:linear-gradient(160deg,var(--pitch) 0%,var(--pitch-2) 100%);color:var(--on-pitch);border-radius:16px;padding:24px 20px 22px;position:relative;overflow:hidden;display:grid;gap:14px}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border:2px solid color-mix(in srgb,var(--on-pitch) 18%,transparent);border-radius:50%;pointer-events:none}
+.hero::before{content:"";position:absolute;right:-6px;top:6px;width:110px;height:110px;border:2px dashed color-mix(in srgb,var(--on-pitch) 14%,transparent);border-radius:50%;pointer-events:none}
+.hero .big{display:flex;align-items:center;gap:14px}
+.hero .big .logo{width:64px;height:64px;border-radius:14px}
+.hero h1{margin:0;font:900 clamp(34px,9vw,52px)/.92 var(--display);text-transform:uppercase;letter-spacing:.01em;text-wrap:balance}
+.hero .lead{margin:0;font-size:17px;line-height:1.5;max-width:56ch;opacity:.95}
+.spruch{border-left:3px solid var(--gold);padding:2px 0 2px 12px;font:700 20px/1.25 var(--display);letter-spacing:.02em;min-height:2.5em;transition:opacity .4s}
+@media (prefers-reduced-motion:reduce){.spruch{transition:none}}
+.stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.stats3 div{background:var(--surface);padding:12px 8px;text-align:center}
+.stats3 b{display:block;font:800 30px/1 var(--display)}.stats3 span{font-size:13px;color:var(--muted)}
+.top{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;background:var(--gold-soft);color:var(--fg);font-size:14px;font-weight:600;border:0;cursor:pointer}
+.chip.ghost{background:var(--surface-2);font-weight:600}
+.chip.on{background:var(--pitch);color:var(--on-pitch)}
+
+/* Galerie */
+.galerie{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.galerie figure{margin:0;border-radius:10px;overflow:hidden;background:var(--surface-2);position:relative;aspect-ratio:4/3;max-width:100%}
+.galerie img{width:100%;height:100%;object-fit:cover;display:block}
+.galerie figcaption{position:absolute;inset:auto 0 0 0;padding:16px 8px 6px;font-size:12px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.7))}
+.platz{border:2px dashed var(--line);border-radius:var(--r);padding:18px;display:grid;gap:6px;color:var(--muted);font-size:14px}
+.platz b{color:var(--fg)}
+
+/* Spiele */
+.games{display:grid}
+.game{display:grid;grid-template-columns:52px 1fr auto;gap:10px;align-items:center;padding:11px 14px;border:0;border-top:1px solid var(--line);background:none;text-align:left;width:100%}
+.game:first-child{border-top:0}
+.game.has{cursor:pointer}
+.game .z{font:700 17px var(--display);font-variant-numeric:tabular-nums}
+.game .z small{display:block;font:600 11px var(--body);color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.game .o{min-width:0}
+.game .o b{display:block;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.game .o span{font-size:13px;color:var(--muted);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.game .o .team{color:var(--gold);font-weight:700}
+.score{font:800 21px/1 var(--display);font-variant-numeric:tabular-nums;padding:6px 8px;border-radius:8px;min-width:64px;text-align:center}
+.score.s{background:color-mix(in srgb,var(--win) 16%,transparent);color:var(--win)}
+.score.n{background:color-mix(in srgb,var(--loss) 14%,transparent);color:var(--loss)}
+.score.u{background:color-mix(in srgb,var(--draw) 16%,transparent);color:var(--draw)}
+.score.o{font:600 13px var(--body);color:var(--muted);background:var(--surface-2)}
+.day{font:800 15px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:12px 14px 4px}
+
+/* Spieldetail */
+.detail{padding:4px 14px 16px;border-top:1px dashed var(--line);display:grid;gap:12px}
+.detail h3{margin:8px 0 0;font:800 15px var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.scorers{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:4px 14px;font-size:14px}
+.scorers div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line);padding:3px 0}
+.scorers small{color:var(--muted)}
+.nr{display:inline-block;width:26px;color:var(--muted);font-variant-numeric:tabular-nums}
+.timeline{display:grid;gap:1px;font-size:13px;max-height:320px;overflow:auto}
+.ev{display:grid;grid-template-columns:44px 50px 1fr;gap:8px;padding:3px 0}
+.ev .t{color:var(--muted);font-variant-numeric:tabular-nums}.ev .st{font-weight:700;font-variant-numeric:tabular-nums}
+.ev.us .p{color:var(--gold);font-weight:700}.ev.pen .p::after{content:"  2′";color:var(--loss);font-weight:700}
+.ev.misc{color:var(--muted)}
+a.src{font-size:14px;color:var(--muted)}
+
+/* Mannschaften */
+.teamlist{display:grid}
+.trow{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:12px 14px;border:0;border-top:1px solid var(--line);background:none;text-align:left;width:100%;cursor:pointer}
+.trow:first-child{border-top:0}
+.trow b{display:block;font-weight:700}
+.trow span{font-size:13px;color:var(--muted)}
+.rank{text-align:right;font:800 20px/1 var(--display);font-variant-numeric:tabular-nums}
+.rank small{display:block;font:600 12px var(--body);color:var(--muted)}
+.rank.eins{color:var(--gold)}
+.tdhead{background:var(--pitch);color:var(--on-pitch);border-radius:16px;padding:18px;display:grid;gap:12px}
+.tdhead h1{margin:0;font:900 34px/.95 var(--display);text-transform:uppercase}
+.tdhead .liga{opacity:.8;font-size:15px}
+.tdhead .k{display:flex;gap:18px;flex-wrap:wrap}
+.tdhead .k div b{display:block;font:800 26px/1 var(--display)}.tdhead .k div span{font-size:12px;opacity:.75}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;background:var(--gold);color:#1b1407;font-weight:700;text-decoration:none;font-size:14px;border:0}
+.btn.ghost{background:transparent;color:var(--on-pitch);border:1px solid color-mix(in srgb,var(--on-pitch) 40%,transparent)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface-2);border-radius:999px;padding:4px;gap:4px}
+.seg button{border:0;background:none;border-radius:999px;padding:8px;font-weight:700;color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--fg);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.seg.zwei{grid-template-columns:repeat(2,1fr)}
+
+/* Tabellen */
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{padding:9px 8px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
+th{font:600 12px var(--body);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);background:var(--surface)}
+th:first-child,td:first-child{padding-left:14px}th:last-child,td:last-child{padding-right:14px}
+td.l,th.l{text-align:left}
+td.name{white-space:normal;min-width:140px;text-align:left}
+th button{all:unset;cursor:pointer}
+th.on{color:var(--gold)}
+tr.us td{background:var(--gold-soft);font-weight:700}
+
+/* Fuß und Leiste */
+.fuss{font-size:13px;color:var(--muted);text-align:center;padding:8px 0 4px;line-height:1.5}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);z-index:5;
+  padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+nav.tabs .in{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr)}
+nav.tabs button{background:none;border:0;padding:9px 4px 8px;display:grid;justify-items:center;gap:3px;font-size:12px;color:var(--muted);cursor:pointer}
+nav.tabs svg{width:24px;height:24px}
+nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
+</style>
+<!--INHALT-ENDE-KOPF-->
+</head>
+<body>
+<!--INHALT-KOERPER-->
+<header class="bar"><div class="wrap" id="kopf"></div></header>
+<main class="wrap" id="view" aria-live="polite"><div class="note">Daten werden geladen …</div></main>
+<nav class="tabs" aria-label="Bereiche"><div class="in">
+  <button data-v="start" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5c3 2.6 3 14.4 0 17M12 3.5c-3 2.6-3 14.4 0 17M3.8 9.5h16.4M3.8 14.5h16.4"/></svg>Start</button>
+  <button data-v="spielplan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Spielplan</button>
+  <button data-v="teams"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5M14.5 14.6c.8-.4 1.6-.6 2.5-.6 2.2 0 3.8 1.4 4.3 4"/></svg>Mannschaften</button>
+</div></nav>
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const lies = (k, d) => { try { return localStorage.getItem(k) ?? d; } catch (e) { return d; } };
+  const merke = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+
+  let D = null, G = [], ansicht = lies("ansicht", "start"), team = null, teil = "spiele",
+      planModus = "kommend", planFilter = "Alle", sortKey = "tore", sortDir = -1, offen = null, spruchNr = 0;
+  const berichte = {};
+  let logoOk = null;
+
+  const EMBLEM = `<svg viewBox="0 0 64 64" width="100%" height="100%" aria-hidden="true"><rect width="64" height="64" rx="14" fill="var(--gold)"/><circle cx="32" cy="32" r="17" fill="none" stroke="#1b1407" stroke-width="3.2"/><path d="M15 32h34M32 15c6 5 6 29 0 34M32 15c-6 5-6 29 0 34" fill="none" stroke="#1b1407" stroke-width="3.2"/></svg>`;
+  const logo = () => logoOk ? `<img src="bilder/logo.png" alt="Vereinslogo">` : EMBLEM;
+
+  // ---------- Hilfen
+  const wann = s => { const [d,m,y] = s.datum.split(".").map(Number); const t = (s.zeit||"").match(/(\d{1,2}):(\d{2})/); return new Date(y, m-1, d, t?+t[1]:0, t?+t[2]:0); };
+  const norm = n => (n||"").toLowerCase().replace(/\s+/g," ").trim();
+  const istWir = (t, n) => norm(n) === norm(t.eigener_name);
+  const daheim = (t, s) => istWir(t, s.heim);
+  const gegner = (t, s) => daheim(t, s) ? s.gast : s.heim;
+  const ausSicht = (t, s, e) => daheim(t, s) ? e : e.split(":").reverse().join(":");
+  const wertung = (t, s) => { if (!s.ergebnis) return ""; const [a,b] = ausSicht(t,s,s.ergebnis).split(":").map(Number); return a>b?"s":a<b?"n":"u"; };
+  const tagLang = d => d.toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"});
+  const quote = (a,b) => b ? Math.round(a/b*100)+" %" : "–";
+  const platz = t => t.tabelle.find(r => istWir(t, r.mannschaft));
+  const kurz = n => n.replace("männliche ","m").replace("weibliche ","w").replace("-Jugend","-Jgd.");
+
+  // ---------- Kopf
+  function kopf() {
+    if (team) {
+      $("#kopf").innerHTML = `<button class="back" id="zurueck" type="button">‹ Mannschaften</button>`;
+      return;
+    }
+    const st = new Date(D.aktualisiert);
+    const stand = `Stand ${st.toLocaleDateString("de-DE")}, ${st.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"})} Uhr`;
+    $("#kopf").innerHTML = ansicht === "start"
+      ? `<div class="s" style="margin:0">Fan-App · ${stand}</div>`
+      : `<div class="logo">${logo()}</div><div style="min-width:0"><div class="t">${esc(D.titel)}</div><div class="s">${stand}</div></div>`;
+  }
+
+  function render() {
+    if (!D) return;
+    document.querySelectorAll("nav.tabs button").forEach(b => b.setAttribute("aria-current", b.dataset.v === (team ? "teams" : ansicht) ? "page" : "false"));
+    kopf();
+    const v = $("#view");
+    v.innerHTML = team ? teamSeite(team) : ({start, spielplan, teams}[ansicht] || start)();
+    if (!team && ansicht === "start") spruchStart();
+  }
+
+  // ---------- Start
+  function start() {
+    const jetzt = new Date(), in7 = new Date(+jetzt + 7*864e5), vor7 = new Date(+jetzt - 8*864e5);
+    const kommend = G.filter(x => !x.s.ergebnis && wann(x.s) >= new Date(+jetzt - 3*36e5) && wann(x.s) <= in7);
+    const zuletzt = G.filter(x => x.s.ergebnis && wann(x.s) >= vor7).sort((a,b) => wann(b.s)-wann(a.s));
+    let s=0,u=0,n=0; G.forEach(x => { const w = wertung(x.t, x.s); if (w==="s") s++; else if (w==="u") u++; else if (w==="n") n++; });
+    const spitze = D.teams.filter(t => platz(t)?.rang === 1);
+    const spr = D.sprueche || [];
+    return `<section class="hero">
+        <div class="big"><div class="logo">${logo()}</div><h1>${esc(D.titel)}</h1></div>
+        ${D.leitsatz ? `<p class="lead">${esc(D.leitsatz)}</p>` : ""}
+        ${spr.length ? `<div class="spruch" id="spruch">${esc(spr[spruchNr % spr.length])}</div>` : ""}
+      </section>
+      ${D.vorschau ? `<div class="note">Vorschau mit echten Tabellen und Spielplänen vom 18.11.2026. Spielerwerte sind hier nur bei den Männern II und der A-Jugend (aus deinem PDF) enthalten. In deiner App kommen sie für alle Mannschaften aus den Spielberichten.</div>` : ""}
+      <h2>Saison bisher, alle ${D.teams.length} Teams</h2>
+      <div class="stats3"><div><b class="num" style="color:var(--win)">${s}</b><span>Siege</span></div><div><b class="num" style="color:var(--draw)">${u}</b><span>Unentschieden</span></div><div><b class="num" style="color:var(--loss)">${n}</b><span>Niederlagen</span></div></div>
+      ${spitze.length ? `<h2>Tabellenführer</h2><div class="top">${spitze.map(t => `<button class="chip" data-team="${t.id}">★ ${esc(t.name)}</button>`).join("")}</div>` : ""}
+      <h2>Die nächsten 7 Tage</h2>
+      ${kommend.length ? spielListe(kommend, false) : `<div class="note">In den nächsten 7 Tagen stehen keine Spiele an.</div>`}
+      <h2>Ergebnisse der letzten Woche</h2>
+      ${zuletzt.length ? spielListe(zuletzt, true) : `<div class="note">In der letzten Woche wurde nicht gespielt.</div>`}
+      ${galerie()}
+      <div class="fuss">Inoffizielle Fan-App. Alle Spieldaten stammen von nuLiga, dem Spielbetrieb des Hessischen Handball-Verbands.</div>`;
+  }
+  let spruchUhr = null;
+  function spruchStart() {
+    clearInterval(spruchUhr);
+    const spr = D.sprueche || []; if (spr.length < 2) return;
+    spruchUhr = setInterval(() => {
+      const el = $("#spruch"); if (!el) return clearInterval(spruchUhr);
+      el.style.opacity = 0;
+      setTimeout(() => { spruchNr++; el.textContent = spr[spruchNr % spr.length]; el.style.opacity = 1; }, 400);
+    }, 7000);
+  }
+  let bilder = [];
+  function galerie() {
+    if (bilder.length) return `<h2>Aus der Vereinsgeschichte</h2><div class="galerie">${bilder.map(b => `<figure><img src="bilder/${esc(b.datei)}" alt="${esc(b.text||"")}" loading="lazy">${b.text?`<figcaption>${esc(b.text)}</figcaption>`:""}</figure>`).join("")}</div>`;
+    if (D.vorschau) return `<h2>Aus der Vereinsgeschichte</h2><div class="platz"><b>Hier erscheint eure Bildergalerie.</b>Fotos mit Erlaubnis des Vereins oder der Fotografen in den Ordner <code>docs/bilder</code> legen und in <code>galerie.json</code> eintragen. Das Vereinslogo als <code>logo.png</code> ersetzt oben das Ball-Symbol.</div>`;
+    return "";
+  }
+
+  // ---------- Spiele
+  function spielListe(eintraege, ergebnisse) {
+    const tage = {};
+    eintraege.forEach(x => { const k = wann(x.s).toDateString(); (tage[k] ||= []).push(x); });
+    return `<div class="card games">${Object.values(tage).map(xs => `<div class="day">${tagLang(wann(xs[0].s))}</div>${xs.sort((a,b)=>ergebnisse?0:wann(a.s)-wann(b.s)).map(x => zeile(x.t, x.s, true)).join("")}`).join("")}</div>`;
+  }
+  function zeile(t, s, mitTeam) {
+    const hat = s.meeting && s.ergebnis;
+    const id = s.meeting || (t.id + s.datum + s.heim);
+    const sc = s.ergebnis ? `<span class="score ${wertung(t,s)}">${esc(ausSicht(t,s,s.ergebnis))}</span>`
+             : `<span class="score o">${wann(s) < new Date() ? "folgt" : (daheim(t,s) ? "Heim" : "Auswärts")}</span>`;
+    return `<button class="game ${hat?"has":""}" data-spiel="${esc(id)}" data-tid="${t.id}" ${hat?`aria-expanded="${offen===id}"`:""} type="button">
+      <span class="z">${esc(s.zeit||"–")}<small>${esc(s.datum.slice(0,6))}</small></span>
+      <span class="o">${mitTeam?`<span class="team">${esc(t.name)}</span>`:""}<b>${daheim(t,s)?"gegen":"bei"} ${esc(gegner(t,s))}</b>${s.halbzeit?`<span>Halbzeit ${esc(ausSicht(t,s,s.halbzeit))}</span>`:""}</span>
+      ${sc}</button>${hat && offen===id ? detail(t, s) : ""}`;
+  }
+  function detail(t, s) {
+    const b = berichte[s.meeting];
+    if (b === undefined) { ladeBericht(s.meeting); return `<div class="detail"><div class="note">Spielbericht wird geladen …</div></div>`; }
+    if (b === null) return `<div class="detail"><div class="note">Spielbericht wird geladen …</div></div>`;
+    if (b === "fehler") return `<div class="detail"><div class="note">Der Spielbericht ist noch nicht in der App. Er kommt mit dem nächsten Datenabruf.</div>${t.extern ? "" : `<a class="src" href="${esc(t.quelle.replace("groupPage?","groupMeetingReport?meeting="+s.meeting+"&"))}" target="_blank" rel="noopener">Spielbericht bei nuLiga öffnen</a>`}</div>`;
+    const unser = b.teams.find(x => istWir(t, x.name)) || b.teams[0];
+    const ander = b.teams.find(x => x !== unser);
+    const torliste = x => { const l = x.spieler.filter(p => p.tore > 0).sort((a,c) => c.tore - a.tore); return l.length ? l.map(p => `<div><span><span class="nr">${p.nr}</span>${esc(p.name)}</span><span class="num">${p.tore}${p["7m_versuche"]?` <small>(${p.tore-p["7m_tore"]} Feld, ${p["7m_tore"]}/${p["7m_versuche"]} 7m)</small>`:""}</span></div>`).join("") : `<div><span>Keine Torschützen im Bericht</span></div>`; };
+    const seite = daheim(t, s) ? "Heim" : "Gast";
+    const ev = (b.verlauf||[]).filter(e => /Tor|Minuten|Auszeit|Disq|Bericht/.test(e.ereignis)).map(e => {
+      const tor = /Tor/.test(e.ereignis) && !/ohne Tor/.test(e.ereignis);
+      const cls = (e.seite===seite ? "us " : "") + (/Minuten/.test(e.ereignis) ? "pen" : tor ? "" : "misc");
+      const st = e.stand && seite==="Gast" ? e.stand.split(":").reverse().join(":") : e.stand;
+      const txt = /Minuten/.test(e.ereignis) ? e.person : tor ? e.person + (/7m/.test(e.ereignis)?" (7m)":"") : e.ereignis + (e.person?" – "+e.person:"");
+      return `<div class="ev ${cls}"><span class="t">${esc(e.zeit)}</span><span class="st">${esc(tor?st:"")}</span><span class="p">${esc(txt)}</span></div>`;
+    }).join("");
+    return `<div class="detail">
+      <div><h3>Tore ${esc(t.name)}</h3><div class="scorers">${torliste(unser)}</div></div>
+      ${ander ? `<div><h3>Tore ${esc(ander.name)}</h3><div class="scorers">${torliste(ander)}</div></div>` : ""}
+      ${ev ? `<div><h3>Spielverlauf</h3><div class="timeline">${ev}</div></div>` : ""}
+      ${b.ort ? `<div class="note">${esc(b.ort)}</div>` : ""}
+    </div>`;
+  }
+  function ladeBericht(id) {
+    berichte[id] = null;
+    fetch(`data/berichte/${id}.json`).then(r => { if (!r.ok) throw 0; return r.json(); })
+      .then(b => { berichte[id] = b; render(); }).catch(() => { berichte[id] = "fehler"; render(); });
+  }
+
+  // ---------- Spielplan
+  const KATS = ["Alle", "Aktive", "Männliche Jugend", "Weibliche Jugend"];
+  function spielplan() {
+    const jetzt = new Date();
+    let l = G.filter(x => planFilter === "Alle" || x.t.kategorie === planFilter);
+    l = planModus === "kommend"
+      ? l.filter(x => !x.s.ergebnis && wann(x.s) >= new Date(+jetzt - 3*36e5)).sort((a,b) => wann(a.s)-wann(b.s)).slice(0, 60)
+      : l.filter(x => x.s.ergebnis).sort((a,b) => wann(b.s)-wann(a.s)).slice(0, 60);
+    return `<div class="seg zwei" role="group" aria-label="Ansicht"><button data-modus="kommend" aria-pressed="${planModus==="kommend"}" type="button">Nächste Spiele</button><button data-modus="ergebnisse" aria-pressed="${planModus==="ergebnisse"}" type="button">Ergebnisse</button></div>
+      <div class="top">${KATS.map(k => `<button class="chip ${k===planFilter?"on":"ghost"}" data-filter="${esc(k)}" type="button">${esc(k)}</button>`).join("")}</div>
+      ${l.length ? spielListe(l, planModus !== "kommend") : `<div class="note">Keine Spiele gefunden.</div>`}`;
+  }
+
+  // ---------- Mannschaften
+  function teams() {
+    const gruppen = ["Aktive", "Männliche Jugend", "Weibliche Jugend", "Jugend"];
+    const alle = [...D.teams.map(t => ({t, extern:false})), ...(D.extern||[]).map(t => ({t, extern:true}))];
+    return gruppen.map(g => {
+      const l = alle.filter(x => x.t.kategorie === g); if (!l.length) return "";
+      return `<h2>${esc(g)}</h2><div class="card teamlist">${l.map(({t, extern}) => {
+        const p = extern ? null : platz(t);
+        return `<button class="trow" data-team="${t.id}" type="button"><span><b>${esc(t.name)}</b><span>${esc(t.liga)}</span></span>
+          ${p ? `<span class="rank ${p.rang===1?"eins":""}">${p.rang}.<small>${esc(p.punkte)} Pkt.</small></span>` : `<span class="rank"><small>${extern ? "Links ›" : t.extern ? "PDF ›" : "›"}</small></span>`}</button>`;
+      }).join("")}</div>`;
+    }).join("") + `<div class="fuss">Die 1. Mannschaft und die Jugendbundesliga-Teams spielen außerhalb von nuLiga. Ihre Spiele kommen aus hochgeladenen PDF-Spielberichten, sonst führt die App zu den offiziellen Seiten.</div>`;
+  }
+  function teamSeite(id) {
+    const ex = (D.extern||[]).find(t => t.id === id);
+    if (ex) return `<section class="tdhead"><h1>${esc(ex.name)}</h1><div class="liga">${esc(ex.liga)}</div><div class="links">${ex.links.map(l => `<a class="btn" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.text)}</a>`).join("")}</div></section><div class="note">${esc(ex.hinweis)}</div>`;
+    const t = D.teams.find(x => x.id === id); if (!t) { team = null; return teams(); }
+    const p = platz(t);
+    const gespielt = t.spiele.filter(s => s.ergebnis);
+    const bilanz = ["s","u","n"].map(w => gespielt.filter(s => wertung(t,s)===w).length);
+    return `<section class="tdhead"><h1>${esc(t.name)}</h1><div class="liga">${esc(t.liga)}</div>
+      <div class="k">${p?`<div><b>${p.rang}.</b><span>Platz</span></div><div><b>${esc(p.punkte)}</b><span>Punkte</span></div>`:""}<div><b>${bilanz.join("-")}</b><span>S-U-N</span></div>${p?`<div><b>${esc(p.tore)}</b><span>Tore</span></div>`:""}</div>
+      <div class="links">${t.extern
+        ? (t.links||[]).map((l,i) => `<a class="btn ${i?"ghost":""}" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.text)}</a>`).join("")
+        : `<a class="btn" href="${esc(t.ticker)}" target="_blank" rel="noopener">Live-Ticker</a><a class="btn ghost" href="${esc(t.quelle)}" target="_blank" rel="noopener">nuLiga</a>`}</div></section>
+      ${t.extern ? `<div class="note">Spiele und Statistik aus hochgeladenen PDF-Spielberichten (${t.spiele.length} ${t.spiele.length===1?"Spiel":"Spiele"}). ${esc(t.hinweis||"")}</div>` : ""}
+      <div class="seg" role="group" aria-label="Bereich">${[["spiele","Spiele"],["tabelle","Tabelle"],["statistik","Statistik"]].map(([k,l]) => `<button data-teil="${k}" aria-pressed="${teil===k}" type="button">${l}</button>`).join("")}</div>
+      ${teil === "tabelle" ? tabelle(t) : teil === "statistik" ? statistik(t) : `<div class="card games">${[...t.spiele].sort((a,b)=>wann(a)-wann(b)).map(s => zeile(t, s, false)).join("")}</div>`}`;
+  }
+  function tabelle(t) {
+    if (!t.tabelle.length) return `<div class="note">${esc(t.hinweis || "Für diese Mannschaft liegt keine Tabelle vor.")}</div>`;
+    return `<div class="card tbl"><table><thead><tr><th class="l">#</th><th class="l">Mannschaft</th><th>Sp.</th><th>S</th><th>U</th><th>N</th><th>Tore</th><th>+/−</th><th>Pkt.</th></tr></thead>
+      <tbody>${t.tabelle.map(r => `<tr class="${istWir(t, r.mannschaft)?"us":""}"><td class="l">${r.rang}</td><td class="name">${esc(r.mannschaft)}</td><td>${r.spiele}</td><td>${r.s}</td><td>${r.u}</td><td>${r.n}</td><td>${esc(r.tore)}</td><td>${esc(r.diff)}</td><td><b>${esc(r.punkte)}</b></td></tr>`).join("")}</tbody></table></div>`;
+  }
+  const SPALTEN = [["nr","#"],["name","Spieler"],["einsaetze","Sp."],["tore","Tore"],["feld","Feld"],["7m","7m"],["7m_quote","7m %"],["tore_pro_spiel","Ø"],["zeitstrafen","2′"],["gelb","Gelb"],["rot","Rot"]];
+  const feld = p => p.tore - (p["7m_tore"]||0);
+  const wertVon = (p,k) => k==="feld" ? feld(p) : k==="7m" ? p["7m_tore"] : k==="7m_quote" ? (p["7m_versuche"] ? p["7m_tore"]/p["7m_versuche"] : -1) : p[k];
+  function statistik(t) {
+    const l = t.spieler || [];
+    if (!l.length) return `<div class="note">${D.vorschau ? "In der Vorschau gibt es Spielerwerte nur bei den Männern II und der A-Jugend. In deiner App stehen sie hier nach dem ersten Datenabruf." : /E-Jugend/.test(t.name) ? "In der E-Jugend werden keine Torschützen erfasst. Gewertet wird nach Punkten." : "Für diese Mannschaft liegen noch keine Spielberichte mit Spielerdaten vor."}</div>`;
+    const rows = [...l].sort((a,b) => { const x = wertVon(a,sortKey), y = wertVon(b,sortKey); return (typeof x === "string" ? x.localeCompare(y) : x - y) * sortDir; });
+    const sum = k => l.reduce((s,p) => s + (p[k]||0), 0);
+    return `<div class="card tbl"><table><thead><tr>${SPALTEN.map(([k,lab]) => `<th class="${k==="name"||k==="nr"?"l":""} ${sortKey===k?"on":""}" aria-sort="${sortKey===k?(sortDir<0?"descending":"ascending"):"none"}"><button data-sort="${k}" type="button">${lab}${sortKey===k?(sortDir<0?" ↓":" ↑"):""}</button></th>`).join("")}</tr></thead>
+      <tbody>${rows.map(p => `<tr><td class="l">${p.nr}</td><td class="name">${esc(p.name)}</td><td>${p.einsaetze}</td><td><b>${p.tore}</b></td><td>${feld(p)}</td><td>${p["7m_versuche"]?p["7m_tore"]+"/"+p["7m_versuche"]:"–"}</td><td>${quote(p["7m_tore"],p["7m_versuche"])}</td><td>${(p.tore_pro_spiel||0).toFixed(1).replace(".",",")}</td><td>${p.zeitstrafen||"–"}</td><td>${p.gelb||"–"}</td><td>${p.rot||"–"}</td></tr>`).join("")}</tbody></table></div>
+      <div class="note">Tore = insgesamt · Feld = aus dem Spiel heraus · 7m = verwandelt/geworfen · Sp. = Einsätze · Ø = Tore pro Einsatz · 2′ = Zeitstrafen. Gesamt: ${sum("tore")} Tore, davon ${sum("tore")-sum("7m_tore")} aus dem Feld und ${sum("7m_tore")} per Siebenmeter.</div>`;
+  }
+
+  // ---------- Navigation
+  function zeigeTeam(id) { team = id; teil = "spiele"; offen = null; render(); window.scrollTo(0,0); if (location.hash !== "#team-"+id) history.pushState(null, "", "#team-"+id); }
+  function ausHash() { const m = location.hash.match(/^#team-([\w-]+)$/); team = m ? m[1] : null; offen = null; render(); }
+  window.addEventListener("popstate", ausHash);
+  window.addEventListener("hashchange", ausHash);
+
+  document.addEventListener("click", e => {
+    const nav = e.target.closest("nav.tabs button");
+    if (nav) { ansicht = nav.dataset.v; merke("ansicht", ansicht); offen = null; if (team) { team = null; history.pushState(null, "", location.pathname + location.search); } render(); window.scrollTo(0,0); return; }
+    if (e.target.closest("#zurueck")) { team = null; ansicht = "teams"; history.pushState(null, "", location.pathname + location.search); render(); return; }
+    const tb = e.target.closest("[data-team]"); if (tb) { zeigeTeam(tb.dataset.team); return; }
+    const tl = e.target.closest("[data-teil]"); if (tl) { teil = tl.dataset.teil; offen = null; render(); return; }
+    const md = e.target.closest("[data-modus]"); if (md) { planModus = md.dataset.modus; offen = null; render(); return; }
+    const fi = e.target.closest("[data-filter]"); if (fi) { planFilter = fi.dataset.filter; render(); return; }
+    const so = e.target.closest("[data-sort]"); if (so) { const k = so.dataset.sort; sortDir = sortKey===k ? -sortDir : (k==="name"||k==="nr" ? 1 : -1); sortKey = k; render(); return; }
+    const g = e.target.closest(".game.has"); if (g) { offen = offen === g.dataset.spiel ? null : g.dataset.spiel; render(); }
+  });
+
+  // ---------- Laden
+  const pruefeLogo = new Promise(ok => { const i = new Image(); i.onload = () => { logoOk = true; ok(); }; i.onerror = () => { logoOk = false; ok(); }; i.src = "bilder/logo.png"; });
+  const ladeGalerie = fetch("bilder/galerie.json").then(r => r.ok ? r.json() : []).then(b => { bilder = Array.isArray(b) ? b : []; }).catch(() => {});
+  fetch("data/verein.json", {cache: "no-store"}).then(r => { if (!r.ok) throw 0; return r.json(); }).then(async d => {
+    D = d; G = d.teams.flatMap(t => t.spiele.map(s => ({t, s})));
+    await Promise.all([pruefeLogo, ladeGalerie]);
+    ausHash();
+  }).catch(() => { $("#view").innerHTML = `<div class="card note">Die Daten konnten nicht geladen werden. Prüfe die Internetverbindung und öffne die App erneut. Bleibt das so, im GitHub-Projekt unter „Actions“ nachsehen, ob der letzte Datenabruf grün ist.</div>`; });
+})();
+</script>
+<!--INHALT-ENDE-->
+</body>
+</html>

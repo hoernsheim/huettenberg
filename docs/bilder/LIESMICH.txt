@@ -1,0 +1,12 @@
+Bilder für die App
+
+1. Vereinslogo: als logo.png in diesen Ordner legen (quadratisch, z. B. 512 x 512 Pixel).
+   Es ersetzt dann automatisch das Ball-Symbol oben in der App.
+
+2. Bildergalerie auf der Startseite:
+   - Fotos (JPG oder PNG, am besten nicht größer als 1600 Pixel Breite) in diesen Ordner legen.
+   - Die Datei galerie-beispiel.json kopieren, in galerie.json umbenennen und für jedes Foto
+     den Dateinamen und eine kurze Bildunterschrift eintragen.
+
+Wichtig: Nur Bilder verwenden, für die ihr die Erlaubnis habt (Verein, Fotograf, abgebildete
+Personen). Bei Fotos von Kindern und Jugendlichen braucht es das Einverständnis der Eltern.
