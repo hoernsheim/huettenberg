@@ -1,5 +1,5 @@
 {
- "aktualisiert": "2026-11-19T23:33+00:00",
+ "aktualisiert": "2026-11-20T22:09+00:00",
  "verein": "TV Hüttenberg",
  "titel": "Handball in Hüttenberg",
  "leitsatz": "Für alle, die in Hüttenberg Handball leben: auf der Tribüne, an der Seitenlinie und vor allem für unsere Jugend. Ihr sorgt dafür, dass in unseren Hallen jedes Wochenende Leben ist.",
@@ -24,6 +24,17 @@
    "tabelle": [
     {
      "rang": 1,
+     "mannschaft": "HSG Breckenh./Wallau/Massenh.",
+     "spiele": 9,
+     "s": 6,
+     "u": 1,
+     "n": 2,
+     "tore": "254:219",
+     "diff": "+35",
+     "punkte": "13:5"
+    },
+    {
+     "rang": 2,
      "mannschaft": "TSG Offenbach-Bürgel",
      "spiele": 9,
      "s": 6,
@@ -34,7 +45,7 @@
      "punkte": "13:5"
     },
     {
-     "rang": 2,
+     "rang": 3,
      "mannschaft": "HSG Gr.-Bieberau/Modau",
      "spiele": 7,
      "s": 6,
@@ -45,7 +56,7 @@
      "punkte": "12:2"
     },
     {
-     "rang": 3,
+     "rang": 4,
      "mannschaft": "TV Groß-Umstadt",
      "spiele": 8,
      "s": 5,
@@ -56,29 +67,7 @@
      "punkte": "12:4"
     },
     {
-     "rang": 4,
-     "mannschaft": "HSG Breckenh./Wallau/Massenh.",
-     "spiele": 8,
-     "s": 5,
-     "u": 1,
-     "n": 2,
-     "tore": "225:192",
-     "diff": "+33",
-     "punkte": "11:5"
-    },
-    {
      "rang": 5,
-     "mannschaft": "HSG Dotzheim/Schierstein",
-     "spiele": 8,
-     "s": 5,
-     "u": 0,
-     "n": 3,
-     "tore": "237:235",
-     "diff": "+2",
-     "punkte": "10:6"
-    },
-    {
-     "rang": 6,
      "mannschaft": "HSG Pohlheim",
      "spiele": 8,
      "s": 5,
@@ -87,6 +76,17 @@
      "tore": "237:251",
      "diff": "-14",
      "punkte": "10:6"
+    },
+    {
+     "rang": 6,
+     "mannschaft": "HSG Dotzheim/Schierstein",
+     "spiele": 9,
+     "s": 5,
+     "u": 0,
+     "n": 4,
+     "tore": "264:264",
+     "diff": "0",
+     "punkte": "10:8"
     },
     {
      "rang": 7,
@@ -736,13 +736,13 @@
     {
      "rang": 4,
      "mannschaft": "TG Friedberg",
-     "spiele": 9,
-     "s": 5,
+     "spiele": 10,
+     "s": 6,
      "u": 1,
      "n": 3,
-     "tore": "299:281",
-     "diff": "+18",
-     "punkte": "11:7"
+     "tore": "330:307",
+     "diff": "+23",
+     "punkte": "13:7"
     },
     {
      "rang": 5,
@@ -813,13 +813,13 @@
     {
      "rang": 11,
      "mannschaft": "HSG Mörlen",
-     "spiele": 9,
+     "spiele": 10,
      "s": 3,
      "u": 1,
-     "n": 5,
-     "tore": "282:288",
-     "diff": "-6",
-     "punkte": "7:11"
+     "n": 6,
+     "tore": "308:319",
+     "diff": "-11",
+     "punkte": "7:13"
     },
     {
      "rang": 12,
@@ -1508,13 +1508,13 @@
     {
      "rang": 5,
      "mannschaft": "HSG Kleenh.-Langg.",
-     "spiele": 8,
-     "s": 5,
+     "spiele": 9,
+     "s": 6,
      "u": 0,
      "n": 3,
-     "tore": "222:226",
-     "diff": "-4",
-     "punkte": "10:6"
+     "tore": "248:250",
+     "diff": "-2",
+     "punkte": "12:6"
     },
     {
      "rang": 6,
@@ -1529,17 +1529,6 @@
     },
     {
      "rang": 7,
-     "mannschaft": "HSG Hungen/Lich",
-     "spiele": 8,
-     "s": 3,
-     "u": 1,
-     "n": 4,
-     "tore": "219:201",
-     "diff": "+18",
-     "punkte": "7:9"
-    },
-    {
-     "rang": 8,
      "mannschaft": "TV Hüttenberg",
      "spiele": 8,
      "s": 3,
@@ -1548,6 +1537,17 @@
      "tore": "207:214",
      "diff": "-7",
      "punkte": "7:9"
+    },
+    {
+     "rang": 8,
+     "mannschaft": "HSG Hungen/Lich",
+     "spiele": 9,
+     "s": 3,
+     "u": 1,
+     "n": 5,
+     "tore": "243:227",
+     "diff": "+16",
+     "punkte": "7:11"
     },
     {
      "rang": 9,
@@ -7984,426 +7984,8 @@
      "punkte": "0:14"
     }
    ],
-   "spiele": [
-    {
-     "tag": "So",
-     "datum": "13.09.2026",
-     "zeit": "13:15",
-     "nr": "5",
-     "heim": "JSGwB Niedergirmes/Aßlar",
-     "gast": "TV Hüttenberg",
-     "ergebnis": "28:35",
-     "meeting": "8381399",
-     "genehmigt": true,
-     "halbzeit": "14:16",
-     "ort": "Sporthalle Aßlar"
-    },
-    {
-     "tag": "So",
-     "datum": "20.09.2026",
-     "zeit": "13:15",
-     "nr": "10",
-     "heim": "TV Hüttenberg",
-     "gast": "HSG Hungen/Lich",
-     "ergebnis": "28:35",
-     "meeting": "8381472",
-     "genehmigt": true,
-     "halbzeit": "13:21",
-     "ort": "Sporthalle Hüttenberg"
-    },
-    {
-     "tag": "Sa",
-     "datum": "26.09.2026",
-     "zeit": "18:00",
-     "nr": "14",
-     "heim": "HSG Herborn/Seelbach",
-     "gast": "TV Hüttenberg",
-     "ergebnis": "23:33",
-     "meeting": "8381397",
-     "genehmigt": true,
-     "halbzeit": "11:16",
-     "ort": "Sporthalle Gymnasium Herborn"
-    },
-    {
-     "tag": "Sa",
-     "datum": "24.10.2026",
-     "zeit": "11:00",
-     "nr": "19",
-     "heim": "TV Hüttenberg",
-     "gast": "TG Friedberg",
-     "ergebnis": "26:25",
-     "meeting": "8381446",
-     "genehmigt": true,
-     "halbzeit": "15:11",
-     "ort": "Sporthalle Hüttenberg"
-    },
-    {
-     "tag": "So",
-     "datum": "01.11.2026",
-     "zeit": "15:15",
-     "nr": "21",
-     "heim": "HSG Dutenh./Münchholzh.",
-     "gast": "TV Hüttenberg",
-     "ergebnis": "19:30",
-     "meeting": "8381440",
-     "genehmigt": true,
-     "halbzeit": "9:15",
-     "ort": "Sporthalle Dutenhofen"
-    },
-    {
-     "tag": "So",
-     "datum": "08.11.2026",
-     "zeit": "11:45",
-     "nr": "27",
-     "heim": "TV Hüttenberg",
-     "gast": "TUS Vollnkirchen",
-     "ergebnis": "35:28",
-     "meeting": "8381462",
-     "genehmigt": true,
-     "halbzeit": "17:16",
-     "ort": "Sporthalle Hüttenberg"
-    },
-    {
-     "tag": "So",
-     "datum": "15.11.2026",
-     "zeit": "13:45",
-     "nr": "33",
-     "heim": "wJSG Bieber/Heuchelheim",
-     "gast": "TV Hüttenberg",
-     "ergebnis": "34:23",
-     "meeting": "8381401",
-     "genehmigt": true,
-     "halbzeit": "17:11",
-     "ort": "Sporthalle Heuchelheim"
-    },
-    {
-     "tag": "Sa",
-     "datum": "28.11.2026",
-     "zeit": "14:00",
-     "nr": "90",
-     "heim": "TV Hüttenberg",
-     "gast": "HSG Lumdatal",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
-    },
-    {
-     "tag": "Mo",
-     "datum": "30.11.2026",
-     "zeit": "17:20",
-     "nr": "39",
-     "heim": "TV Hüttenberg",
-     "gast": "HSG Butzbach",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
-    },
-    {
-     "tag": "Sa",
-     "datum": "05.12.2026",
-     "zeit": "12:30",
-     "nr": "50",
-     "heim": "TV Hüttenberg",
-     "gast": "JSGwB Niedergirmes/Aßlar",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
-    },
-    {
-     "tag": "Sa",
-     "datum": "12.12.2026",
-     "zeit": "14:30",
-     "nr": "55",
-     "heim": "HSG Hungen/Lich",
-     "gast": "TV Hüttenberg",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
-    },
-    {
-     "tag": "So",
-     "datum": "24.01.2027",
-     "zeit": "13:30",
-     "nr": "59",
-     "heim": "TV Hüttenberg",
-     "gast": "HSG Herborn/Seelbach",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
-    },
-    {
-     "tag": "Sa",
-     "datum": "30.01.2027",
-     "zeit": "13:30",
-     "nr": "64",
-     "heim": "TG Friedberg",
-     "gast": "TV Hüttenberg",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
-    },
-    {
-     "tag": "Sa",
-     "datum": "13.02.2027",
-     "zeit": "11:00",
-     "nr": "66",
-     "heim": "TV Hüttenberg",
-     "gast": "HSG Dutenh./Münchholzh.",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
-    },
-    {
-     "tag": "Sa",
-     "datum": "20.02.2027",
-     "zeit": "17:15",
-     "nr": "72",
-     "heim": "TUS Vollnkirchen",
-     "gast": "TV Hüttenberg",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
-    },
-    {
-     "tag": "Sa",
-     "datum": "27.02.2027",
-     "zeit": "16:15",
-     "nr": "78",
-     "heim": "TV Hüttenberg",
-     "gast": "wJSG Bieber/Heuchelheim",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
-    },
-    {
-     "tag": "So",
-     "datum": "07.03.2027",
-     "zeit": "17:00",
-     "nr": "84",
-     "heim": "HSG Butzbach",
-     "gast": "TV Hüttenberg",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
-    },
-    {
-     "tag": "So",
-     "datum": "14.03.2027",
-     "zeit": "15:30",
-     "nr": "45",
-     "heim": "HSG Lumdatal",
-     "gast": "TV Hüttenberg",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
-    }
-   ],
-   "spieler": [
-    {
-     "name": "Zörb, Matea",
-     "nr": 8,
-     "einsaetze": 6,
-     "tore": 30,
-     "7m_tore": 7,
-     "7m_versuche": 11,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 5.0
-    },
-    {
-     "name": "Rudl, Mara",
-     "nr": 20,
-     "einsaetze": 5,
-     "tore": 27,
-     "7m_tore": 8,
-     "7m_versuche": 12,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 5.4
-    },
-    {
-     "name": "Feisel, Lina",
-     "nr": 17,
-     "einsaetze": 7,
-     "tore": 24,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 3.43
-    },
-    {
-     "name": "Schultze-Rhonhof, Marie Linnea",
-     "nr": 3,
-     "einsaetze": 6,
-     "tore": 24,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 4.0
-    },
-    {
-     "name": "Lakowski, Marlene",
-     "nr": 13,
-     "einsaetze": 6,
-     "tore": 23,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 3.83
-    },
-    {
-     "name": "Klees, Nele Elisa",
-     "nr": 9,
-     "einsaetze": 5,
-     "tore": 17,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 3.4
-    },
-    {
-     "name": "Siegel, Polly Greta",
-     "nr": 14,
-     "einsaetze": 7,
-     "tore": 17,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 2.43
-    },
-    {
-     "name": "Lachmann, Carolin",
-     "nr": 6,
-     "einsaetze": 6,
-     "tore": 13,
-     "7m_tore": 4,
-     "7m_versuche": 4,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 2.17
-    },
-    {
-     "name": "Theiß, Jule",
-     "nr": 10,
-     "einsaetze": 7,
-     "tore": 12,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 1.71
-    },
-    {
-     "name": "Feisel, Fiona",
-     "nr": 2,
-     "einsaetze": 7,
-     "tore": 10,
-     "7m_tore": 0,
-     "7m_versuche": 1,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 1.43
-    },
-    {
-     "name": "Schreiner, Paula",
-     "nr": 11,
-     "einsaetze": 6,
-     "tore": 7,
-     "7m_tore": 0,
-     "7m_versuche": 1,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 1.17
-    },
-    {
-     "name": "Weber, Lydia Sophie",
-     "nr": 7,
-     "einsaetze": 5,
-     "tore": 5,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 1.0
-    },
-    {
-     "name": "Martin, Jule",
-     "nr": 13,
-     "einsaetze": 2,
-     "tore": 1,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 0.5
-    },
-    {
-     "name": "Behrens, Nelly",
-     "nr": 33,
-     "einsaetze": 7,
-     "tore": 0,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 0.0
-    },
-    {
-     "name": "Faber, Lana",
-     "nr": 90,
-     "einsaetze": 3,
-     "tore": 0,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 0.0
-    },
-    {
-     "name": "Heidebrecht, Aurelia Marie",
-     "nr": 1,
-     "einsaetze": 6,
-     "tore": 0,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 0.0
-    },
-    {
-     "name": "Selent, Liana",
-     "nr": 16,
-     "einsaetze": 3,
-     "tore": 0,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 0.0
-    }
-   ]
+   "spiele": [],
+   "spieler": []
   },
   {
    "id": "wc1",
@@ -9805,24 +9387,24 @@
     {
      "rang": 3,
      "mannschaft": "TV Hüttenberg II",
-     "spiele": 6,
-     "s": 4,
+     "spiele": 7,
+     "s": 5,
      "u": 1,
      "n": 1,
-     "tore": "22:7",
-     "diff": "+15",
-     "punkte": "9:3"
+     "tore": "33:14",
+     "diff": "+19",
+     "punkte": "11:3"
     },
     {
      "rang": 4,
      "mannschaft": "HSG Butzbach",
-     "spiele": 5,
+     "spiele": 6,
      "s": 4,
      "u": 0,
-     "n": 1,
-     "tore": "20:5",
-     "diff": "+15",
-     "punkte": "8:2"
+     "n": 2,
+     "tore": "27:16",
+     "diff": "+11",
+     "punkte": "8:4"
     },
     {
      "rang": 5,
@@ -9977,9 +9559,11 @@
      "nr": "31",
      "heim": "HSG Butzbach",
      "gast": "TV Hüttenberg II",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
+     "ergebnis": "0:2",
+     "meeting": "8382355",
+     "genehmigt": false,
+     "halbzeit": "2:6",
+     "ort": "Mehrzweckhalle Kirch-/Pohlgöns"
     },
     {
      "tag": "Sa",
@@ -10107,7 +9691,7 @@
     {
      "name": "Dietrich, Hanne",
      "nr": 18,
-     "einsaetze": 5,
+     "einsaetze": 6,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -10143,7 +9727,7 @@
     {
      "name": "Goy, Emelie",
      "nr": 11,
-     "einsaetze": 6,
+     "einsaetze": 7,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -10155,7 +9739,19 @@
     {
      "name": "Herold, Mila",
      "nr": 6,
-     "einsaetze": 6,
+     "einsaetze": 7,
+     "tore": 0,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 0.0
+    },
+    {
+     "name": "Kaminski, Nelly Rae",
+     "nr": 4,
+     "einsaetze": 1,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -10167,7 +9763,7 @@
     {
      "name": "Kunert, Anna Clara Paulina Sophie",
      "nr": 10,
-     "einsaetze": 6,
+     "einsaetze": 7,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -10178,8 +9774,8 @@
     },
     {
      "name": "Küster, Lotta",
-     "nr": 7,
-     "einsaetze": 2,
+     "nr": 8,
+     "einsaetze": 3,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -10191,7 +9787,7 @@
     {
      "name": "Linnemann, Anni",
      "nr": 9,
-     "einsaetze": 4,
+     "einsaetze": 5,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -10227,7 +9823,7 @@
     {
      "name": "Volk, Mathilde",
      "nr": 5,
-     "einsaetze": 6,
+     "einsaetze": 7,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -10250,8 +9846,8 @@
     },
     {
      "name": "Zörb, Hanna Malou",
-     "nr": 3,
-     "einsaetze": 3,
+     "nr": 2,
+     "einsaetze": 4,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
