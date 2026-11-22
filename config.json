@@ -45,12 +45,12 @@
      "hinweis": "Die Tabelle der 2. Bundesliga veröffentlicht die Handball-Bundesliga nur auf ihren eigenen Seiten.",
      "links": [{"text": "Statistik der 2. HBL", "url": "https://www.opel-hbl.de/de/2-hbl/statistiken"}]},
     {"id": "maj", "name": "männliche A-Jugend (JBL)", "kategorie": "Männliche Jugend", "liga": "Jugendbundesliga · HSG Dutenhofen/Münchholzhausen",
-     "pdf_ordner": "pdf-berichte/a-jugend", "eigener_name": "HSG Dutenhofen/Münchholzhausen",
+     "pdf_ordner": "pdf-berichte/a-jugend", "pdf_kennung": "JBLAJ", "eigener_name": "HSG Dutenhofen/Münchholzhausen",
      "hinweis": "Spielt als HSG Dutenhofen/Münchholzhausen. Spielpläne und Tabellen der Jugendbundesliga erscheinen auf handball.net.",
      "links": [{"text": "Spielkalender auf handball.net", "url": "https://www.handball.net/spielbetrieb/spielkalender?verband=1"},
                {"text": "Tabellen beim DHB", "url": "https://www.dhb.de/wettbewerbe/jugendbundesliga-handball/jblh-a-jugend-maennlich"}]},
     {"id": "mbj", "name": "männliche B-Jugend (JBL)", "kategorie": "Männliche Jugend", "liga": "Jugendbundesliga · HSG Dutenhofen/Münchholzhausen",
-     "pdf_ordner": "pdf-berichte/b-jugend", "eigener_name": "HSG Dutenhofen/Münchholzhausen",
+     "pdf_ordner": "pdf-berichte/b-jugend", "pdf_kennung": "JBLBJ", "eigener_name": "HSG Dutenhofen/Münchholzhausen",
      "hinweis": "Spielt als HSG Dutenhofen/Münchholzhausen. Spielpläne und Tabellen der Jugendbundesliga erscheinen auf handball.net.",
      "links": [{"text": "Spielkalender auf handball.net", "url": "https://www.handball.net/spielbetrieb/spielkalender?verband=1"}]}
   ]
