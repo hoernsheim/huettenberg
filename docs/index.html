@@ -273,8 +273,9 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
   const LIVE_MIN = 95;          // ohne Live-Daten: so lange gilt ein Spiel nach Anpfiff als "läuft"
   const TAKT = 60;              // Sekunden bis zur nächsten Aktualisierung
   let proxy = "", live = {}, versionen = {}, rest = TAKT, takt = null, laedt = false;
-  const AKTION = {4: "Tor", 5: "7m-Tor", 6: "7m verworfen"};
-  const META = new Set([0, 15, 17]);
+  // Ereignis-Codes des offiziellen Tickers (abgeglichen mit dessen Anzeige am 22.11.2026)
+  const AKTION = {2: "Auszeit", 3: "Auszeit", 4: "Tor", 5: "7m-Tor", 6: "7m verworfen", 8: "2 Minuten", 9: "Gelbe Karte", 11: "Rote Karte", 14: "Halbzeit", 16: "Spielende"};
+  const META = new Set([0, 1, 15, 17]);   // Uhr an/aus und Spielbeginn-Markierungen
   const schl = (t, s) => t.id + "|" + s.datum + "|" + s.heim;
   const gruppe = t => ((t.ticker || "").match(/groups\/(\d+)/) || [])[1];
   const zeitAus = x => new Date(String(x).replace(/\.\d+/, "").replace(/([+-]\d{2})(\d{2})$/, "$1:$2"));
@@ -319,7 +320,7 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
               if (ev) {
                 const wer = ev.personLastname ? `${ev.personLastname} ${(ev.personFirstname || "").slice(0,1)}.` : "";
                 const team = ev.teamHome === null ? "" : (ev.teamHome ? m.teamHome : m.teamGuest);
-                if (!d.letzte || d.letzte.idx !== ev.idx) d.letzte = { idx: ev.idx, sek: ev.second || 0, gesehen: Date.now(), zeit: mmss(ev.second || 0), text: [AKTION[ev.event] || "Aktion", wer].filter(Boolean).join(" ") + (team ? ` (${team})` : ""), team };
+                if (!d.letzte || d.letzte.idx !== ev.idx) d.letzte = { idx: ev.idx, code: ev.event, sek: ev.second || 0, gesehen: Date.now(), zeit: mmss(ev.second || 0), text: [AKTION[ev.event] || "Aktion", wer].filter(Boolean).join(" ") + (team ? ` (${team})` : ""), team };
               }
             }
           }
@@ -333,6 +334,8 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
   // Geschätzte Spielzeit: ab der letzten Aktion weiterzählen, höchstens bis zum Ende der jeweiligen Halbzeit
   function schaetze(d) {
     if (!d || !d.letzte) return "";
+    if (d.letzte.code === 14) return "Halbzeit";
+    if (d.letzte.code === 16) return "Spielende";
     const hz = d.halbzeit || 1800, sek = d.letzte.sek + Math.floor((Date.now() - d.letzte.gesehen) / 1000);
     const grenze = d.letzte.sek < hz ? hz : 2 * hz;
     return sek >= grenze ? (grenze === hz ? "Halbzeit?" : "Schluss?") : "ca. " + mmss(sek);
