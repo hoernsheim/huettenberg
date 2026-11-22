@@ -1,5 +1,5 @@
 {
- "aktualisiert": "2026-11-22T15:29+00:00",
+ "aktualisiert": "2026-11-22T19:29+00:00",
  "verein": "TV Hüttenberg",
  "titel": "Handball in Hüttenberg",
  "leitsatz": "Für alle, die in Hüttenberg Handball leben: auf der Tribüne, an der Seitenlinie und vor allem für unsere Jugend. Ihr sorgt dafür, dass in unseren Hallen jedes Wochenende Leben ist.",
@@ -68,17 +68,6 @@
     },
     {
      "rang": 5,
-     "mannschaft": "HSG Pohlheim",
-     "spiele": 8,
-     "s": 5,
-     "u": 0,
-     "n": 3,
-     "tore": "237:251",
-     "diff": "-14",
-     "punkte": "10:6"
-    },
-    {
-     "rang": 6,
      "mannschaft": "HSG Dotzheim/Schierstein",
      "spiele": 9,
      "s": 5,
@@ -89,7 +78,29 @@
      "punkte": "10:8"
     },
     {
+     "rang": 6,
+     "mannschaft": "HSG Pohlheim",
+     "spiele": 9,
+     "s": 5,
+     "u": 0,
+     "n": 4,
+     "tore": "261:286",
+     "diff": "-25",
+     "punkte": "10:8"
+    },
+    {
      "rang": 7,
+     "mannschaft": "TV Petterweil",
+     "spiele": 9,
+     "s": 4,
+     "u": 0,
+     "n": 5,
+     "tore": "274:262",
+     "diff": "+12",
+     "punkte": "8:10"
+    },
+    {
+     "rang": 8,
      "mannschaft": "TV Hüttenberg II",
      "spiele": 9,
      "s": 4,
@@ -100,7 +111,7 @@
      "punkte": "8:10"
     },
     {
-     "rang": 8,
+     "rang": 9,
      "mannschaft": "GSV Eintr. Baunatal",
      "spiele": 8,
      "s": 3,
@@ -111,7 +122,7 @@
      "punkte": "7:9"
     },
     {
-     "rang": 9,
+     "rang": 10,
      "mannschaft": "HSG Rodgau/N.-Roden II",
      "spiele": 10,
      "s": 3,
@@ -120,17 +131,6 @@
      "tore": "288:302",
      "diff": "-14",
      "punkte": "7:13"
-    },
-    {
-     "rang": 10,
-     "mannschaft": "TV Petterweil",
-     "spiele": 8,
-     "s": 3,
-     "u": 0,
-     "n": 5,
-     "tore": "239:238",
-     "diff": "+1",
-     "punkte": "6:10"
     },
     {
      "rang": 11,
@@ -704,6 +704,17 @@
    "tabelle": [
     {
      "rang": 1,
+     "mannschaft": "TSV Griedel",
+     "spiele": 10,
+     "s": 9,
+     "u": 0,
+     "n": 1,
+     "tore": "337:246",
+     "diff": "+91",
+     "punkte": "18:2"
+    },
+    {
+     "rang": 2,
      "mannschaft": "HSG Dilltal",
      "spiele": 10,
      "s": 9,
@@ -712,17 +723,6 @@
      "tore": "314:237",
      "diff": "+77",
      "punkte": "18:2"
-    },
-    {
-     "rang": 2,
-     "mannschaft": "TSV Griedel",
-     "spiele": 9,
-     "s": 8,
-     "u": 0,
-     "n": 1,
-     "tore": "306:225",
-     "diff": "+81",
-     "punkte": "16:2"
     },
     {
      "rang": 3,
@@ -759,6 +759,17 @@
     },
     {
      "rang": 6,
+     "mannschaft": "TSF Heuchelheim",
+     "spiele": 10,
+     "s": 4,
+     "u": 2,
+     "n": 4,
+     "tore": "282:282",
+     "diff": "0",
+     "punkte": "10:10"
+    },
+    {
+     "rang": 7,
      "mannschaft": "HSG Hungen/Lich",
      "spiele": 10,
      "s": 5,
@@ -769,7 +780,7 @@
      "punkte": "10:10"
     },
     {
-     "rang": 7,
+     "rang": 8,
      "mannschaft": "TUS Vollnkirchen",
      "spiele": 10,
      "s": 4,
@@ -780,40 +791,40 @@
      "punkte": "9:11"
     },
     {
-     "rang": 8,
-     "mannschaft": "TSF Heuchelheim",
-     "spiele": 9,
-     "s": 3,
-     "u": 2,
-     "n": 4,
-     "tore": "250:252",
-     "diff": "-2",
-     "punkte": "8:10"
-    },
-    {
      "rang": 9,
-     "mannschaft": "HSG Linden II",
-     "spiele": 9,
+     "mannschaft": "HSG Kirchhain/Neustadt",
+     "spiele": 10,
      "s": 4,
      "u": 0,
-     "n": 5,
-     "tore": "267:274",
-     "diff": "-7",
-     "punkte": "8:10"
+     "n": 6,
+     "tore": "313:329",
+     "diff": "-16",
+     "punkte": "8:12"
     },
     {
      "rang": 10,
-     "mannschaft": "HSG Kirchhain/Neustadt",
-     "spiele": 9,
+     "mannschaft": "HSG Linden II",
+     "spiele": 10,
      "s": 4,
      "u": 0,
-     "n": 5,
-     "tore": "288:296",
-     "diff": "-8",
-     "punkte": "8:10"
+     "n": 6,
+     "tore": "288:305",
+     "diff": "-17",
+     "punkte": "8:12"
     },
     {
      "rang": 11,
+     "mannschaft": "HSG Wettenberg II",
+     "spiele": 10,
+     "s": 3,
+     "u": 1,
+     "n": 6,
+     "tore": "296:296",
+     "diff": "0",
+     "punkte": "7:13"
+    },
+    {
+     "rang": 12,
      "mannschaft": "HSG Mörlen",
      "spiele": 10,
      "s": 3,
@@ -824,26 +835,15 @@
      "punkte": "7:13"
     },
     {
-     "rang": 12,
-     "mannschaft": "HSG Wettenberg II",
-     "spiele": 9,
-     "s": 2,
-     "u": 1,
-     "n": 6,
-     "tore": "263:271",
-     "diff": "-8",
-     "punkte": "5:13"
-    },
-    {
      "rang": 13,
      "mannschaft": "TV Hüttenberg III",
-     "spiele": 9,
+     "spiele": 10,
      "s": 2,
      "u": 0,
-     "n": 7,
-     "tore": "238:273",
-     "diff": "-35",
-     "punkte": "4:14"
+     "n": 8,
+     "tore": "268:305",
+     "diff": "-37",
+     "punkte": "4:16"
     },
     {
      "rang": 14,
@@ -982,9 +982,11 @@
      "nr": "65",
      "heim": "TSF Heuchelheim",
      "gast": "TV Hüttenberg III",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
+     "ergebnis": "32:30",
+     "meeting": "8262368",
+     "genehmigt": false,
+     "halbzeit": "14:11",
+     "ort": "Sporthalle Heuchelheim"
     },
     {
      "tag": "Sa",
@@ -1167,26 +1169,38 @@
     {
      "name": "Kummer, Jan",
      "nr": 10,
-     "einsaetze": 7,
-     "tore": 41,
+     "einsaetze": 8,
+     "tore": 45,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 3,
      "rot": 0,
-     "tore_pro_spiel": 5.86
+     "tore_pro_spiel": 5.62
     },
     {
      "name": "Malo, Nils",
      "nr": 9,
-     "einsaetze": 9,
-     "tore": 31,
+     "einsaetze": 10,
+     "tore": 34,
      "7m_tore": 18,
-     "7m_versuche": 22,
+     "7m_versuche": 23,
      "zeitstrafen": 0,
      "gelb": 1,
      "rot": 0,
-     "tore_pro_spiel": 3.44
+     "tore_pro_spiel": 3.4
+    },
+    {
+     "name": "Mackenrodt, Maximilian",
+     "nr": 5,
+     "einsaetze": 9,
+     "tore": 32,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 1,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 3.56
     },
     {
      "name": "Stankewitz, Jakob",
@@ -1201,64 +1215,88 @@
      "tore_pro_spiel": 3.88
     },
     {
-     "name": "Mackenrodt, Maximilian",
-     "nr": 5,
-     "einsaetze": 8,
-     "tore": 29,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 1,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 3.62
-    },
-    {
      "name": "Franke, Julian",
      "nr": 19,
-     "einsaetze": 9,
-     "tore": 21,
-     "7m_tore": 9,
-     "7m_versuche": 13,
+     "einsaetze": 10,
+     "tore": 24,
+     "7m_tore": 12,
+     "7m_versuche": 17,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 2.33
+     "tore_pro_spiel": 2.4
+    },
+    {
+     "name": "Kassabaum, Lukas",
+     "nr": 13,
+     "einsaetze": 6,
+     "tore": 16,
+     "7m_tore": 1,
+     "7m_versuche": 2,
+     "zeitstrafen": 2,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 2.67
+    },
+    {
+     "name": "Lohrey, Max",
+     "nr": 2,
+     "einsaetze": 10,
+     "tore": 14,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 1.4
     },
     {
      "name": "Linzke, Mika Fynn",
      "nr": 27,
-     "einsaetze": 8,
+     "einsaetze": 9,
      "tore": 12,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 3,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 1.5
+     "tore_pro_spiel": 1.33
     },
     {
-     "name": "Lohrey, Max",
-     "nr": 2,
-     "einsaetze": 9,
+     "name": "Weiß, Yannick",
+     "nr": 20,
+     "einsaetze": 7,
      "tore": 12,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 5,
+     "gelb": 6,
+     "rot": 0,
+     "tore_pro_spiel": 1.71
+    },
+    {
+     "name": "Langsdorf, Moritz",
+     "nr": 4,
+     "einsaetze": 5,
+     "tore": 10,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 1.33
+     "tore_pro_spiel": 2.0
     },
     {
-     "name": "Kassabaum, Lukas",
-     "nr": 13,
-     "einsaetze": 5,
-     "tore": 11,
-     "7m_tore": 1,
-     "7m_versuche": 1,
-     "zeitstrafen": 1,
+     "name": "Weber, Sven",
+     "nr": 25,
+     "einsaetze": 9,
+     "tore": 10,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 2.2
+     "tore_pro_spiel": 1.11
     },
     {
      "name": "Machleit, Fritz",
@@ -1273,40 +1311,16 @@
      "tore_pro_spiel": 1.5
     },
     {
-     "name": "Weber, Sven",
-     "nr": 25,
-     "einsaetze": 8,
-     "tore": 9,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 1.12
-    },
-    {
-     "name": "Weiß, Yannick",
-     "nr": 20,
+     "name": "Bunfill, Tim",
+     "nr": 29,
      "einsaetze": 6,
-     "tore": 8,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 3,
-     "gelb": 5,
-     "rot": 0,
-     "tore_pro_spiel": 1.33
-    },
-    {
-     "name": "Langsdorf, Moritz",
-     "nr": 4,
-     "einsaetze": 4,
      "tore": 7,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
-     "gelb": 0,
+     "gelb": 1,
      "rot": 0,
-     "tore_pro_spiel": 1.75
+     "tore_pro_spiel": 1.17
     },
     {
      "name": "Loderhose, Lasse",
@@ -1321,40 +1335,28 @@
      "tore_pro_spiel": 1.4
     },
     {
-     "name": "Bunfill, Tim",
-     "nr": 29,
-     "einsaetze": 5,
-     "tore": 6,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 1,
-     "rot": 0,
-     "tore_pro_spiel": 1.2
-    },
-    {
      "name": "Bach, Felix",
      "nr": 3,
-     "einsaetze": 9,
-     "tore": 2,
+     "einsaetze": 10,
+     "tore": 3,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 2,
      "rot": 0,
-     "tore_pro_spiel": 0.22
+     "tore_pro_spiel": 0.3
     },
     {
      "name": "Zörb, Jan",
      "nr": 7,
-     "einsaetze": 4,
+     "einsaetze": 5,
      "tore": 2,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 1,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 0.5
+     "tore_pro_spiel": 0.4
     },
     {
      "name": "Dürl, Eric",
@@ -1383,7 +1385,7 @@
     {
      "name": "Faber, Anton",
      "nr": 11,
-     "einsaetze": 5,
+     "einsaetze": 6,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -1407,7 +1409,7 @@
     {
      "name": "Jung, Johannes",
      "nr": 12,
-     "einsaetze": 7,
+     "einsaetze": 8,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -1443,7 +1445,7 @@
     {
      "name": "Zörb, Julian",
      "nr": 1,
-     "einsaetze": 7,
+     "einsaetze": 8,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -1466,13 +1468,13 @@
     {
      "rang": 1,
      "mannschaft": "HSG Weiters./Braunsh.Worf.",
-     "spiele": 8,
-     "s": 7,
+     "spiele": 9,
+     "s": 8,
      "u": 1,
      "n": 0,
-     "tore": "264:199",
-     "diff": "+65",
-     "punkte": "15:1"
+     "tore": "296:218",
+     "diff": "+78",
+     "punkte": "17:1"
     },
     {
      "rang": 2,
@@ -1521,27 +1523,16 @@
     {
      "rang": 6,
      "mannschaft": "HSG Rodgau/N.-Roden",
-     "spiele": 8,
-     "s": 4,
+     "spiele": 9,
+     "s": 5,
      "u": 1,
      "n": 3,
-     "tore": "230:205",
-     "diff": "+25",
-     "punkte": "9:7"
+     "tore": "270:224",
+     "diff": "+46",
+     "punkte": "11:7"
     },
     {
      "rang": 7,
-     "mannschaft": "TV Hüttenberg",
-     "spiele": 8,
-     "s": 3,
-     "u": 1,
-     "n": 4,
-     "tore": "207:214",
-     "diff": "-7",
-     "punkte": "7:9"
-    },
-    {
-     "rang": 8,
      "mannschaft": "HSG Hungen/Lich",
      "spiele": 9,
      "s": 3,
@@ -1549,6 +1540,17 @@
      "n": 5,
      "tore": "243:227",
      "diff": "+16",
+     "punkte": "7:11"
+    },
+    {
+     "rang": 8,
+     "mannschaft": "TV Hüttenberg",
+     "spiele": 9,
+     "s": 3,
+     "u": 1,
+     "n": 5,
+     "tore": "226:246",
+     "diff": "-20",
      "punkte": "7:11"
     },
     {
@@ -1587,13 +1589,13 @@
     {
      "rang": 12,
      "mannschaft": "HSG Wesertal",
-     "spiele": 8,
+     "spiele": 9,
      "s": 0,
      "u": 0,
-     "n": 8,
-     "tore": "144:286",
-     "diff": "-142",
-     "punkte": "0:16"
+     "n": 9,
+     "tore": "163:326",
+     "diff": "-163",
+     "punkte": "0:18"
     }
    ],
    "spiele": [
@@ -1708,9 +1710,11 @@
      "nr": "52",
      "heim": "HSG Weiters./Braunsh.Worf.",
      "gast": "TV Hüttenberg",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
+     "ergebnis": "32:19",
+     "meeting": "8299976",
+     "genehmigt": false,
+     "halbzeit": "16:9",
+     "ort": "Sporthalle Braunshardt"
     },
     {
      "tag": "Sa",
@@ -1860,107 +1864,107 @@
     {
      "name": "Naumann, Jule",
      "nr": 19,
-     "einsaetze": 8,
-     "tore": 46,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 3,
-     "gelb": 1,
-     "rot": 0,
-     "tore_pro_spiel": 5.75
-    },
-    {
-     "name": "Engel, Klara Elisabeth",
-     "nr": 5,
-     "einsaetze": 8,
-     "tore": 44,
-     "7m_tore": 24,
-     "7m_versuche": 31,
-     "zeitstrafen": 7,
-     "gelb": 3,
-     "rot": 0,
-     "tore_pro_spiel": 5.5
-    },
-    {
-     "name": "Braun, Melanie Isabel",
-     "nr": 92,
-     "einsaetze": 8,
-     "tore": 33,
+     "einsaetze": 9,
+     "tore": 50,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 3,
      "gelb": 2,
      "rot": 0,
-     "tore_pro_spiel": 4.12
+     "tore_pro_spiel": 5.56
+    },
+    {
+     "name": "Engel, Klara Elisabeth",
+     "nr": 5,
+     "einsaetze": 9,
+     "tore": 46,
+     "7m_tore": 25,
+     "7m_versuche": 32,
+     "zeitstrafen": 7,
+     "gelb": 3,
+     "rot": 0,
+     "tore_pro_spiel": 5.11
+    },
+    {
+     "name": "Braun, Melanie Isabel",
+     "nr": 92,
+     "einsaetze": 9,
+     "tore": 34,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 3,
+     "gelb": 2,
+     "rot": 0,
+     "tore_pro_spiel": 3.78
     },
     {
      "name": "Schwarze, Franca",
      "nr": 25,
-     "einsaetze": 8,
-     "tore": 20,
+     "einsaetze": 9,
+     "tore": 22,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 3,
      "gelb": 1,
      "rot": 0,
-     "tore_pro_spiel": 2.5
+     "tore_pro_spiel": 2.44
     },
     {
      "name": "Dias Melle, Jessica",
      "nr": 26,
-     "einsaetze": 6,
-     "tore": 13,
-     "7m_tore": 7,
-     "7m_versuche": 9,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 2.17
-    },
-    {
-     "name": "Rüspeler, Alina",
-     "nr": 2,
-     "einsaetze": 8,
-     "tore": 10,
-     "7m_tore": 0,
-     "7m_versuche": 0,
+     "einsaetze": 7,
+     "tore": 16,
+     "7m_tore": 10,
+     "7m_versuche": 12,
      "zeitstrafen": 1,
-     "gelb": 0,
+     "gelb": 1,
      "rot": 0,
-     "tore_pro_spiel": 1.25
-    },
-    {
-     "name": "Harder, Paulina",
-     "nr": 17,
-     "einsaetze": 6,
-     "tore": 9,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 1.5
-    },
-    {
-     "name": "Schicketanz, Nea",
-     "nr": 15,
-     "einsaetze": 8,
-     "tore": 9,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 1,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 1.12
+     "tore_pro_spiel": 2.29
     },
     {
      "name": "Saul, Kaya",
      "nr": 21,
-     "einsaetze": 8,
-     "tore": 8,
+     "einsaetze": 9,
+     "tore": 12,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 3,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 1.33
+    },
+    {
+     "name": "Rüspeler, Alina",
+     "nr": 2,
+     "einsaetze": 9,
+     "tore": 11,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 2,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 1.22
+    },
+    {
+     "name": "Harder, Paulina",
+     "nr": 17,
+     "einsaetze": 7,
+     "tore": 10,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 1.43
+    },
+    {
+     "name": "Schicketanz, Nea",
+     "nr": 15,
+     "einsaetze": 9,
+     "tore": 9,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 1,
      "gelb": 0,
      "rot": 0,
      "tore_pro_spiel": 1.0
@@ -1968,14 +1972,14 @@
     {
      "name": "Richter, Lina",
      "nr": 9,
-     "einsaetze": 8,
-     "tore": 5,
+     "einsaetze": 9,
+     "tore": 6,
      "7m_tore": 1,
      "7m_versuche": 1,
      "zeitstrafen": 2,
      "gelb": 1,
      "rot": 0,
-     "tore_pro_spiel": 0.62
+     "tore_pro_spiel": 0.67
     },
     {
      "name": "Ringleb, Franziska",
@@ -1992,26 +1996,26 @@
     {
      "name": "Scheibel, Sophie",
      "nr": 22,
-     "einsaetze": 7,
+     "einsaetze": 8,
      "tore": 3,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 1,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 0.43
+     "tore_pro_spiel": 0.38
     },
     {
      "name": "Hanl, Malika",
      "nr": 23,
-     "einsaetze": 7,
+     "einsaetze": 8,
      "tore": 2,
      "7m_tore": 1,
      "7m_versuche": 1,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 0.29
+     "tore_pro_spiel": 0.25
     },
     {
      "name": "Rust, Lena",
@@ -2028,7 +2032,7 @@
     {
      "name": "Heller, Svenja",
      "nr": 99,
-     "einsaetze": 7,
+     "einsaetze": 8,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -2052,7 +2056,7 @@
     {
      "name": "Neidel, Melike",
      "nr": 11,
-     "einsaetze": 8,
+     "einsaetze": 9,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -2109,16 +2113,27 @@
     {
      "rang": 3,
      "mannschaft": "FSG Gettenau/Florstadt",
-     "spiele": 5,
+     "spiele": 6,
      "s": 4,
      "u": 1,
-     "n": 0,
-     "tore": "163:133",
-     "diff": "+30",
-     "punkte": "9:1"
+     "n": 1,
+     "tore": "188:163",
+     "diff": "+25",
+     "punkte": "9:3"
     },
     {
      "rang": 4,
+     "mannschaft": "HSG Linden",
+     "spiele": 7,
+     "s": 4,
+     "u": 1,
+     "n": 2,
+     "tore": "204:174",
+     "diff": "+30",
+     "punkte": "9:5"
+    },
+    {
+     "rang": 5,
      "mannschaft": "HSG Wettertal",
      "spiele": 7,
      "s": 4,
@@ -2129,7 +2144,7 @@
      "punkte": "8:6"
     },
     {
-     "rang": 5,
+     "rang": 6,
      "mannschaft": "TSG Leihgestern II",
      "spiele": 7,
      "s": 4,
@@ -2138,17 +2153,6 @@
      "tore": "194:192",
      "diff": "+2",
      "punkte": "8:6"
-    },
-    {
-     "rang": 6,
-     "mannschaft": "HSG Linden",
-     "spiele": 6,
-     "s": 3,
-     "u": 1,
-     "n": 2,
-     "tore": "174:149",
-     "diff": "+25",
-     "punkte": "7:5"
     },
     {
      "rang": 7,
@@ -3365,6 +3369,17 @@
     },
     {
      "rang": 7,
+     "mannschaft": "TV Hüttenberg II",
+     "spiele": 8,
+     "s": 2,
+     "u": 1,
+     "n": 5,
+     "tore": "213:241",
+     "diff": "-28",
+     "punkte": "5:11"
+    },
+    {
+     "rang": 8,
      "mannschaft": "JSGmB Florstadt/Friedberg",
      "spiele": 8,
      "s": 2,
@@ -3375,29 +3390,7 @@
      "punkte": "4:12"
     },
     {
-     "rang": 8,
-     "mannschaft": "TV Hüttenberg II",
-     "spiele": 7,
-     "s": 1,
-     "u": 1,
-     "n": 5,
-     "tore": "178:209",
-     "diff": "-31",
-     "punkte": "3:11"
-    },
-    {
      "rang": 9,
-     "mannschaft": "HSG Hinterland",
-     "spiele": 7,
-     "s": 1,
-     "u": 0,
-     "n": 6,
-     "tore": "212:312",
-     "diff": "-100",
-     "punkte": "2:12"
-    },
-    {
-     "rang": 10,
      "mannschaft": "HSG Linden",
      "spiele": 8,
      "s": 1,
@@ -3405,6 +3398,17 @@
      "n": 7,
      "tore": "191:240",
      "diff": "-49",
+     "punkte": "2:14"
+    },
+    {
+     "rang": 10,
+     "mannschaft": "HSG Hinterland",
+     "spiele": 8,
+     "s": 1,
+     "u": 0,
+     "n": 7,
+     "tore": "244:347",
+     "diff": "-103",
      "punkte": "2:14"
     }
    ],
@@ -3507,11 +3511,11 @@
      "nr": "37",
      "heim": "HSG Hinterland",
      "gast": "TV Hüttenberg II",
-     "ergebnis": "9:6",
+     "ergebnis": "32:35",
      "meeting": "8380105",
-     "genehmigt": false,
-     "halbzeit": "",
-     "ort": ""
+     "genehmigt": true,
+     "halbzeit": "17:17",
+     "ort": "Hinterlandhalle Dautphetal"
     },
     {
      "tag": "So",
@@ -3628,38 +3632,38 @@
     {
      "name": "Simon, Ole Peter",
      "nr": 5,
-     "einsaetze": 7,
-     "tore": 64,
-     "7m_tore": 10,
-     "7m_versuche": 14,
+     "einsaetze": 8,
+     "tore": 77,
+     "7m_tore": 12,
+     "7m_versuche": 17,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 9.14
+     "tore_pro_spiel": 9.62
     },
     {
      "name": "Allendörfer, Ben Louis",
      "nr": 11,
-     "einsaetze": 7,
-     "tore": 19,
+     "einsaetze": 8,
+     "tore": 25,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 2.71
+     "tore_pro_spiel": 3.12
     },
     {
      "name": "Schaaf, Moritz",
      "nr": 17,
-     "einsaetze": 7,
-     "tore": 18,
+     "einsaetze": 8,
+     "tore": 22,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 2.57
+     "tore_pro_spiel": 2.75
     },
     {
      "name": "Olbrich, Miles Phineas",
@@ -3676,80 +3680,80 @@
     {
      "name": "Bitsch, Leonard Alexander",
      "nr": 7,
-     "einsaetze": 7,
-     "tore": 11,
+     "einsaetze": 8,
+     "tore": 14,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 1.57
+     "tore_pro_spiel": 1.75
     },
     {
      "name": "Kestawitz, Vincent",
      "nr": 9,
-     "einsaetze": 6,
-     "tore": 11,
+     "einsaetze": 7,
+     "tore": 13,
      "7m_tore": 2,
      "7m_versuche": 2,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 1.83
+     "tore_pro_spiel": 1.86
     },
     {
      "name": "Rafalzik, Michel",
-     "nr": 6,
-     "einsaetze": 6,
-     "tore": 11,
+     "nr": 13,
+     "einsaetze": 7,
+     "tore": 13,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 1.83
+     "tore_pro_spiel": 1.86
     },
     {
      "name": "Kaufmann, Nils",
      "nr": 3,
-     "einsaetze": 6,
-     "tore": 8,
+     "einsaetze": 7,
+     "tore": 9,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 1.33
+     "tore_pro_spiel": 1.29
+    },
+    {
+     "name": "Metz, Quentin Ilias",
+     "nr": 14,
+     "einsaetze": 7,
+     "tore": 7,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 1.0
     },
     {
      "name": "Prößer, Emil",
      "nr": 4,
-     "einsaetze": 7,
+     "einsaetze": 8,
      "tore": 6,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 0.86
-    },
-    {
-     "name": "Metz, Quentin Ilias",
-     "nr": 14,
-     "einsaetze": 6,
-     "tore": 5,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 0.83
+     "tore_pro_spiel": 0.75
     },
     {
      "name": "Spieß, Jannis",
-     "nr": 13,
-     "einsaetze": 4,
-     "tore": 4,
+     "nr": 6,
+     "einsaetze": 5,
+     "tore": 5,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
@@ -3760,26 +3764,26 @@
     {
      "name": "Medenbach, Louis",
      "nr": 8,
-     "einsaetze": 6,
-     "tore": 3,
+     "einsaetze": 7,
+     "tore": 4,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 0.5
+     "tore_pro_spiel": 0.57
     },
     {
      "name": "Neuhof, Felix Maximilian",
      "nr": 10,
-     "einsaetze": 6,
+     "einsaetze": 7,
      "tore": 3,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 0.5
+     "tore_pro_spiel": 0.43
     },
     {
      "name": "Enders, Damian Alexander",
@@ -3796,7 +3800,7 @@
     {
      "name": "Franz, Hannes",
      "nr": 2,
-     "einsaetze": 4,
+     "einsaetze": 5,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -3832,7 +3836,7 @@
     {
      "name": "Müller, Lennart",
      "nr": 12,
-     "einsaetze": 5,
+     "einsaetze": 6,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -4319,69 +4323,69 @@
    "tabelle": [
     {
      "rang": 1,
-     "mannschaft": "TV Hüttenberg II",
-     "spiele": 7,
-     "s": 6,
+     "mannschaft": "HSG Kirchhain/Neustadt",
+     "spiele": 8,
+     "s": 7,
      "u": 0,
      "n": 1,
-     "tore": "239:178",
-     "diff": "+61",
-     "punkte": "12:2"
+     "tore": "260:187",
+     "diff": "+73",
+     "punkte": "14:2"
     },
     {
      "rang": 2,
-     "mannschaft": "HSG Kirchhain/Neustadt",
-     "spiele": 7,
-     "s": 6,
+     "mannschaft": "TV Hüttenberg II",
+     "spiele": 8,
+     "s": 7,
      "u": 0,
      "n": 1,
-     "tore": "229:169",
-     "diff": "+60",
-     "punkte": "12:2"
+     "tore": "272:203",
+     "diff": "+69",
+     "punkte": "14:2"
     },
     {
      "rang": 3,
      "mannschaft": "mJSG Heuchelheim/Bieber",
-     "spiele": 7,
-     "s": 5,
+     "spiele": 8,
+     "s": 6,
      "u": 0,
      "n": 2,
-     "tore": "234:167",
-     "diff": "+67",
-     "punkte": "10:4"
+     "tore": "271:191",
+     "diff": "+80",
+     "punkte": "12:4"
     },
     {
      "rang": 4,
      "mannschaft": "HSG Wettertal",
-     "spiele": 7,
-     "s": 5,
+     "spiele": 8,
+     "s": 6,
      "u": 0,
      "n": 2,
-     "tore": "205:175",
-     "diff": "+30",
-     "punkte": "10:4"
+     "tore": "240:204",
+     "diff": "+36",
+     "punkte": "12:4"
     },
     {
      "rang": 5,
      "mannschaft": "HSG Hungen/Lich",
-     "spiele": 7,
+     "spiele": 8,
      "s": 4,
      "u": 0,
-     "n": 3,
-     "tore": "222:238",
-     "diff": "-16",
-     "punkte": "8:6"
+     "n": 4,
+     "tore": "251:273",
+     "diff": "-22",
+     "punkte": "8:8"
     },
     {
      "rang": 6,
      "mannschaft": "HSG Grünberg/Mücke",
-     "spiele": 7,
+     "spiele": 8,
      "s": 3,
      "u": 0,
-     "n": 4,
-     "tore": "207:216",
-     "diff": "-9",
-     "punkte": "6:8"
+     "n": 5,
+     "tore": "232:249",
+     "diff": "-17",
+     "punkte": "6:10"
     },
     {
      "rang": 7,
@@ -4397,24 +4401,24 @@
     {
      "rang": 8,
      "mannschaft": "HSG Kleenh.-Langg.",
-     "spiele": 7,
+     "spiele": 8,
      "s": 1,
      "u": 1,
-     "n": 5,
-     "tore": "194:211",
-     "diff": "-17",
-     "punkte": "3:11"
+     "n": 6,
+     "tore": "212:242",
+     "diff": "-30",
+     "punkte": "3:13"
     },
     {
      "rang": 9,
      "mannschaft": "HSG Linden",
-     "spiele": 7,
+     "spiele": 8,
      "s": 1,
      "u": 1,
-     "n": 5,
-     "tore": "185:236",
-     "diff": "-51",
-     "punkte": "3:11"
+     "n": 6,
+     "tore": "209:273",
+     "diff": "-64",
+     "punkte": "3:13"
     },
     {
      "rang": 10,
@@ -4527,11 +4531,11 @@
      "nr": "39",
      "heim": "HSG Grünberg/Mücke",
      "gast": "TV Hüttenberg II",
-     "ergebnis": "16:24",
+     "ergebnis": "25:33",
      "meeting": "8380256",
-     "genehmigt": false,
-     "halbzeit": "",
-     "ort": ""
+     "genehmigt": true,
+     "halbzeit": "11:15",
+     "ort": "Theodor-Koch-Schule Grünberg"
     },
     {
      "tag": "So",
@@ -4648,38 +4652,50 @@
     {
      "name": "Steiner, Justus",
      "nr": 9,
-     "einsaetze": 7,
-     "tore": 55,
-     "7m_tore": 7,
-     "7m_versuche": 8,
+     "einsaetze": 8,
+     "tore": 65,
+     "7m_tore": 8,
+     "7m_versuche": 9,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 7.86
+     "tore_pro_spiel": 8.12
     },
     {
      "name": "Peh, Liam",
      "nr": 3,
-     "einsaetze": 7,
-     "tore": 31,
+     "einsaetze": 8,
+     "tore": 37,
      "7m_tore": 0,
-     "7m_versuche": 0,
+     "7m_versuche": 1,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 4.43
+     "tore_pro_spiel": 4.62
     },
     {
      "name": "Scherrer, Nick",
      "nr": 8,
-     "einsaetze": 7,
-     "tore": 25,
+     "einsaetze": 8,
+     "tore": 29,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 3.57
+     "tore_pro_spiel": 3.62
+    },
+    {
+     "name": "Henrich, David Johannes",
+     "nr": 10,
+     "einsaetze": 8,
+     "tore": 19,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 2.38
     },
     {
      "name": "Teichert, David Ole",
@@ -4694,64 +4710,52 @@
      "tore_pro_spiel": 3.8
     },
     {
-     "name": "Henrich, David Johannes",
-     "nr": 10,
-     "einsaetze": 7,
-     "tore": 15,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 2.14
-    },
-    {
      "name": "Meschkat, Felix",
      "nr": 11,
-     "einsaetze": 6,
-     "tore": 15,
+     "einsaetze": 7,
+     "tore": 18,
      "7m_tore": 1,
      "7m_versuche": 1,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 2.5
+     "tore_pro_spiel": 2.57
     },
     {
      "name": "Müller, Lennard",
      "nr": 5,
-     "einsaetze": 7,
-     "tore": 12,
+     "einsaetze": 8,
+     "tore": 14,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 1.71
-    },
-    {
-     "name": "Frey, Luca Benedikt",
-     "nr": 7,
-     "einsaetze": 7,
-     "tore": 11,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 1.57
+     "tore_pro_spiel": 1.75
     },
     {
      "name": "Metz, Marlon",
      "nr": 6,
-     "einsaetze": 3,
-     "tore": 11,
+     "einsaetze": 4,
+     "tore": 13,
      "7m_tore": 1,
      "7m_versuche": 1,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 3.67
+     "tore_pro_spiel": 3.25
+    },
+    {
+     "name": "Frey, Luca Benedikt",
+     "nr": 7,
+     "einsaetze": 8,
+     "tore": 11,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 1.38
     },
     {
      "name": "Rach, Konstantin",
@@ -4790,6 +4794,18 @@
      "tore_pro_spiel": 2.67
     },
     {
+     "name": "Geil, Emil",
+     "nr": 2,
+     "einsaetze": 4,
+     "tore": 6,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 1.5
+    },
+    {
      "name": "Wagner, Paul",
      "nr": 2,
      "einsaetze": 4,
@@ -4800,18 +4816,6 @@
      "gelb": 0,
      "rot": 0,
      "tore_pro_spiel": 1.5
-    },
-    {
-     "name": "Geil, Emil",
-     "nr": 2,
-     "einsaetze": 3,
-     "tore": 5,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 1.67
     },
     {
      "name": "Türe, Selim",
@@ -4826,33 +4830,33 @@
      "tore_pro_spiel": 1.33
     },
     {
-     "name": "Zell, Justus",
-     "nr": 13,
-     "einsaetze": 1,
+     "name": "Czech, Moritz",
+     "nr": 4,
+     "einsaetze": 2,
      "tore": 1,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 1.0
+     "tore_pro_spiel": 0.5
     },
     {
-     "name": "Czech, Moritz",
-     "nr": 11,
-     "einsaetze": 1,
-     "tore": 0,
+     "name": "Zell, Justus",
+     "nr": 13,
+     "einsaetze": 2,
+     "tore": 1,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 0.0
+     "tore_pro_spiel": 0.5
     },
     {
      "name": "Enders, Damian Alexander",
      "nr": 1,
-     "einsaetze": 7,
+     "einsaetze": 8,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -4876,7 +4880,7 @@
     {
      "name": "Könnecke, Lukas",
      "nr": 12,
-     "einsaetze": 7,
+     "einsaetze": 8,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -4921,13 +4925,13 @@
     {
      "rang": 3,
      "mannschaft": "HSG Marburg",
-     "spiele": 6,
-     "s": 4,
+     "spiele": 7,
+     "s": 5,
      "u": 1,
      "n": 1,
-     "tore": "203:169",
-     "diff": "+34",
-     "punkte": "9:3"
+     "tore": "243:198",
+     "diff": "+45",
+     "punkte": "11:3"
     },
     {
      "rang": 4,
@@ -4943,13 +4947,13 @@
     {
      "rang": 5,
      "mannschaft": "HSG Herborn/Seelbach",
-     "spiele": 6,
+     "spiele": 7,
      "s": 3,
      "u": 0,
-     "n": 3,
-     "tore": "206:203",
-     "diff": "+3",
-     "punkte": "6:6"
+     "n": 4,
+     "tore": "235:243",
+     "diff": "-8",
+     "punkte": "6:8"
     },
     {
      "rang": 6,
@@ -6476,8 +6480,8 @@
      "s": 4,
      "u": 0,
      "n": 1,
-     "tore": "46:34",
-     "diff": "+12",
+     "tore": "20:5",
+     "diff": "+15",
      "punkte": "8:2"
     },
     {
@@ -6487,8 +6491,8 @@
      "s": 3,
      "u": 0,
      "n": 2,
-     "tore": "44:36",
-     "diff": "+8",
+     "tore": "15:10",
+     "diff": "+5",
      "punkte": "6:4"
     },
     {
@@ -6498,8 +6502,8 @@
      "s": 2,
      "u": 0,
      "n": 3,
-     "tore": "26:30",
-     "diff": "-4",
+     "tore": "10:15",
+     "diff": "-5",
      "punkte": "4:6"
     },
     {
@@ -6509,8 +6513,8 @@
      "s": 1,
      "u": 0,
      "n": 4,
-     "tore": "20:36",
-     "diff": "-16",
+     "tore": "5:20",
+     "diff": "-15",
      "punkte": "2:8"
     },
     {
@@ -6896,18 +6900,18 @@
    "tabelle": [
     {
      "rang": 1,
-     "mannschaft": "HSG Wettenberg",
+     "mannschaft": "TUS Vollnkirchen",
      "spiele": 5,
      "s": 5,
      "u": 0,
      "n": 0,
-     "tore": "64:9",
-     "diff": "+55",
+     "tore": "25:0",
+     "diff": "+25",
      "punkte": "10:0"
     },
     {
      "rang": 2,
-     "mannschaft": "TUS Vollnkirchen",
+     "mannschaft": "HSG Wettenberg",
      "spiele": 5,
      "s": 5,
      "u": 0,
@@ -6934,7 +6938,7 @@
      "s": 2,
      "u": 1,
      "n": 2,
-     "tore": "30:30",
+     "tore": "11:11",
      "diff": "0",
      "punkte": "5:5"
     },
@@ -6945,7 +6949,7 @@
      "s": 1,
      "u": 1,
      "n": 3,
-     "tore": "25:35",
+     "tore": "6:16",
      "diff": "-10",
      "punkte": "3:7"
     },
@@ -6967,8 +6971,8 @@
      "s": 0,
      "u": 0,
      "n": 5,
-     "tore": "9:64",
-     "diff": "-55",
+     "tore": "0:25",
+     "diff": "-25",
      "punkte": "0:10"
     }
    ],
@@ -7034,8 +7038,8 @@
      "gast": "TV Hüttenberg II",
      "ergebnis": "1:1",
      "meeting": "8380986",
-     "genehmigt": false,
-     "halbzeit": "11:8",
+     "genehmigt": true,
+     "halbzeit": "0:0",
      "ort": "Lumdatalhalle Rabenau"
     },
     {
@@ -7928,24 +7932,24 @@
     {
      "rang": 1,
      "mannschaft": "wJSG Bieber/Heuchelheim",
-     "spiele": 7,
-     "s": 7,
+     "spiele": 8,
+     "s": 8,
      "u": 0,
      "n": 0,
-     "tore": "260:154",
-     "diff": "+106",
-     "punkte": "14:0"
+     "tore": "295:183",
+     "diff": "+112",
+     "punkte": "16:0"
     },
     {
      "rang": 2,
      "mannschaft": "HSG Hungen/Lich",
-     "spiele": 7,
+     "spiele": 8,
      "s": 7,
      "u": 0,
-     "n": 0,
-     "tore": "267:173",
-     "diff": "+94",
-     "punkte": "14:0"
+     "n": 1,
+     "tore": "296:208",
+     "diff": "+88",
+     "punkte": "14:2"
     },
     {
      "rang": 3,
@@ -8513,13 +8517,13 @@
     {
      "rang": 5,
      "mannschaft": "TV Hüttenberg",
-     "spiele": 7,
-     "s": 4,
+     "spiele": 8,
+     "s": 5,
      "u": 0,
      "n": 3,
-     "tore": "183:170",
-     "diff": "+13",
-     "punkte": "8:6"
+     "tore": "212:185",
+     "diff": "+27",
+     "punkte": "10:6"
     },
     {
      "rang": 6,
@@ -8556,17 +8560,6 @@
     },
     {
      "rang": 9,
-     "mannschaft": "HSG Lumdatal II",
-     "spiele": 7,
-     "s": 0,
-     "u": 1,
-     "n": 6,
-     "tore": "136:216",
-     "diff": "-80",
-     "punkte": "1:13"
-    },
-    {
-     "rang": 10,
      "mannschaft": "HSG Eibelsh./Ewersb.",
      "spiele": 7,
      "s": 0,
@@ -8575,6 +8568,17 @@
      "tore": "168:265",
      "diff": "-97",
      "punkte": "1:13"
+    },
+    {
+     "rang": 10,
+     "mannschaft": "HSG Lumdatal II",
+     "spiele": 8,
+     "s": 0,
+     "u": 1,
+     "n": 7,
+     "tore": "151:245",
+     "diff": "-94",
+     "punkte": "1:15"
     }
    ],
    "spiele": [
@@ -8676,11 +8680,11 @@
      "nr": "40",
      "heim": "HSG Lumdatal II",
      "gast": "TV Hüttenberg",
-     "ergebnis": "4:7",
+     "ergebnis": "15:29",
      "meeting": "8381603",
      "genehmigt": false,
-     "halbzeit": "",
-     "ort": ""
+     "halbzeit": "8:15",
+     "ort": "Lumdatalhalle Rabenau"
     },
     {
      "tag": "So",
@@ -8797,26 +8801,26 @@
     {
      "name": "Schicketanz, Ida",
      "nr": 5,
-     "einsaetze": 7,
-     "tore": 59,
+     "einsaetze": 8,
+     "tore": 71,
      "7m_tore": 5,
-     "7m_versuche": 7,
+     "7m_versuche": 8,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 8.43
+     "tore_pro_spiel": 8.88
     },
     {
      "name": "Bellinghausen, Leni",
      "nr": 10,
-     "einsaetze": 7,
-     "tore": 42,
-     "7m_tore": 8,
-     "7m_versuche": 9,
+     "einsaetze": 8,
+     "tore": 52,
+     "7m_tore": 11,
+     "7m_versuche": 13,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 6.0
+     "tore_pro_spiel": 6.5
     },
     {
      "name": "Alban, Carlotta",
@@ -8831,58 +8835,58 @@
      "tore_pro_spiel": 2.83
     },
     {
-     "name": "Droß, Felia Anni",
-     "nr": 4,
-     "einsaetze": 5,
-     "tore": 11,
-     "7m_tore": 0,
-     "7m_versuche": 0,
-     "zeitstrafen": 0,
-     "gelb": 0,
-     "rot": 0,
-     "tore_pro_spiel": 2.2
-    },
-    {
      "name": "Gehring, Svea Lynn",
      "nr": 2,
-     "einsaetze": 5,
-     "tore": 11,
+     "einsaetze": 6,
+     "tore": 13,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 2.2
+     "tore_pro_spiel": 2.17
     },
     {
      "name": "Schmidt, Laila",
      "nr": 6,
-     "einsaetze": 7,
+     "einsaetze": 8,
+     "tore": 13,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 1.62
+    },
+    {
+     "name": "Droß, Felia Anni",
+     "nr": 4,
+     "einsaetze": 6,
      "tore": 11,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 1.57
+     "tore_pro_spiel": 1.83
     },
     {
      "name": "Simon, Clara Luise",
-     "nr": 16,
-     "einsaetze": 7,
+     "nr": 7,
+     "einsaetze": 8,
      "tore": 10,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 1.43
+     "tore_pro_spiel": 1.25
     },
     {
      "name": "Schaum, Juna Marie",
      "nr": 3,
-     "einsaetze": 7,
-     "tore": 7,
+     "einsaetze": 8,
+     "tore": 8,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
@@ -8893,8 +8897,8 @@
     {
      "name": "Weber, Lotta Feline",
      "nr": 13,
-     "einsaetze": 7,
-     "tore": 7,
+     "einsaetze": 8,
+     "tore": 8,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
@@ -8905,14 +8909,14 @@
     {
      "name": "Steiger, Fayola",
      "nr": 9,
-     "einsaetze": 6,
-     "tore": 4,
+     "einsaetze": 7,
+     "tore": 5,
      "7m_tore": 0,
      "7m_versuche": 0,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 0.67
+     "tore_pro_spiel": 0.71
     },
     {
      "name": "Goth, Mila",
@@ -8928,15 +8932,15 @@
     },
     {
      "name": "Faber, Lana",
-     "nr": 8,
-     "einsaetze": 7,
+     "nr": 90,
+     "einsaetze": 8,
      "tore": 1,
      "7m_tore": 0,
      "7m_versuche": 1,
      "zeitstrafen": 0,
      "gelb": 0,
      "rot": 0,
-     "tore_pro_spiel": 0.14
+     "tore_pro_spiel": 0.12
     },
     {
      "name": "Weber, Linnea Marleen",
@@ -9000,13 +9004,13 @@
     {
      "rang": 1,
      "mannschaft": "HSG Gedern/Nidda",
-     "spiele": 5,
-     "s": 5,
+     "spiele": 6,
+     "s": 6,
      "u": 0,
      "n": 0,
-     "tore": "117:41",
-     "diff": "+76",
-     "punkte": "10:0"
+     "tore": "143:53",
+     "diff": "+90",
+     "punkte": "12:0"
     },
     {
      "rang": 2,
@@ -9055,13 +9059,13 @@
     {
      "rang": 6,
      "mannschaft": "HSG Butzbach II",
-     "spiele": 4,
+     "spiele": 5,
      "s": 1,
      "u": 0,
-     "n": 3,
-     "tore": "50:62",
-     "diff": "-12",
-     "punkte": "2:6"
+     "n": 4,
+     "tore": "62:88",
+     "diff": "-26",
+     "punkte": "2:8"
     },
     {
      "rang": 7,
@@ -10335,6 +10339,283 @@
      "tore_pro_spiel": 0.0
     }
    ]
+  },
+  {
+   "id": "mbj",
+   "name": "männliche B-Jugend (JBL)",
+   "kategorie": "Männliche Jugend",
+   "liga": "Jugendbundesliga · HSG Dutenhofen/Münchholzhausen",
+   "eigener_name": "HSG Dutenhofen/Münchholzhausen",
+   "extern": true,
+   "hinweis": "Spielt als HSG Dutenhofen/Münchholzhausen. Spielpläne und Tabellen der Jugendbundesliga erscheinen auf handball.net.",
+   "links": [
+    {
+     "text": "Spielkalender auf handball.net",
+     "url": "https://www.handball.net/spielbetrieb/spielkalender?verband=1"
+    }
+   ],
+   "quelle": "https://www.handball.net/spielbetrieb/spielkalender?verband=1",
+   "ticker": "",
+   "tabelle": [],
+   "spiele": [
+    {
+     "tag": "So",
+     "datum": "08.11.2026",
+     "zeit": "13:00",
+     "nr": "2627DHBJBLAJMB0104",
+     "heim": "HSG Dutenhofen/Münchholzhausen",
+     "gast": "Rhein-neckar Löwen",
+     "ergebnis": "30:30",
+     "meeting": "pdf-2627DHBJBLAJMB0104",
+     "genehmigt": true,
+     "halbzeit": "18:13",
+     "ort": "Sporthalle Dutenhofen"
+    },
+    {
+     "tag": "Sa",
+     "datum": "14.11.2026",
+     "zeit": "16:30",
+     "nr": "2627DHBJBLAJMB0701",
+     "heim": "SC DHFK Leipzig",
+     "gast": "HSG Dutenhofen/Münchholzhausen",
+     "ergebnis": "31:27",
+     "meeting": "pdf-2627DHBJBLAJMB0701",
+     "genehmigt": true,
+     "halbzeit": "16:12",
+     "ort": "SH Sportoberschule"
+    },
+    {
+     "tag": "So",
+     "datum": "22.11.2026",
+     "zeit": "15:00",
+     "nr": "2627DHBJBLAJMB0802",
+     "heim": "HSG Dutenhofen/Münchholzhausen",
+     "gast": "Jano Filder",
+     "ergebnis": null,
+     "meeting": "pdf-2627DHBJBLAJMB0802",
+     "genehmigt": true,
+     "halbzeit": "",
+     "ort": "Sportzentrum HüTTENBERG"
+    }
+   ],
+   "spieler": [
+    {
+     "name": "Leonard Volk",
+     "nr": 5,
+     "einsaetze": 3,
+     "tore": 19,
+     "7m_tore": 11,
+     "7m_versuche": 15,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 1,
+     "tore_pro_spiel": 6.33
+    },
+    {
+     "name": "Leon Maic Kraft",
+     "nr": 69,
+     "einsaetze": 3,
+     "tore": 15,
+     "7m_tore": 4,
+     "7m_versuche": 4,
+     "zeitstrafen": 4,
+     "gelb": 0,
+     "rot": 1,
+     "tore_pro_spiel": 5.0
+    },
+    {
+     "name": "Chris-Dominik Hase",
+     "nr": 9,
+     "einsaetze": 3,
+     "tore": 14,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 2,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 4.67
+    },
+    {
+     "name": "Linus Sauer",
+     "nr": 6,
+     "einsaetze": 3,
+     "tore": 12,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 4.0
+    },
+    {
+     "name": "Julian Schieferstein",
+     "nr": 78,
+     "einsaetze": 3,
+     "tore": 8,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 2.67
+    },
+    {
+     "name": "Maximilian Gilbert",
+     "nr": 4,
+     "einsaetze": 3,
+     "tore": 6,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 1,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 2.0
+    },
+    {
+     "name": "Felix Lohrey",
+     "nr": 71,
+     "einsaetze": 3,
+     "tore": 5,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 3,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 1.67
+    },
+    {
+     "name": "Marlon Alexander Becht",
+     "nr": 11,
+     "einsaetze": 3,
+     "tore": 4,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 1.33
+    },
+    {
+     "name": "Lauri Bennet Hartmann",
+     "nr": 28,
+     "einsaetze": 3,
+     "tore": 3,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 3,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 1.0
+    },
+    {
+     "name": "Maximilian Dolderer",
+     "nr": 13,
+     "einsaetze": 3,
+     "tore": 3,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 1.0
+    },
+    {
+     "name": "Janne Linus Klein",
+     "nr": 16,
+     "einsaetze": 1,
+     "tore": 1,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 1.0
+    },
+    {
+     "name": "Bennet Jakobi",
+     "nr": 77,
+     "einsaetze": 1,
+     "tore": 0,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 0.0
+    },
+    {
+     "name": "Corbinian Wen",
+     "nr": 15,
+     "einsaetze": 3,
+     "tore": 0,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 0.0
+    },
+    {
+     "name": "Kilian Morys",
+     "nr": 7,
+     "einsaetze": 1,
+     "tore": 0,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 0.0
+    },
+    {
+     "name": "Laurens Lapp",
+     "nr": 20,
+     "einsaetze": 2,
+     "tore": 0,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 0.0
+    },
+    {
+     "name": "Lennart Ludwig",
+     "nr": 8,
+     "einsaetze": 1,
+     "tore": 0,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 0.0
+    },
+    {
+     "name": "Luca Tomescu",
+     "nr": 10,
+     "einsaetze": 1,
+     "tore": 0,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 0.0
+    },
+    {
+     "name": "Vladislavs Babra",
+     "nr": 34,
+     "einsaetze": 3,
+     "tore": 0,
+     "7m_tore": 0,
+     "7m_versuche": 0,
+     "zeitstrafen": 0,
+     "gelb": 0,
+     "rot": 0,
+     "tore_pro_spiel": 0.0
+    }
+   ]
   }
  ],
  "extern": [
@@ -10369,21 +10650,6 @@
     {
      "text": "Tabellen beim DHB",
      "url": "https://www.dhb.de/wettbewerbe/jugendbundesliga-handball/jblh-a-jugend-maennlich"
-    }
-   ]
-  },
-  {
-   "id": "mbj",
-   "name": "männliche B-Jugend (JBL)",
-   "kategorie": "Männliche Jugend",
-   "liga": "Jugendbundesliga · HSG Dutenhofen/Münchholzhausen",
-   "pdf_ordner": "pdf-berichte/b-jugend",
-   "eigener_name": "HSG Dutenhofen/Münchholzhausen",
-   "hinweis": "Spielt als HSG Dutenhofen/Münchholzhausen. Spielpläne und Tabellen der Jugendbundesliga erscheinen auf handball.net.",
-   "links": [
-    {
-     "text": "Spielkalender auf handball.net",
-     "url": "https://www.handball.net/spielbetrieb/spielkalender?verband=1"
     }
    ]
   }
