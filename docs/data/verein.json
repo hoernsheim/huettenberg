@@ -1,5 +1,5 @@
 {
- "aktualisiert": "2026-11-22T22:00+00:00",
+ "aktualisiert": "2026-11-22T22:36+00:00",
  "verein": "TV Hüttenberg",
  "titel": "Handball in Hüttenberg",
  "leitsatz": "Für alle, die in Hüttenberg Handball leben: auf der Tribüne, an der Seitenlinie und vor allem für unsere Jugend. Ihr sorgt dafür, dass in unseren Hallen jedes Wochenende Leben ist.",
@@ -10369,10 +10369,10 @@
      "nr": "2627DHBJBLAJMB0802",
      "heim": "HSG Dutenhofen/Münchholzhausen",
      "gast": "Jano Filder",
-     "ergebnis": null,
+     "ergebnis": "33:28",
      "meeting": "pdf-2627DHBJBLAJMB0802",
      "genehmigt": true,
-     "halbzeit": "",
+     "halbzeit": "19:16",
      "ort": "Sportzentrum HüTTENBERG"
     }
    ],
@@ -10584,10 +10584,10 @@
      "nr": "2627DHBJBLBJME0101",
      "heim": "HSG Dutenhofen/Münchholzhausen",
      "gast": "JSG Handball Köln",
-     "ergebnis": null,
+     "ergebnis": "33:34",
      "meeting": "pdf-2627DHBJBLBJME0101",
      "genehmigt": true,
-     "halbzeit": "",
+     "halbzeit": "12:18",
      "ort": "Sportzentrum HüTTENBERG"
     },
     {
@@ -10597,10 +10597,10 @@
      "nr": "2627DHBJBLBJME0201",
      "heim": "TSV Bayer Dormagen",
      "gast": "HSG Dutenhofen/Münchholzhausen",
-     "ergebnis": null,
+     "ergebnis": "37:30",
      "meeting": "pdf-2627DHBJBLBJME0201",
      "genehmigt": true,
-     "halbzeit": "",
+     "halbzeit": "14:14",
      "ort": "TSV Bayer Sportcenter"
     },
     {
@@ -10610,10 +10610,10 @@
      "nr": "2627DHBJBLBJME0301",
      "heim": "HSG Dutenhofen/Münchholzhausen",
      "gast": "VFL Gummersbach",
-     "ergebnis": null,
+     "ergebnis": "32:30",
      "meeting": "pdf-2627DHBJBLBJME0301",
      "genehmigt": true,
-     "halbzeit": "",
+     "halbzeit": "17:18",
      "ort": "Sporthalle Dutenhofen"
     },
     {
@@ -10649,10 +10649,10 @@
      "nr": "2627DHBJBLBJME0601",
      "heim": "JSG Handball Köln",
      "gast": "HSG Dutenhofen/Münchholzhausen",
-     "ergebnis": null,
+     "ergebnis": "42:28",
      "meeting": "pdf-2627DHBJBLBJME0601",
      "genehmigt": true,
-     "halbzeit": "",
+     "halbzeit": "20:16",
      "ort": "Herler Ring"
     },
     {
@@ -10662,10 +10662,10 @@
      "nr": "2627DHBJBLBJME0701",
      "heim": "HSG Dutenhofen/Münchholzhausen",
      "gast": "TSV Bayer Dormagen",
-     "ergebnis": null,
+     "ergebnis": "28:27",
      "meeting": "pdf-2627DHBJBLBJME0701",
      "genehmigt": true,
-     "halbzeit": "",
+     "halbzeit": "11:13",
      "ort": "Sporthalle Dutenhofen"
     }
    ],
