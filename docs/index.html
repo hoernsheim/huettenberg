@@ -272,10 +272,11 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
   const gruppe = t => ((t.ticker || "").match(/groups\/(\d+)/) || [])[1];
   const zeitAus = x => new Date(String(x).replace(/\.\d+/, "").replace(/([+-]\d{2})(\d{2})$/, "$1:$2"));
   const mmss = sec => String(Math.floor(sec / 60)).padStart(2, "0") + ":" + String(sec % 60).padStart(2, "0");
+  const vorlaeufig = s => !!s.ergebnis && (new Date(D.aktualisiert) - wann(s)) < 110 * 6e4;
   const heuteSpiele = () => { const j = new Date(); return G.filter(x => wann(x.s).toDateString() === j.toDateString()).sort((a,b) => wann(a.s)-wann(b.s)); };
   // Spiele, die gerade laufen könnten: 10 Minuten vor bis 3 Stunden nach Anpfiff, noch ohne Ergebnis
   const kandidaten = () => { const j = new Date(); return heuteSpiele().filter(({t, s}) => { const m = (j - wann(s)) / 6e4;
-    return !s.ergebnis && gruppe(t) && m >= -10 && m <= 180 && !(live[schl(t,s)] || {}).ende; }); };
+    return (!s.ergebnis || vorlaeufig(s)) && gruppe(t) && m >= -10 && m <= 180 && !(live[schl(t,s)] || {}).ende; }); };
 
   async function holeLive() {
     if (!proxy || laedt) return;
@@ -325,10 +326,12 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
     const zeilen = heuteL.map(({t, s}) => {
       const min = (jetzt - wann(s)) / 6e4, d = live[schl(t,s)];
       let status, info = "";
-      if (s.ergebnis) status = `<span class="score ${wertung(t,s)}">${esc(ausSicht(t,s,s.ergebnis))}</span>`;
+      if (s.ergebnis && !vorlaeufig(s)) status = `<span class="score ${wertung(t,s)}">${esc(ausSicht(t,s,s.ergebnis))}</span>`;
       else if (d && d.ende) { const [a,b] = d.stand.split(":").map(Number); status = `<span class="score ${a>b?"s":a<b?"n":"u"}">${esc(d.stand)}</span>`; info = "Spielende"; }
       else if (d && d.laeuft) { irgendLive = true; status = `<span class="lv an">${esc(d.stand)}</span>`;
         info = d.letzte ? `<span class="lz">${esc(d.letzte.zeit)}</span> · ${esc(d.letzte.text)}` : "Läuft"; }
+      else if (vorlaeufig(s) && min > LIVE_MIN) { status = `<span class="lv">${esc(ausSicht(t,s,s.ergebnis))}</span>`; info = "Ende, Ergebnis folgt mit dem nächsten Abruf"; }
+      else if (vorlaeufig(s)) { irgendLive = true; status = `<span class="lv an">${esc(ausSicht(t,s,s.ergebnis))}</span>`; info = "Zwischenstand"; }
       else if (min >= 0 && min <= LIVE_MIN) { irgendLive = true; status = `<span class="lv an">Live</span>`; }
       else if (min > LIVE_MIN) status = `<span class="lv">Beendet</span>`;
       else status = `<span class="lv">${esc(s.zeit||"")} Uhr</span>`;
