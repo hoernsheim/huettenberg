@@ -325,23 +325,56 @@ def verarbeite(team):
     }
 
 
-def verarbeite_pdf(team):
-    """Mannschaft aus hochgeladenen PDF-Spielberichten (z. B. Bundesliga, Jugendbundesliga)."""
+_PDF_CACHE = {}
+
+
+def _lies_pdf_einmal(pfad):
     from pdf_bericht import lies_pdf
-    suchwort = norm(team.get("eigener_name") or CFG["verein"].split()[-1])
-    berichte, spiele, eigener_name = [], [], ""
-    for pfad in sorted((ROOT / team["pdf_ordner"]).glob("*.pdf")):
-        print(f"  PDF {pfad.name}")
+    if pfad not in _PDF_CACHE:
         try:
-            b = lies_pdf(pfad)
+            _PDF_CACHE[pfad] = lies_pdf(pfad)
         except Exception as e:
             print(f"  FEHLER beim Lesen von {pfad.name}: {e}")
-            continue
+            _PDF_CACHE[pfad] = None
+    return _PDF_CACHE[pfad]
+
+
+def verarbeite_pdf(team):
+    """Mannschaft aus hochgeladenen PDF-Spielberichten (z. B. Bundesliga, Jugendbundesliga).
+    Absicherung: Hat eine Mannschaft eine 'pdf_kennung' (z. B. JBLAJ fuer die A-Jugend), bekommt sie
+    jeden Bericht, dessen Spielnummer diese Kennung enthaelt, egal in welchen Ordner er hochgeladen wurde."""
+    suchwort = norm(team.get("eigener_name") or CFG["verein"].split()[-1])
+    berichte, spiele, eigener_name = [], [], ""
+    pdf_teams = [t for t in CFG.get("extern", []) if t.get("pdf_ordner")]
+    kennungen = [t["pdf_kennung"].upper() for t in pdf_teams if t.get("pdf_kennung")]
+    for ordner_team in pdf_teams:
+        for pfad in sorted((ROOT / ordner_team["pdf_ordner"]).glob("*.pdf")):
+            b = _lies_pdf_einmal(pfad)
+            if not b:
+                continue
+            nr = (b.get("spielnummer") or "").upper()
+            passend = [k for k in kennungen if k in nr]
+            if passend:
+                if (team.get("pdf_kennung") or "").upper() not in passend:
+                    continue
+                if ordner_team is not team:
+                    print(f"  Hinweis: {pfad.name} liegt in '{ordner_team['pdf_ordner']}', gehört aber zu {team['name']} (Spielnummer {nr})")
+            elif ordner_team is not team:
+                continue
+            print(f"  PDF {pfad.name}")
+            spiele, berichte, eigener_name = _uebernehme(b, pfad, team, suchwort, spiele, berichte, eigener_name)
+    return _pdf_team(team, spiele, berichte, eigener_name)
+
+
+def _uebernehme(b, pfad, team, suchwort, spiele, berichte, eigener_name):
+    if any(s["meeting"] == b["meeting"] for s in spiele):
+        return spiele, berichte, eigener_name          # gleicher Bericht doppelt hochgeladen
+    if True:
         namen = [b["heim"], b["gast"]]
         unser = next((n for n in namen if norm(n) == suchwort), None) or next((n for n in namen if suchwort in norm(n)), None)
         if not unser:
             print(f"  übersprungen: {pfad.name} enthält kein Spiel von '{team.get('eigener_name')}'")
-            continue
+            return spiele, berichte, eigener_name
         eigener_name = unser
         (BERICHTE / f"{b['meeting']}.json").write_text(json.dumps(b, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         d, m, y = b["datum"].split(".")
@@ -352,6 +385,10 @@ def verarbeite_pdf(team):
             "halbzeit": b["halbzeit"], "ort": b["ort"],
         })
         berichte.append(b)
+    return spiele, berichte, eigener_name
+
+
+def _pdf_team(team, spiele, berichte, eigener_name):
     if not spiele:
         return None
     spiele.sort(key=lambda s: tuple(reversed(s["datum"].split("."))))
