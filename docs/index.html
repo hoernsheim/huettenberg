@@ -50,7 +50,15 @@ h2{font:800 17px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;
 main.wrap{padding-block:16px 24px;display:grid;gap:14px}
 
 /* Kopf */
-header.bar{background:var(--pitch);color:var(--on-pitch)}
+header.bar{background:var(--pitch);color:var(--on-pitch);padding-top:env(safe-area-inset-top,0px)}
+/* Startbild */
+#intro{position:fixed;inset:0;z-index:100;background:linear-gradient(160deg,var(--pitch) 0%,var(--pitch-2) 100%);color:var(--on-pitch);display:grid;place-content:center;justify-items:center;gap:18px;padding:24px;text-align:center;transition:opacity .5s ease}
+#intro img{width:min(44vw,190px);height:auto;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35));animation:introPop .7s ease-out both}
+#intro .t{font:900 clamp(32px,9vw,48px)/.95 var(--display);text-transform:uppercase;letter-spacing:.01em;animation:introPop .7s .15s ease-out both}
+#intro .s{font-size:15px;opacity:.85;animation:introPop .7s .3s ease-out both}
+#intro.weg{opacity:0;pointer-events:none}
+@keyframes introPop{from{transform:translateY(8px) scale(.94);opacity:0}}
+@media (prefers-reduced-motion: reduce){#intro img,#intro .t,#intro .s{animation:none}}
 header.bar .wrap{display:flex;align-items:center;gap:12px;padding-block:12px}
 .logo{width:40px;height:40px;flex:none;border-radius:10px;overflow:hidden;display:grid;place-items:center}
 .logo img{width:100%;height:100%;object-fit:contain}
@@ -187,6 +195,7 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
 </head>
 <body>
 <!--INHALT-KOERPER-->
+<div id="intro" aria-hidden="true"><img src="bilder/logo.png" alt="" onerror="this.remove()"><div class="t">Handball in<br>Hüttenberg</div><div class="s">Die Fan-App</div></div>
 <header class="bar"><div class="wrap" id="kopf"></div></header>
 <main class="wrap" id="view" aria-live="polite"><div class="note">Daten werden geladen …</div></main>
 <nav class="tabs" aria-label="Bereiche"><div class="in">
@@ -586,6 +595,9 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
   });
 
   // ---------- Laden
+  const START = performance.now();
+  const introWeg = () => { const el = $("#intro"); if (!el || el.classList.contains("weg")) return; el.classList.add("weg"); setTimeout(() => el.remove(), 600); };
+  setTimeout(introWeg, 6000);
   const pruefeLogo = new Promise(ok => { const i = new Image(); i.onload = () => { logoOk = true; ok(); }; i.onerror = () => { logoOk = false; ok(); }; i.src = "bilder/logo.png"; });
   const ladeGalerie = fetch("bilder/galerie.json").then(r => r.ok ? r.json() : []).then(b => { bilder = Array.isArray(b) ? b : []; }).catch(() => {});
   const ladeSponsoren = fetch("sponsoren.csv", {cache: "no-store"}).then(r => r.ok ? r.arrayBuffer() : null).then(buf => {
@@ -598,8 +610,9 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
     D = d; G = d.teams.flatMap(t => t.spiele.map(s => ({t, s})));
     await Promise.all([pruefeLogo, ladeGalerie, ladeSponsoren, ladeLive]);
     await holeLive(); starteTakt();
+    setTimeout(introWeg, Math.max(0, 2000 - (performance.now() - START)));
     ausHash();
-  }).catch(() => { $("#view").innerHTML = `<div class="card note">Die Daten konnten nicht geladen werden. Prüfe die Internetverbindung und öffne die App erneut. Bleibt das so, im GitHub-Projekt unter „Actions“ nachsehen, ob der letzte Datenabruf grün ist.</div>`; });
+  }).catch(() => { introWeg(); $("#view").innerHTML = `<div class="card note">Die Daten konnten nicht geladen werden. Prüfe die Internetverbindung und öffne die App erneut. Bleibt das so, im GitHub-Projekt unter „Actions“ nachsehen, ob der letzte Datenabruf grün ist.</div>`; });
 })();
 </script>
 <!--INHALT-ENDE-->
