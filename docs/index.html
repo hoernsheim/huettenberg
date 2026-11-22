@@ -96,6 +96,10 @@ header.bar .wrap{display:flex;align-items:center;gap:12px;padding-block:12px}
 .game .o{min-width:0}
 .game .o b{display:block;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .game .o span{font-size:13px;color:var(--muted);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.game .o b.paar{display:grid;gap:1px;white-space:normal;margin:1px 0}
+.game .o .paar .tm{font-size:15px;font-weight:500;color:var(--fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.game .o .paar .tm.wir{font-weight:700}
+.game .o .paar .mini{height:1.05em;width:auto;vertical-align:-2px;margin-right:5px;display:inline}
 .game .o .team{color:var(--gold);font-weight:700}
 .score{font:800 21px/1 var(--display);font-variant-numeric:tabular-nums;padding:6px 8px;border-radius:8px;min-width:64px;text-align:center}
 .score.s{background:color-mix(in srgb,var(--win) 16%,transparent);color:var(--win)}
@@ -212,6 +216,9 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
   const daheim = (t, s) => istWir(t, s.heim);
   const gegner = (t, s) => daheim(t, s) ? s.gast : s.heim;
   const ausSicht = (t, s, e) => daheim(t, s) ? e : e.split(":").reverse().join(":");
+  const hg = (t, s, st) => daheim(t, s) ? st : st.split(":").reverse().join(":");   // TVH-Sicht -> Heim:Gast
+  const paarung = (t, s) => { const seite = n => `<span class="tm${istWir(t,n)?" wir":""}">${istWir(t,n) && logoOk ? `<img class="mini" src="bilder/logo.png" alt="">` : ""}${esc(n)}</span>`;
+    return `<b class="paar">${seite(s.heim)}${seite(s.gast)}</b>`; };
   const wertung = (t, s) => { if (!s.ergebnis) return ""; const [a,b] = ausSicht(t,s,s.ergebnis).split(":").map(Number); return a>b?"s":a<b?"n":"u"; };
   const tagLang = d => d.toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"});
   const quote = (a,b) => b ? Math.round(a/b*100)+" %" : "–";
@@ -243,8 +250,6 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
   // ---------- Start
   function start() {
     const jetzt = new Date(), in7 = new Date(+jetzt + 7*864e5), vor7 = new Date(+jetzt - 8*864e5);
-    const oben = new Set(obenListe().map(x => schl(x.t, x.s)));
-    const kommend = G.filter(x => !x.s.ergebnis && wann(x.s) >= jetzt && wann(x.s) <= in7 && !oben.has(schl(x.t, x.s)));
     const zuletzt = G.filter(x => wann(x.s) >= vor7 && wann(x.s) <= jetzt).map(mitLiveErgebnis).filter(Boolean).filter(x => !(wann(x.s).toDateString() === jetzt.toDateString() && !abgehakt(x.t, x.s))).sort((a,b) => wann(b.s)-wann(a.s));
     let s=0,u=0,n=0; G.forEach(x => { const w = wertung(x.t, x.s); if (w==="s") s++; else if (w==="u") u++; else if (w==="n") n++; });
     const spitze = D.teams.filter(t => platz(t)?.rang === 1);
@@ -258,8 +263,6 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
       <h2>Saison bisher, alle ${D.teams.length} Teams</h2>
       <div class="stats3"><div><b class="num" style="color:var(--win)">${s}</b><span>Siege</span></div><div><b class="num" style="color:var(--draw)">${u}</b><span>Unentschieden</span></div><div><b class="num" style="color:var(--loss)">${n}</b><span>Niederlagen</span></div></div>
       ${spitze.length ? `<h2>Tabellenführer</h2><div class="top">${spitze.map(t => `<button class="chip" data-team="${t.id}">★ ${esc(t.name)}</button>`).join("")}</div>` : ""}
-      <h2>Die nächsten 7 Tage</h2>
-      ${kommend.length ? spielListe(kommend, false) : `<div class="note">In den nächsten 7 Tagen stehen keine Spiele an.</div>`}
       <h2>Ergebnisse der letzten Woche</h2>
       ${zuletzt.length ? spielListe(zuletzt, true) : `<div class="note">In der letzten Woche wurde nicht gespielt.</div>`}
       ${galerie()}
@@ -307,7 +310,12 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
             const e = await fetch(`${proxy}/events/${m.meetingID}/versions/${m.versionUid}`);
             if (e.ok) {
               versionen[m.meetingID] = m.versionUid;
-              const ev = ((await e.json()).events || []).filter(x => !META.has(x.event)).sort((a,b) => b.idx - a.idx)[0];
+              const alle = ((await e.json()).events || []).filter(x => !META.has(x.event)).sort((a,b) => a.idx - b.idx);
+              d.ereignisse = alle.map(x => ({ zeit: mmss(x.second || 0), art: AKTION[x.event] || "Aktion", code: x.event,
+                wer: x.personLastname ? `${x.personLastname} ${(x.personFirstname || "").slice(0,1)}.` : "",
+                wir: x.teamHome === null ? null : x.teamHome === wirHeim,
+                stand: x.pointsHome == null ? "" : wirHeim ? `${x.pointsHome}:${x.pointsGuest}` : `${x.pointsGuest}:${x.pointsHome}` }));
+              const ev = alle[alle.length - 1];
               if (ev) {
                 const wer = ev.personLastname ? `${ev.personLastname} ${(ev.personFirstname || "").slice(0,1)}.` : "";
                 const team = ev.teamHome === null ? "" : (ev.teamHome === wirHeim ? "TVH" : "Gegner");
@@ -342,8 +350,8 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
   function mitLiveErgebnis(x) {
     if (x.s.ergebnis && !vorlaeufig(x.s)) return x;
     const d = live[schl(x.t, x.s)];
-    if (d && d.ende) return {t: x.t, s: {...x.s, ergebnis: daheim(x.t, x.s) ? d.stand : d.stand.split(":").reverse().join(":"), meeting: null}};
-    return x.s.ergebnis ? x : null;
+    if (d && d.ende) return {t: x.t, s: {...x.s, ergebnis: daheim(x.t, x.s) ? d.stand : d.stand.split(":").reverse().join(":"), meeting: null, liveKey: schl(x.t, x.s)}};
+    return x.s.ergebnis ? (d && d.ereignisse ? {t: x.t, s: {...x.s, liveKey: schl(x.t, x.s)}} : x) : null;
   }
 
   function heute() {
@@ -353,16 +361,16 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
     const zeilen = liste.map(({t, s}) => {
       const min = (jetzt - wann(s)) / 6e4, d = live[schl(t,s)];
       let status, info = "";
-      if (d && d.ende) { const [a,b] = d.stand.split(":").map(Number); status = `<span class="score ${a>b?"s":a<b?"n":"u"}">${esc(d.stand)}</span>`; info = "Spielende"; }
-      else if (d && d.laeuft) { irgendLive = true; status = `<span class="lv an">${esc(d.stand)}</span>`;
+      if (d && d.ende) { const [a,b] = d.stand.split(":").map(Number); status = `<span class="score ${a>b?"s":a<b?"n":"u"}">${esc(hg(t,s,d.stand))}</span>`; info = "Spielende"; }
+      else if (d && d.laeuft) { irgendLive = true; status = `<span class="lv an">${esc(hg(t,s,d.stand))}</span>`;
         info = d.letzte ? `<span class="lz" data-uhr="${esc(schl(t,s))}">${esc(schaetze(d))}</span> · ${esc(d.letzte.text)} <small>(${esc(d.letzte.zeit)})</small>` : "Läuft"; }
-      else if (vorlaeufig(s) && min > LIVE_MIN) { status = `<span class="lv">${esc(ausSicht(t,s,s.ergebnis))}</span>`; info = "Ende, Ergebnis folgt mit dem nächsten Abruf"; }
-      else if (vorlaeufig(s)) { irgendLive = true; status = `<span class="lv an">${esc(ausSicht(t,s,s.ergebnis))}</span>`; info = "Zwischenstand"; }
+      else if (vorlaeufig(s) && min > LIVE_MIN) { status = `<span class="lv">${esc(s.ergebnis)}</span>`; info = "Ende, Ergebnis folgt mit dem nächsten Abruf"; }
+      else if (vorlaeufig(s)) { irgendLive = true; status = `<span class="lv an">${esc(s.ergebnis)}</span>`; info = "Zwischenstand"; }
       else if (min >= 0 && min <= LIVE_MIN) { irgendLive = true; status = `<span class="lv an">Live</span>`; }
       else if (min > LIVE_MIN) status = `<span class="lv">Beendet</span>`;
       else status = `<span class="lv">${esc(s.zeit||"")} Uhr</span>`;
       const inhalt = `<span class="z">${esc(s.zeit||"–")}<small>${daheim(t,s)?"Heim":"Ausw."}</small></span>
-        <span class="o"><span class="team">${esc(t.name)}</span><b>${daheim(t,s)?"gegen":"bei"} ${esc(gegner(t,s))}</b>${info ? `<span class="akt">${info}</span>` : (t.ticker ? "<span>Live-Ticker öffnen ›</span>" : "")}</span>${status}`;
+        <span class="o"><span class="team">${esc(t.name)}</span>${paarung(t,s)}${info ? `<span class="akt">${info}</span>` : (t.ticker ? "<span>Live-Ticker öffnen ›</span>" : "")}</span>${status}`;
       return t.ticker ? `<a class="game" href="${esc(t.ticker)}" target="_blank" rel="noopener">${inhalt}</a>` : `<div class="game">${inhalt}</div>`;
     }).join("");
     const uhr = proxy && kandidaten().length ? `<span class="uhr" id="countdown" aria-live="off">↻ ${rest} s</span>` : "";
@@ -440,16 +448,17 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
     return `<div class="card games">${Object.values(tage).map(xs => `<div class="day">${tagLang(wann(xs[0].s))}</div>${xs.sort((a,b)=>ergebnisse?0:wann(a.s)-wann(b.s)).map(x => zeile(x.t, x.s, true)).join("")}`).join("")}</div>`;
   }
   function zeile(t, s, mitTeam) {
-    const hat = s.meeting && s.ergebnis;
-    const id = s.meeting || (t.id + s.datum + s.heim);
-    const sc = s.ergebnis ? `<span class="score ${wertung(t,s)}">${esc(ausSicht(t,s,s.ergebnis))}</span>`
+    const hat = (s.meeting && s.ergebnis) || (s.liveKey && live[s.liveKey]?.ereignisse?.length);
+    const id = s.liveKey ? "live:" + s.liveKey : (s.meeting || (t.id + s.datum + s.heim));
+    const sc = s.ergebnis ? `<span class="score ${wertung(t,s)}">${esc(s.ergebnis)}</span>`
              : `<span class="score o">${wann(s) < new Date() ? "folgt" : (daheim(t,s) ? "Heim" : "Auswärts")}</span>`;
     return `<button class="game ${hat?"has":""}" data-spiel="${esc(id)}" data-tid="${t.id}" ${hat?`aria-expanded="${offen===id}"`:""} type="button">
       <span class="z">${esc(s.zeit||"–")}<small>${esc(s.datum.slice(0,6))}</small></span>
-      <span class="o">${mitTeam?`<span class="team">${esc(t.name)}</span>`:""}<b>${daheim(t,s)?"gegen":"bei"} ${esc(gegner(t,s))}</b>${s.halbzeit?`<span>Halbzeit ${esc(ausSicht(t,s,s.halbzeit))}</span>`:""}</span>
+      <span class="o">${mitTeam?`<span class="team">${esc(t.name)}</span>`:""}${paarung(t,s)}${s.halbzeit?`<span>Halbzeit ${esc(s.halbzeit)}</span>`:""}</span>
       ${sc}</button>${hat && offen===id ? detail(t, s) : ""}`;
   }
   function detail(t, s) {
+    if (s.liveKey && (!s.meeting || berichte[s.meeting] === "fehler")) return liveDetail(t, s, live[s.liveKey]);
     const b = berichte[s.meeting];
     if (b === undefined) { ladeBericht(s.meeting); return `<div class="detail"><div class="note">Spielbericht wird geladen …</div></div>`; }
     if (b === null) return `<div class="detail"><div class="note">Spielbericht wird geladen …</div></div>`;
@@ -470,6 +479,22 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
       ${ander ? `<div><h3>Tore ${esc(ander.name)}</h3><div class="scorers">${torliste(ander)}</div></div>` : ""}
       ${ev ? `<div><h3>Spielverlauf</h3><div class="timeline">${ev}</div></div>` : ""}
       ${b.ort ? `<div class="note">${esc(b.ort)}</div>` : ""}
+    </div>`;
+  }
+  function liveDetail(t, s, d) {
+    const ev = (d && d.ereignisse) || [];
+    const liste = wir => { const z = {};
+      ev.filter(e => e.wir === wir && (e.code === 4 || e.code === 5 || e.code === 6) && e.wer).forEach(e => {
+        const p = z[e.wer] ||= {tore: 0, sm: 0, smv: 0}; if (e.code !== 6) p.tore++; if (e.code !== 4) p.smv++; if (e.code === 5) p.sm++; });
+      const l = Object.entries(z).filter(([,p]) => p.tore > 0).sort((a,b) => b[1].tore - a[1].tore);
+      return l.length ? l.map(([n,p]) => `<div><span>${esc(n)}</span><span class="num">${p.tore}${p.smv ? ` <small>(${p.sm}/${p.smv} 7m)</small>` : ""}</span></div>`).join("") : `<div><span>Keine Torschützen erfasst</span></div>`; };
+    const zeilen = ev.slice().reverse().map(e => `<div class="ev ${e.wir ? "us" : ""} ${e.code === 4 || e.code === 5 ? "" : "misc"}"><span class="t">${esc(e.zeit)}</span><span class="st">${e.code === 4 || e.code === 5 ? esc(e.stand) : ""}</span><span class="p">${esc(e.art)}${e.wer ? " – " + esc(e.wer) : ""}</span></div>`).join("");
+    return `<div class="detail">
+      <div class="note">Aus dem Live-Ticker. Der offizielle Spielbericht folgt mit einem der nächsten Datenabrufe.</div>
+      <div><h3>Tore ${esc(t.name)}</h3><div class="scorers">${liste(true)}</div></div>
+      <div><h3>Tore ${esc(gegner(t, s))}</h3><div class="scorers">${liste(false)}</div></div>
+      ${zeilen ? `<div><h3>Spielverlauf</h3><div class="timeline">${zeilen}</div></div>` : ""}
+      ${t.ticker ? `<a class="src" href="${esc(t.ticker)}" target="_blank" rel="noopener">Im offiziellen Live-Ticker ansehen</a>` : ""}
     </div>`;
   }
   function ladeBericht(id) {
