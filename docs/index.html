@@ -318,8 +318,8 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
               const ev = alle[alle.length - 1];
               if (ev) {
                 const wer = ev.personLastname ? `${ev.personLastname} ${(ev.personFirstname || "").slice(0,1)}.` : "";
-                const team = ev.teamHome === null ? "" : (ev.teamHome === wirHeim ? "TVH" : "Gegner");
-                if (!d.letzte || d.letzte.idx !== ev.idx) d.letzte = { idx: ev.idx, sek: ev.second || 0, gesehen: Date.now(), zeit: mmss(ev.second || 0), text: [AKTION[ev.event] || "Aktion", wer].filter(Boolean).join(" "), team };
+                const team = ev.teamHome === null ? "" : (ev.teamHome ? m.teamHome : m.teamGuest);
+                if (!d.letzte || d.letzte.idx !== ev.idx) d.letzte = { idx: ev.idx, sek: ev.second || 0, gesehen: Date.now(), zeit: mmss(ev.second || 0), text: [AKTION[ev.event] || "Aktion", wer].filter(Boolean).join(" ") + (team ? ` (${team})` : ""), team };
               }
             }
           }
@@ -453,7 +453,7 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
     const sc = s.ergebnis ? `<span class="score ${wertung(t,s)}">${esc(s.ergebnis)}</span>`
              : `<span class="score o">${wann(s) < new Date() ? "folgt" : (daheim(t,s) ? "Heim" : "Auswärts")}</span>`;
     return `<button class="game ${hat?"has":""}" data-spiel="${esc(id)}" data-tid="${t.id}" ${hat?`aria-expanded="${offen===id}"`:""} type="button">
-      <span class="z">${esc(s.zeit||"–")}<small>${esc(s.datum.slice(0,6))}</small></span>
+      <span class="z">${esc(s.zeit||"–")}${mitTeam ? "" : `<small>${esc(s.datum.slice(0,6))}</small>`}<small>${daheim(t,s)?"Heim":"Ausw."}</small></span>
       <span class="o">${mitTeam?`<span class="team">${esc(t.name)}</span>`:""}${paarung(t,s)}${s.halbzeit?`<span>Halbzeit ${esc(s.halbzeit)}</span>`:""}</span>
       ${sc}</button>${hat && offen===id ? detail(t, s) : ""}`;
   }
