@@ -99,6 +99,15 @@ header.bar .wrap{display:flex;align-items:center;gap:12px;padding-block:12px}
 .score.s{background:color-mix(in srgb,var(--win) 16%,transparent);color:var(--win)}
 .score.n{background:color-mix(in srgb,var(--loss) 14%,transparent);color:var(--loss)}
 .score.u{background:color-mix(in srgb,var(--draw) 16%,transparent);color:var(--draw)}
+.heute{margin:0 0 18px}
+.heute h2{display:flex;align-items:center;gap:8px;margin-top:0}
+a.game{color:inherit;text-decoration:none}
+.lv{font:700 12px var(--body);letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;background:var(--surface-2);color:var(--muted)}
+.lv.an{background:var(--loss);color:#fff}
+.lv.an::before{content:"";width:7px;height:7px;border-radius:50%;background:#fff;animation:puls 1.4s ease-in-out infinite}
+@keyframes puls{50%{opacity:.25}}
+@media (prefers-reduced-motion: reduce){.lv.an::before{animation:none}}
+.heute .tip{font-size:12px;color:var(--muted);margin-top:6px}
 .score.o{font:600 13px var(--body);color:var(--muted);background:var(--surface-2)}
 .day{font:800 15px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:12px 14px 4px}
 
@@ -151,6 +160,11 @@ th.on{color:var(--gold)}
 tr.us td{background:var(--gold-soft);font-weight:700}
 
 /* Fuß und Leiste */
+.foerder{margin-top:22px}
+.foerder .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+.foerder a,.foerder div.f{display:flex;align-items:center;justify-content:center;min-height:76px;padding:10px;border-radius:10px;background:#fff;border:1px solid var(--line);color:#1c2420;text-decoration:none;font-weight:600;font-size:14px;text-align:center;line-height:1.25}
+.foerder img{max-width:100%;max-height:56px;object-fit:contain;display:block}
+.foerder .hin{font-size:12px;color:var(--muted);margin-top:6px}
 .fuss{font-size:13px;color:var(--muted);text-align:center;padding:8px 0 4px;line-height:1.5}
 nav.tabs{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);z-index:5;
   padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
@@ -177,7 +191,7 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
   const lies = (k, d) => { try { return localStorage.getItem(k) ?? d; } catch (e) { return d; } };
   const merke = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
 
-  let D = null, G = [], ansicht = lies("ansicht", "start"), team = null, teil = "spiele",
+  let D = null, G = [], ansicht = "start", team = null, teil = "spiele",
       planModus = "kommend", planFilter = "Alle", sortKey = "tore", sortDir = -1, offen = null, spruchNr = 0;
   const berichte = {};
   let logoOk = null;
@@ -218,6 +232,7 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
     const v = $("#view");
     v.innerHTML = team ? teamSeite(team) : ({start, spielplan, teams}[ansicht] || start)();
     if (!team && ansicht === "start") spruchStart();
+    clearTimeout(window.__heuteUhr); if (!team && ansicht === "start") window.__heuteUhr = setTimeout(() => { if (!team && ansicht === "start" && !document.querySelector(".detail")) render(); }, 60000);
   }
 
   // ---------- Start
@@ -228,7 +243,7 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
     let s=0,u=0,n=0; G.forEach(x => { const w = wertung(x.t, x.s); if (w==="s") s++; else if (w==="u") u++; else if (w==="n") n++; });
     const spitze = D.teams.filter(t => platz(t)?.rang === 1);
     const spr = D.sprueche || [];
-    return `<section class="hero">
+    return `${heute()}<section class="hero">
         <div class="big"><div class="logo">${logo()}</div><h1>${esc(D.titel)}</h1></div>
         ${D.leitsatz ? `<p class="lead">${esc(D.leitsatz)}</p>` : ""}
         ${spr.length ? `<div class="spruch" id="spruch">${esc(spr[spruchNr % spr.length])}</div>` : ""}
@@ -242,7 +257,33 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
       <h2>Ergebnisse der letzten Woche</h2>
       ${zuletzt.length ? spielListe(zuletzt, true) : `<div class="note">In der letzten Woche wurde nicht gespielt.</div>`}
       ${galerie()}
+      ${foerderer(sponsoren.filter(sp => /(^|\+)\s*(verein|alle)\s*($|\+)/i.test(sp.mannschaft||"")), "Unsere Förderer")}
       <div class="fuss">Inoffizielle Fan-App. Alle Spieldaten stammen von nuLiga, dem Spielbetrieb des Hessischen Handball-Verbands.</div>`;
+  }
+  // ---------- Heute: aktuelle Spiele mit Live-Ticker
+  const LIVE_MIN = 95;   // so lange gilt ein Spiel nach Anpfiff als "läuft"
+  function heute() {
+    const jetzt = new Date();
+    const heuteL = G.filter(x => wann(x.s).toDateString() === jetzt.toDateString()).sort((a,b) => wann(a.s)-wann(b.s));
+    if (!heuteL.length) {
+      const naechst = G.filter(x => !x.s.ergebnis && wann(x.s) > jetzt).sort((a,b) => wann(a.s)-wann(b.s));
+      if (!naechst.length) return "";
+      const tag = wann(naechst[0].s).toDateString(), anz = naechst.filter(x => wann(x.s).toDateString() === tag).length;
+      return `<div class="note heute">Heute keine Spiele. Nächster Spieltag: <b>${tagLang(wann(naechst[0].s))}</b> mit ${anz} ${anz===1?"Spiel":"Spielen"}.</div>`;
+    }
+    const zeilen = heuteL.map(({t, s}) => {
+      const min = (jetzt - wann(s)) / 6e4;
+      const status = s.ergebnis ? `<span class="score ${wertung(t,s)}">${esc(ausSicht(t,s,s.ergebnis))}</span>`
+        : min >= 0 && min <= LIVE_MIN ? `<span class="lv an">Live</span>`
+        : min > LIVE_MIN ? `<span class="lv">Beendet</span>`
+        : `<span class="lv">${esc(s.zeit||"")} Uhr</span>`;
+      const inhalt = `<span class="z">${esc(s.zeit||"–")}<small>${daheim(t,s)?"Heim":"Ausw."}</small></span>
+        <span class="o"><span class="team">${esc(t.name)}</span><b>${daheim(t,s)?"gegen":"bei"} ${esc(gegner(t,s))}</b>${t.ticker?"<span>Live-Ticker öffnen ›</span>":""}</span>${status}`;
+      return t.ticker ? `<a class="game" href="${esc(t.ticker)}" target="_blank" rel="noopener">${inhalt}</a>` : `<div class="game">${inhalt}</div>`;
+    }).join("");
+    const live = heuteL.some(({s}) => { const m = (jetzt - wann(s))/6e4; return !s.ergebnis && m >= 0 && m <= LIVE_MIN; });
+    return `<section class="heute"><h2>Heute${live?' <span class="lv an">Live</span>':""}</h2><div class="card games">${zeilen}</div>
+      <div class="tip">Antippen öffnet den offiziellen Live-Ticker von nuLiga. Ergebnisse erscheinen hier nach dem nächsten Datenabruf.</div></section>`;
   }
   let spruchUhr = null;
   function spruchStart() {
@@ -255,6 +296,34 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
     }, 7000);
   }
   let bilder = [];
+  // ---------- Sponsoren (Tabelle docs/sponsoren.csv)
+  let sponsoren = [];
+  function leseCsv(text) {
+    text = text.replace(/^\uFEFF/, "");
+    const zeilen = text.split(/\r?\n/).filter(z => z.trim());
+    if (!zeilen.length) return [];
+    const trenn = zeilen[0].includes(";") ? ";" : zeilen[0].includes("\t") ? "\t" : ",";
+    const teile = z => { const out = []; let cur = "", q = false;
+      for (let i = 0; i < z.length; i++) { const c = z[i];
+        if (q) { if (c === '"' && z[i+1] === '"') { cur += '"'; i++; } else if (c === '"') q = false; else cur += c; }
+        else if (c === '"') q = true; else if (c === trenn) { out.push(cur.trim()); cur = ""; } else cur += c; }
+      out.push(cur.trim()); return out; };
+    const kopfz = teile(zeilen[0]).map(h => h.toLowerCase());
+    return zeilen.slice(1).map(z => { const w = teile(z), o = {}; kopfz.forEach((h,i) => o[h] = w[i] || ""); return o; }).filter(o => o.name);
+  }
+  const istJugend = t => /Jugend/.test(t.kategorie || "") || /Jugend/.test(t.name || "");
+  function sponsorenFuer(t) {
+    return sponsoren.filter(sp => (sp.mannschaft || "").split("+").map(x => norm(x)).some(m =>
+      m === norm(t.id) || m === norm(t.name) || (m === "jugend" && istJugend(t)) || m === "alle"));
+  }
+  function foerderer(liste, titel) {
+    if (!liste.length) return "";
+    const bild = sp => { const l = sp.logo || ""; if (!l) return ""; return /^https:\/\//.test(l) ? l : "bilder/sponsoren/" + l; };
+    return `<section class="foerder"><h2>${esc(titel)}</h2><div class="grid">${liste.map(sp => {
+      const inhalt = bild(sp) ? `<img src="${esc(bild(sp))}" alt="${esc(sp.name)}" loading="lazy">` : esc(sp.name);
+      return /^https?:\/\//.test(sp.link || "") ? `<a href="${esc(sp.link)}" target="_blank" rel="noopener" title="${esc(sp.name)}">${inhalt}</a>` : `<div class="f" title="${esc(sp.name)}">${inhalt}</div>`;
+    }).join("")}</div><div class="hin">Herzlichen Dank für die Unterstützung!</div></section>`;
+  }
   function galerie() {
     if (bilder.length) return `<h2>Aus der Vereinsgeschichte</h2><div class="galerie">${bilder.map(b => `<figure><img src="bilder/${esc(b.datei)}" alt="${esc(b.text||"")}" loading="lazy">${b.text?`<figcaption>${esc(b.text)}</figcaption>`:""}</figure>`).join("")}</div>`;
     if (D.vorschau) return `<h2>Aus der Vereinsgeschichte</h2><div class="platz"><b>Hier erscheint eure Bildergalerie.</b>Fotos mit Erlaubnis des Vereins oder der Fotografen in den Ordner <code>docs/bilder</code> legen und in <code>galerie.json</code> eintragen. Das Vereinslogo als <code>logo.png</code> ersetzt oben das Ball-Symbol.</div>`;
@@ -334,7 +403,7 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
   }
   function teamSeite(id) {
     const ex = (D.extern||[]).find(t => t.id === id);
-    if (ex) return `<section class="tdhead"><h1>${esc(ex.name)}</h1><div class="liga">${esc(ex.liga)}</div><div class="links">${ex.links.map(l => `<a class="btn" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.text)}</a>`).join("")}</div></section><div class="note">${esc(ex.hinweis)}</div>`;
+    if (ex) return `<section class="tdhead"><h1>${esc(ex.name)}</h1><div class="liga">${esc(ex.liga)}</div><div class="links">${ex.links.map(l => `<a class="btn" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.text)}</a>`).join("")}</div></section><div class="note">${esc(ex.hinweis)}</div>${foerderer(sponsorenFuer(ex), "Gefördert von")}`;
     const t = D.teams.find(x => x.id === id); if (!t) { team = null; return teams(); }
     const p = platz(t);
     const gespielt = t.spiele.filter(s => s.ergebnis);
@@ -346,7 +415,8 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
         : `<a class="btn" href="${esc(t.ticker)}" target="_blank" rel="noopener">Live-Ticker</a><a class="btn ghost" href="${esc(t.quelle)}" target="_blank" rel="noopener">nuLiga</a>`}</div></section>
       ${t.extern ? `<div class="note">Spiele und Statistik aus hochgeladenen PDF-Spielberichten (${t.spiele.length} ${t.spiele.length===1?"Spiel":"Spiele"}). ${esc(t.hinweis||"")}</div>` : ""}
       <div class="seg" role="group" aria-label="Bereich">${[["spiele","Spiele"],["tabelle","Tabelle"],["statistik","Statistik"]].map(([k,l]) => `<button data-teil="${k}" aria-pressed="${teil===k}" type="button">${l}</button>`).join("")}</div>
-      ${teil === "tabelle" ? tabelle(t) : teil === "statistik" ? statistik(t) : `<div class="card games">${[...t.spiele].sort((a,b)=>wann(a)-wann(b)).map(s => zeile(t, s, false)).join("")}</div>`}`;
+      ${teil === "tabelle" ? tabelle(t) : teil === "statistik" ? statistik(t) : `<div class="card games">${[...t.spiele].sort((a,b)=>wann(a)-wann(b)).map(s => zeile(t, s, false)).join("")}</div>`}
+      ${foerderer(sponsorenFuer(t), "Gefördert von")}`;
   }
   function tabelle(t) {
     if (!t.tabelle.length) return `<div class="note">${esc(t.hinweis || "Für diese Mannschaft liegt keine Tabelle vor.")}</div>`;
@@ -387,9 +457,14 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
   // ---------- Laden
   const pruefeLogo = new Promise(ok => { const i = new Image(); i.onload = () => { logoOk = true; ok(); }; i.onerror = () => { logoOk = false; ok(); }; i.src = "bilder/logo.png"; });
   const ladeGalerie = fetch("bilder/galerie.json").then(r => r.ok ? r.json() : []).then(b => { bilder = Array.isArray(b) ? b : []; }).catch(() => {});
+  const ladeSponsoren = fetch("sponsoren.csv", {cache: "no-store"}).then(r => r.ok ? r.arrayBuffer() : null).then(buf => {
+    if (!buf) return;
+    let text; try { text = new TextDecoder("utf-8", {fatal: true}).decode(buf); } catch (e) { text = new TextDecoder("windows-1252").decode(buf); }
+    sponsoren = leseCsv(text);
+  }).catch(() => {});
   fetch("data/verein.json", {cache: "no-store"}).then(r => { if (!r.ok) throw 0; return r.json(); }).then(async d => {
     D = d; G = d.teams.flatMap(t => t.spiele.map(s => ({t, s})));
-    await Promise.all([pruefeLogo, ladeGalerie]);
+    await Promise.all([pruefeLogo, ladeGalerie, ladeSponsoren]);
     ausHash();
   }).catch(() => { $("#view").innerHTML = `<div class="card note">Die Daten konnten nicht geladen werden. Prüfe die Internetverbindung und öffne die App erneut. Bleibt das so, im GitHub-Projekt unter „Actions“ nachsehen, ob der letzte Datenabruf grün ist.</div>`; });
 })();
