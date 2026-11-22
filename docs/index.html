@@ -300,8 +300,9 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
           d.laeuft = !!m.live;
           const warEnde = d.ende;
           d.ende = !m.live && (h + gst) > 0 && new Date() > wann(s);
-          if (d.ende && !warEnde) d.endeSeit = Date.now();
           d.halbzeit = (m.halftimeLength || 30) * 60;
+          // Spielende: spätestens 2 Halbzeiten + 20 Minuten nach Anpfiff (falls die App erst später davon erfährt)
+          if (d.ende && !warEnde) d.endeSeit = Math.min(Date.now(), +wann(s) + (2 * d.halbzeit / 60 + 20) * 6e4);
           if (m.versionUid && versionen[m.meetingID] !== m.versionUid) {
             const e = await fetch(`${proxy}/events/${m.meetingID}/versions/${m.versionUid}`);
             if (e.ok) {
