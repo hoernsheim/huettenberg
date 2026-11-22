@@ -165,6 +165,26 @@ def _vereinheitlichen(e):
     return e
 
 
+def _ergaenze_stand(kopf, teams, ev):
+    """Manche Berichte haben keine Zeile 'Endstand'. Dann Ergebnis aus den Toren der Spieler
+    und Halbzeitstand aus dem Spielverlauf berechnen."""
+    if not kopf["ergebnis"] and len(teams) >= 2:
+        heim = next((t for t in teams if t["seite"] == "Heim"), teams[0])
+        gast = next((t for t in teams if t["seite"] == "Gast"), teams[1])
+        h, g = (sum(p["tore"] for p in t["spieler"]) for t in (heim, gast))
+        letzter = next((e["stand"] for e in reversed(ev) if re.match(r"^\d+:\d+$", e.get("stand", ""))), "")
+        if h + g > 0:
+            kopf["ergebnis"] = f"{h}:{g}"
+            if letzter and letzter != kopf["ergebnis"]:
+                print(f"  Hinweis: Tore der Spieler ergeben {h}:{g}, letzter Stand im Verlauf ist {letzter}")
+        elif letzter:
+            kopf["ergebnis"] = letzter
+    if not kopf["halbzeit"]:
+        pause = next((i for i, e in enumerate(ev) if "halbzeit" in e["ereignis"].lower() and e["zeit"] != "00:00"), None)
+        if pause is not None:
+            kopf["halbzeit"] = next((e["stand"] for e in reversed(ev[:pause]) if re.match(r"^\d+:\d+$", e.get("stand", ""))), "")
+
+
 def lies_pdf(pfad):
     with pdfplumber.open(pfad) as pdf:
         kopf = _kopf(pdf.pages[0].extract_text() or "")
@@ -180,6 +200,7 @@ def lies_pdf(pfad):
             gesehen.add(k)
             ev.append(_vereinheitlichen(e))
     ev.sort(key=lambda e: (int(e["zeit"].split(":")[0]), int(e["zeit"].split(":")[1])))
+    _ergaenze_stand(kopf, teams, ev)
     return {
         "meeting": "pdf-" + (kopf["spielnummer"] or "unbekannt"),
         **kopf,
