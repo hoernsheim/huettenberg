@@ -1,5 +1,5 @@
 {
- "aktualisiert": "2026-11-21T22:50+00:00",
+ "aktualisiert": "2026-11-22T15:29+00:00",
  "verein": "TV Hüttenberg",
  "titel": "Handball in Hüttenberg",
  "leitsatz": "Für alle, die in Hüttenberg Handball leben: auf der Tribüne, an der Seitenlinie und vor allem für unsere Jugend. Ihr sorgt dafür, dass in unseren Hallen jedes Wochenende Leben ist.",
@@ -280,7 +280,7 @@
      "gast": "TV Hüttenberg II",
      "ergebnis": "31:39",
      "meeting": "8256480",
-     "genehmigt": false,
+     "genehmigt": true,
      "halbzeit": "16:18",
      "ort": "Großsporthalle Vellmar"
     },
@@ -3300,13 +3300,13 @@
     {
      "rang": 1,
      "mannschaft": "mJSG Heuchelheim/Bieber",
-     "spiele": 7,
-     "s": 7,
+     "spiele": 8,
+     "s": 8,
      "u": 0,
      "n": 0,
-     "tore": "257:137",
-     "diff": "+120",
-     "punkte": "14:0"
+     "tore": "293:158",
+     "diff": "+135",
+     "punkte": "16:0"
     },
     {
      "rang": 2,
@@ -3333,13 +3333,13 @@
     {
      "rang": 4,
      "mannschaft": "HSG Mörlen",
-     "spiele": 7,
+     "spiele": 8,
      "s": 5,
      "u": 0,
-     "n": 2,
-     "tore": "215:183",
-     "diff": "+32",
-     "punkte": "10:4"
+     "n": 3,
+     "tore": "236:219",
+     "diff": "+17",
+     "punkte": "10:6"
     },
     {
      "rang": 5,
@@ -3507,9 +3507,11 @@
      "nr": "37",
      "heim": "HSG Hinterland",
      "gast": "TV Hüttenberg II",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
+     "ergebnis": "9:6",
+     "meeting": "8380105",
+     "genehmigt": false,
+     "halbzeit": "",
+     "ort": ""
     },
     {
      "tag": "So",
@@ -3909,24 +3911,24 @@
     {
      "rang": 5,
      "mannschaft": "HSG Hanau",
-     "spiele": 8,
+     "spiele": 9,
      "s": 5,
      "u": 0,
-     "n": 3,
-     "tore": "221:227",
-     "diff": "-6",
-     "punkte": "10:6"
+     "n": 4,
+     "tore": "246:255",
+     "diff": "-9",
+     "punkte": "10:8"
     },
     {
      "rang": 6,
      "mannschaft": "HSG Dutenh./Münchholzh.",
-     "spiele": 8,
-     "s": 2,
+     "spiele": 9,
+     "s": 3,
      "u": 0,
      "n": 6,
-     "tore": "161:193",
-     "diff": "-32",
-     "punkte": "4:12"
+     "tore": "189:218",
+     "diff": "-29",
+     "punkte": "6:12"
     },
     {
      "rang": 7,
@@ -4525,9 +4527,11 @@
      "nr": "39",
      "heim": "HSG Grünberg/Mücke",
      "gast": "TV Hüttenberg II",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
+     "ergebnis": "16:24",
+     "meeting": "8380256",
+     "genehmigt": false,
+     "halbzeit": "",
+     "ort": ""
     },
     {
      "tag": "So",
@@ -4927,6 +4931,17 @@
     },
     {
      "rang": 4,
+     "mannschaft": "JSGmC Florstadt/Friedberg",
+     "spiele": 8,
+     "s": 4,
+     "u": 0,
+     "n": 4,
+     "tore": "237:225",
+     "diff": "+12",
+     "punkte": "8:8"
+    },
+    {
+     "rang": 5,
      "mannschaft": "HSG Herborn/Seelbach",
      "spiele": 6,
      "s": 3,
@@ -4937,26 +4952,15 @@
      "punkte": "6:6"
     },
     {
-     "rang": 5,
-     "mannschaft": "JSGmC Florstadt/Friedberg",
-     "spiele": 7,
-     "s": 3,
-     "u": 0,
-     "n": 4,
-     "tore": "208:205",
-     "diff": "+3",
-     "punkte": "6:8"
-    },
-    {
      "rang": 6,
      "mannschaft": "mJSG Heuchelheim/Bieber II",
-     "spiele": 6,
+     "spiele": 7,
      "s": 2,
      "u": 1,
-     "n": 3,
-     "tore": "165:178",
-     "diff": "-13",
-     "punkte": "5:7"
+     "n": 4,
+     "tore": "185:207",
+     "diff": "-22",
+     "punkte": "5:9"
     },
     {
      "rang": 7,
@@ -5091,7 +5095,7 @@
      "gast": "TSV Griedel",
      "ergebnis": "36:25",
      "meeting": "8380382",
-     "genehmigt": false,
+     "genehmigt": true,
      "halbzeit": "18:10",
      "ort": "Sporthalle Hüttenberg"
     },
@@ -5449,17 +5453,6 @@
    "tabelle": [
     {
      "rang": 1,
-     "mannschaft": "HSG Pohlheim",
-     "spiele": 5,
-     "s": 5,
-     "u": 0,
-     "n": 0,
-     "tore": "141:111",
-     "diff": "+30",
-     "punkte": "10:0"
-    },
-    {
-     "rang": 2,
      "mannschaft": "HSG Gedern/Nidda",
      "spiele": 6,
      "s": 5,
@@ -5470,26 +5463,37 @@
      "punkte": "10:2"
     },
     {
-     "rang": 3,
+     "rang": 2,
      "mannschaft": "HSG Dutenh./Münchholzh.",
-     "spiele": 5,
-     "s": 4,
+     "spiele": 6,
+     "s": 5,
      "u": 0,
      "n": 1,
-     "tore": "144:105",
-     "diff": "+39",
-     "punkte": "8:2"
+     "tore": "167:126",
+     "diff": "+41",
+     "punkte": "10:2"
+    },
+    {
+     "rang": 3,
+     "mannschaft": "HSG Pohlheim",
+     "spiele": 6,
+     "s": 5,
+     "u": 0,
+     "n": 1,
+     "tore": "162:134",
+     "diff": "+28",
+     "punkte": "10:2"
     },
     {
      "rang": 4,
      "mannschaft": "mJSG Heuchelheim/Bieber",
-     "spiele": 5,
-     "s": 3,
+     "spiele": 6,
+     "s": 4,
      "u": 0,
      "n": 2,
-     "tore": "172:137",
-     "diff": "+35",
-     "punkte": "6:4"
+     "tore": "209:161",
+     "diff": "+48",
+     "punkte": "8:4"
     },
     {
      "rang": 5,
@@ -5505,13 +5509,13 @@
     {
      "rang": 6,
      "mannschaft": "HSG Linden",
-     "spiele": 5,
+     "spiele": 6,
      "s": 1,
      "u": 0,
-     "n": 4,
-     "tore": "111:132",
-     "diff": "-21",
-     "punkte": "2:8"
+     "n": 5,
+     "tore": "135:169",
+     "diff": "-34",
+     "punkte": "2:10"
     },
     {
      "rang": 7,
@@ -6461,53 +6465,53 @@
      "s": 5,
      "u": 0,
      "n": 0,
-     "tore": "61:5",
-     "diff": "+56",
+     "tore": "25:0",
+     "diff": "+25",
      "punkte": "10:0"
     },
     {
      "rang": 2,
-     "mannschaft": "TSG 1883 Lollar",
-     "spiele": 4,
-     "s": 3,
+     "mannschaft": "mJSG Heuchelheim/Bieber",
+     "spiele": 5,
+     "s": 4,
      "u": 0,
      "n": 1,
-     "tore": "15:5",
-     "diff": "+10",
-     "punkte": "6:2"
+     "tore": "46:34",
+     "diff": "+12",
+     "punkte": "8:2"
     },
     {
      "rang": 3,
-     "mannschaft": "mJSG Heuchelheim/Bieber",
-     "spiele": 4,
+     "mannschaft": "TSG 1883 Lollar",
+     "spiele": 5,
      "s": 3,
      "u": 0,
-     "n": 1,
-     "tore": "15:5",
-     "diff": "+10",
-     "punkte": "6:2"
+     "n": 2,
+     "tore": "44:36",
+     "diff": "+8",
+     "punkte": "6:4"
     },
     {
      "rang": 4,
-     "mannschaft": "HSG Linden",
-     "spiele": 4,
-     "s": 1,
+     "mannschaft": "HSG Hungen/Lich",
+     "spiele": 5,
+     "s": 2,
      "u": 0,
      "n": 3,
-     "tore": "5:15",
-     "diff": "-10",
-     "punkte": "2:6"
+     "tore": "26:30",
+     "diff": "-4",
+     "punkte": "4:6"
     },
     {
      "rang": 5,
-     "mannschaft": "HSG Hungen/Lich",
-     "spiele": 4,
+     "mannschaft": "HSG Linden",
+     "spiele": 5,
      "s": 1,
      "u": 0,
-     "n": 3,
-     "tore": "5:15",
-     "diff": "-10",
-     "punkte": "2:6"
+     "n": 4,
+     "tore": "20:36",
+     "diff": "-16",
+     "punkte": "2:8"
     },
     {
      "rang": 6,
@@ -6516,8 +6520,8 @@
      "s": 0,
      "u": 0,
      "n": 5,
-     "tore": "5:61",
-     "diff": "-56",
+     "tore": "0:25",
+     "diff": "-25",
      "punkte": "0:10"
     }
    ],
@@ -6583,8 +6587,8 @@
      "gast": "TV Hüttenberg",
      "ergebnis": "0:2",
      "meeting": "8472496",
-     "genehmigt": false,
-     "halbzeit": "1:27",
+     "genehmigt": true,
+     "halbzeit": "0:0",
      "ort": "Karl-Zeiss-Halle Langgöns"
     },
     {
@@ -6892,6 +6896,17 @@
    "tabelle": [
     {
      "rang": 1,
+     "mannschaft": "HSG Wettenberg",
+     "spiele": 5,
+     "s": 5,
+     "u": 0,
+     "n": 0,
+     "tore": "64:9",
+     "diff": "+55",
+     "punkte": "10:0"
+    },
+    {
+     "rang": 2,
      "mannschaft": "TUS Vollnkirchen",
      "spiele": 5,
      "s": 5,
@@ -6902,48 +6917,37 @@
      "punkte": "10:0"
     },
     {
-     "rang": 2,
-     "mannschaft": "HSG Wettenberg",
-     "spiele": 4,
-     "s": 4,
-     "u": 0,
-     "n": 0,
-     "tore": "20:0",
-     "diff": "+20",
-     "punkte": "8:0"
-    },
-    {
      "rang": 3,
      "mannschaft": "TV Homberg",
      "spiele": 5,
      "s": 3,
      "u": 0,
      "n": 2,
-     "tore": "31:23",
-     "diff": "+8",
+     "tore": "15:10",
+     "diff": "+5",
      "punkte": "6:4"
     },
     {
      "rang": 4,
      "mannschaft": "TV Hüttenberg II",
-     "spiele": 4,
+     "spiele": 5,
      "s": 2,
-     "u": 0,
+     "u": 1,
      "n": 2,
-     "tore": "10:10",
+     "tore": "30:30",
      "diff": "0",
-     "punkte": "4:4"
+     "punkte": "5:5"
     },
     {
      "rang": 5,
      "mannschaft": "HSG Lumdatal",
-     "spiele": 4,
+     "spiele": 5,
      "s": 1,
-     "u": 0,
+     "u": 1,
      "n": 3,
-     "tore": "5:15",
+     "tore": "25:35",
      "diff": "-10",
-     "punkte": "2:6"
+     "punkte": "3:7"
     },
     {
      "rang": 6,
@@ -6952,20 +6956,20 @@
      "s": 1,
      "u": 0,
      "n": 5,
-     "tore": "18:41",
-     "diff": "-23",
+     "tore": "5:25",
+     "diff": "-20",
      "punkte": "2:10"
     },
     {
      "rang": 7,
      "mannschaft": "HSG Gr.-Buseck/Beuern",
-     "spiele": 4,
+     "spiele": 5,
      "s": 0,
      "u": 0,
-     "n": 4,
-     "tore": "0:20",
-     "diff": "-20",
-     "punkte": "0:8"
+     "n": 5,
+     "tore": "9:64",
+     "diff": "-55",
+     "punkte": "0:10"
     }
    ],
    "spiele": [
@@ -7028,9 +7032,11 @@
      "nr": "22",
      "heim": "HSG Lumdatal",
      "gast": "TV Hüttenberg II",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
+     "ergebnis": "1:1",
+     "meeting": "8380986",
+     "genehmigt": false,
+     "halbzeit": "11:8",
+     "ort": "Lumdatalhalle Rabenau"
     },
     {
      "tag": "So",
@@ -7114,7 +7120,7 @@
     {
      "name": "Derr, Adrian",
      "nr": 18,
-     "einsaetze": 3,
+     "einsaetze": 4,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -7126,7 +7132,7 @@
     {
      "name": "Gawenda, Leo",
      "nr": 12,
-     "einsaetze": 4,
+     "einsaetze": 5,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -7138,7 +7144,7 @@
     {
      "name": "Georgiev, Matey",
      "nr": 16,
-     "einsaetze": 4,
+     "einsaetze": 5,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -7150,7 +7156,7 @@
     {
      "name": "Kunz, Hannes",
      "nr": 11,
-     "einsaetze": 1,
+     "einsaetze": 2,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -7174,7 +7180,7 @@
     {
      "name": "Lossack, Valentin",
      "nr": 7,
-     "einsaetze": 4,
+     "einsaetze": 5,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -7185,8 +7191,8 @@
     },
     {
      "name": "Meissner, Louis",
-     "nr": 6,
-     "einsaetze": 2,
+     "nr": 5,
+     "einsaetze": 3,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -7198,7 +7204,7 @@
     {
      "name": "Müller, Finn",
      "nr": 13,
-     "einsaetze": 1,
+     "einsaetze": 2,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -7234,7 +7240,7 @@
     {
      "name": "Redmer, Mats Oskar",
      "nr": 14,
-     "einsaetze": 4,
+     "einsaetze": 5,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -7246,7 +7252,7 @@
     {
      "name": "Repper, Theo",
      "nr": 10,
-     "einsaetze": 4,
+     "einsaetze": 5,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -7258,7 +7264,7 @@
     {
      "name": "Weller, Niklas",
      "nr": 17,
-     "einsaetze": 4,
+     "einsaetze": 5,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -7270,7 +7276,7 @@
     {
      "name": "Wiener, Moritz",
      "nr": 8,
-     "einsaetze": 3,
+     "einsaetze": 4,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -7282,7 +7288,7 @@
     {
      "name": "Woki, Nicolas",
      "nr": 2,
-     "einsaetze": 3,
+     "einsaetze": 4,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -7361,13 +7367,13 @@
     {
      "rang": 5,
      "mannschaft": "HSG Rodgau/N.-Roden",
-     "spiele": 8,
+     "spiele": 9,
      "s": 4,
      "u": 0,
-     "n": 4,
-     "tore": "225:239",
-     "diff": "-14",
-     "punkte": "8:8"
+     "n": 5,
+     "tore": "250:266",
+     "diff": "-16",
+     "punkte": "8:10"
     },
     {
      "rang": 6,
@@ -7393,6 +7399,17 @@
     },
     {
      "rang": 8,
+     "mannschaft": "JSG Wallstadt",
+     "spiele": 8,
+     "s": 2,
+     "u": 0,
+     "n": 6,
+     "tore": "202:255",
+     "diff": "-53",
+     "punkte": "4:12"
+    },
+    {
+     "rang": 9,
      "mannschaft": "GSV Eintr. Baunatal",
      "spiele": 8,
      "s": 2,
@@ -7401,17 +7418,6 @@
      "tore": "219:296",
      "diff": "-77",
      "punkte": "4:12"
-    },
-    {
-     "rang": 9,
-     "mannschaft": "JSG Wallstadt",
-     "spiele": 7,
-     "s": 1,
-     "u": 0,
-     "n": 6,
-     "tore": "175:230",
-     "diff": "-55",
-     "punkte": "2:12"
     },
     {
      "rang": 10,
@@ -8463,24 +8469,24 @@
     {
      "rang": 1,
      "mannschaft": "HSG Dutenh./Münchholzh.",
-     "spiele": 7,
-     "s": 7,
+     "spiele": 8,
+     "s": 8,
      "u": 0,
      "n": 0,
-     "tore": "222:155",
-     "diff": "+67",
-     "punkte": "14:0"
+     "tore": "252:171",
+     "diff": "+81",
+     "punkte": "16:0"
     },
     {
      "rang": 2,
      "mannschaft": "HSG Kleenh.-Langg. II",
-     "spiele": 7,
-     "s": 6,
+     "spiele": 8,
+     "s": 7,
      "u": 0,
      "n": 1,
-     "tore": "219:144",
-     "diff": "+75",
-     "punkte": "12:2"
+     "tore": "256:175",
+     "diff": "+81",
+     "punkte": "14:2"
     },
     {
      "rang": 3,
@@ -8506,17 +8512,6 @@
     },
     {
      "rang": 5,
-     "mannschaft": "HSG Hungen/Lich II",
-     "spiele": 7,
-     "s": 4,
-     "u": 0,
-     "n": 3,
-     "tore": "224:183",
-     "diff": "+41",
-     "punkte": "8:6"
-    },
-    {
-     "rang": 6,
      "mannschaft": "TV Hüttenberg",
      "spiele": 7,
      "s": 4,
@@ -8527,15 +8522,26 @@
      "punkte": "8:6"
     },
     {
+     "rang": 6,
+     "mannschaft": "HSG Hungen/Lich II",
+     "spiele": 8,
+     "s": 4,
+     "u": 0,
+     "n": 4,
+     "tore": "255:220",
+     "diff": "+35",
+     "punkte": "8:8"
+    },
+    {
      "rang": 7,
      "mannschaft": "wJSG Florstadt/Gettenau",
-     "spiele": 7,
+     "spiele": 8,
      "s": 2,
      "u": 0,
-     "n": 5,
-     "tore": "155:174",
-     "diff": "-19",
-     "punkte": "4:10"
+     "n": 6,
+     "tore": "171:204",
+     "diff": "-33",
+     "punkte": "4:12"
     },
     {
      "rang": 8,
@@ -8670,9 +8676,11 @@
      "nr": "40",
      "heim": "HSG Lumdatal II",
      "gast": "TV Hüttenberg",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
+     "ergebnis": "4:7",
+     "meeting": "8381603",
+     "genehmigt": false,
+     "halbzeit": "",
+     "ort": ""
     },
     {
      "tag": "So",
@@ -9003,27 +9011,16 @@
     {
      "rang": 2,
      "mannschaft": "TV Homberg",
-     "spiele": 4,
-     "s": 4,
+     "spiele": 5,
+     "s": 5,
      "u": 0,
      "n": 0,
-     "tore": "91:52",
-     "diff": "+39",
-     "punkte": "8:0"
+     "tore": "114:68",
+     "diff": "+46",
+     "punkte": "10:0"
     },
     {
      "rang": 3,
-     "mannschaft": "TSV Södel",
-     "spiele": 5,
-     "s": 4,
-     "u": 0,
-     "n": 1,
-     "tore": "80:76",
-     "diff": "+4",
-     "punkte": "8:2"
-    },
-    {
-     "rang": 4,
      "mannschaft": "wJSG Florstadt/Gettenau",
      "spiele": 6,
      "s": 4,
@@ -9031,6 +9028,17 @@
      "n": 2,
      "tore": "97:96",
      "diff": "+1",
+     "punkte": "8:4"
+    },
+    {
+     "rang": 4,
+     "mannschaft": "TSV Södel",
+     "spiele": 6,
+     "s": 4,
+     "u": 0,
+     "n": 2,
+     "tore": "96:99",
+     "diff": "-3",
      "punkte": "8:4"
     },
     {
@@ -9465,38 +9473,27 @@
     {
      "rang": 1,
      "mannschaft": "TV Hüttenberg",
-     "spiele": 5,
-     "s": 5,
+     "spiele": 6,
+     "s": 6,
      "u": 0,
      "n": 0,
-     "tore": "25:0",
-     "diff": "+25",
-     "punkte": "10:0"
+     "tore": "70:2",
+     "diff": "+68",
+     "punkte": "12:0"
     },
     {
      "rang": 2,
      "mannschaft": "HSG Hungen/Lich",
-     "spiele": 4,
+     "spiele": 5,
      "s": 4,
      "u": 0,
-     "n": 0,
-     "tore": "20:0",
-     "diff": "+20",
-     "punkte": "8:0"
+     "n": 1,
+     "tore": "22:45",
+     "diff": "-23",
+     "punkte": "8:2"
     },
     {
      "rang": 3,
-     "mannschaft": "HSG Gedern/Nidda",
-     "spiele": 4,
-     "s": 2,
-     "u": 0,
-     "n": 2,
-     "tore": "10:10",
-     "diff": "0",
-     "punkte": "4:4"
-    },
-    {
-     "rang": 4,
      "mannschaft": "TG Friedberg",
      "spiele": 5,
      "s": 2,
@@ -9504,6 +9501,17 @@
      "n": 3,
      "tore": "20:22",
      "diff": "-2",
+     "punkte": "4:6"
+    },
+    {
+     "rang": 4,
+     "mannschaft": "HSG Linden",
+     "spiele": 5,
+     "s": 2,
+     "u": 0,
+     "n": 3,
+     "tore": "25:28",
+     "diff": "-3",
      "punkte": "4:6"
     },
     {
@@ -9519,14 +9527,14 @@
     },
     {
      "rang": 6,
-     "mannschaft": "HSG Linden",
-     "spiele": 4,
-     "s": 1,
+     "mannschaft": "HSG Gedern/Nidda",
+     "spiele": 5,
+     "s": 2,
      "u": 0,
      "n": 3,
-     "tore": "5:15",
-     "diff": "-10",
-     "punkte": "2:6"
+     "tore": "23:30",
+     "diff": "-7",
+     "punkte": "4:6"
     },
     {
      "rang": 7,
@@ -9613,9 +9621,11 @@
      "nr": "21",
      "heim": "HSG Hungen/Lich",
      "gast": "TV Hüttenberg",
-     "ergebnis": null,
-     "meeting": null,
-     "genehmigt": false
+     "ergebnis": "0:2",
+     "meeting": "8382158",
+     "genehmigt": false,
+     "halbzeit": "2:22",
+     "ort": "Schäferstadthalle Hungen"
     },
     {
      "tag": "Sa",
@@ -9688,7 +9698,7 @@
     {
      "name": "Diering, Lia",
      "nr": 2,
-     "einsaetze": 5,
+     "einsaetze": 6,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -9712,7 +9722,7 @@
     {
      "name": "Krauhausen, Leandra",
      "nr": 5,
-     "einsaetze": 4,
+     "einsaetze": 5,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -9724,7 +9734,7 @@
     {
      "name": "Kühn, Olivia",
      "nr": 6,
-     "einsaetze": 5,
+     "einsaetze": 6,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -9736,7 +9746,7 @@
     {
      "name": "Marth, Madita Charlotte",
      "nr": 8,
-     "einsaetze": 3,
+     "einsaetze": 4,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -9748,7 +9758,7 @@
     {
      "name": "Serafin, Carlotta",
      "nr": 7,
-     "einsaetze": 5,
+     "einsaetze": 6,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -9760,7 +9770,7 @@
     {
      "name": "Sonnabend, Talina Sophia",
      "nr": 13,
-     "einsaetze": 4,
+     "einsaetze": 5,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -9784,7 +9794,7 @@
     {
      "name": "Weiß, Leni Katharina",
      "nr": 11,
-     "einsaetze": 5,
+     "einsaetze": 6,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -9796,7 +9806,7 @@
     {
      "name": "Wiener, Greta",
      "nr": 3,
-     "einsaetze": 5,
+     "einsaetze": 6,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
@@ -9808,7 +9818,7 @@
     {
      "name": "Yildiz, Züleyha",
      "nr": 17,
-     "einsaetze": 3,
+     "einsaetze": 4,
      "tore": 0,
      "7m_tore": 0,
      "7m_versuche": 0,
