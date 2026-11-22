@@ -109,7 +109,8 @@ a.game{color:inherit;text-decoration:none}
 @media (prefers-reduced-motion: reduce){.lv.an::before{animation:none}}
 .heute .uhr{margin-left:auto;font:600 13px var(--body);letter-spacing:0;text-transform:none;color:var(--muted);font-variant-numeric:tabular-nums}
 .game .akt{color:var(--fg)}
-.game .akt .lz{font-weight:700;font-variant-numeric:tabular-nums;color:var(--loss)}
+.game .akt small{display:inline;color:var(--muted)}
+.game .akt .lz{display:inline;font-weight:700;font-variant-numeric:tabular-nums;color:var(--loss)}
 .heute .tip{font-size:12px;color:var(--muted);margin-top:6px}
 .score.o{font:600 13px var(--body);color:var(--muted);background:var(--surface-2)}
 .day{font:800 15px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:12px 14px 4px}
@@ -234,14 +235,15 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
     kopf();
     const v = $("#view");
     v.innerHTML = team ? teamSeite(team) : ({start, spielplan, teams}[ansicht] || start)();
-    if (!team && ansicht === "start") spruchStart();
+    if (!team && ansicht === "start") { spruchStart(); obenSig = obenListe().map(({t,s}) => schl(t,s) + (live[schl(t,s)]?.ende ? "E" : "")).join(","); }
   }
 
   // ---------- Start
   function start() {
     const jetzt = new Date(), in7 = new Date(+jetzt + 7*864e5), vor7 = new Date(+jetzt - 8*864e5);
-    const kommend = G.filter(x => !x.s.ergebnis && wann(x.s) >= new Date(+jetzt - 3*36e5) && wann(x.s) <= in7);
-    const zuletzt = G.filter(x => x.s.ergebnis && wann(x.s) >= vor7).sort((a,b) => wann(b.s)-wann(a.s));
+    const oben = new Set(obenListe().map(x => schl(x.t, x.s)));
+    const kommend = G.filter(x => !x.s.ergebnis && wann(x.s) >= jetzt && wann(x.s) <= in7 && !oben.has(schl(x.t, x.s)));
+    const zuletzt = G.filter(x => wann(x.s) >= vor7 && wann(x.s) <= jetzt).map(mitLiveErgebnis).filter(Boolean).filter(x => !(wann(x.s).toDateString() === jetzt.toDateString() && !abgehakt(x.t, x.s))).sort((a,b) => wann(b.s)-wann(a.s));
     let s=0,u=0,n=0; G.forEach(x => { const w = wertung(x.t, x.s); if (w==="s") s++; else if (w==="u") u++; else if (w==="n") n++; });
     const spitze = D.teams.filter(t => platz(t)?.rang === 1);
     const spr = D.sprueche || [];
@@ -294,7 +296,10 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
           const d = live[schl(t,s)] || {};
           d.stand = wirHeim ? `${h}:${gst}` : `${gst}:${h}`;
           d.laeuft = !!m.live;
+          const warEnde = d.ende;
           d.ende = !m.live && (h + gst) > 0 && new Date() > wann(s);
+          if (d.ende && !warEnde) d.endeSeit = Date.now();
+          d.halbzeit = (m.halftimeLength || 30) * 60;
           if (m.versionUid && versionen[m.meetingID] !== m.versionUid) {
             const e = await fetch(`${proxy}/events/${m.meetingID}/versions/${m.versionUid}`);
             if (e.ok) {
@@ -303,7 +308,7 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
               if (ev) {
                 const wer = ev.personLastname ? `${ev.personLastname} ${(ev.personFirstname || "").slice(0,1)}.` : "";
                 const team = ev.teamHome === null ? "" : (ev.teamHome === wirHeim ? "TVH" : "Gegner");
-                d.letzte = { zeit: mmss(ev.second || 0), text: [AKTION[ev.event] || "Aktion", wer].filter(Boolean).join(" "), team };
+                if (!d.letzte || d.letzte.idx !== ev.idx) d.letzte = { idx: ev.idx, sek: ev.second || 0, gesehen: Date.now(), zeit: mmss(ev.second || 0), text: [AKTION[ev.event] || "Aktion", wer].filter(Boolean).join(" "), team };
               }
             }
           }
@@ -314,22 +319,40 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
     laedt = false;
   }
 
+  // Geschätzte Spielzeit: ab der letzten Aktion weiterzählen, höchstens bis zum Ende der jeweiligen Halbzeit
+  function schaetze(d) {
+    if (!d || !d.letzte) return "";
+    const hz = d.halbzeit || 1800, sek = d.letzte.sek + Math.floor((Date.now() - d.letzte.gesehen) / 1000);
+    const grenze = d.letzte.sek < hz ? hz : 2 * hz;
+    return sek >= grenze ? (grenze === hz ? "Halbzeit?" : "Schluss?") : "ca. " + mmss(sek);
+  }
+  // Ist das Spiel seit mehr als 15 Minuten vorbei? Dann gehört es nicht mehr nach oben.
+  function abgehakt(t, s) {
+    const d = live[schl(t,s)], min = (Date.now() - wann(s)) / 6e4;
+    if (d && d.ende) return Date.now() - (d.endeSeit || 0) > 15 * 6e4;
+    if (d && d.laeuft) return false;
+    if (s.ergebnis && !vorlaeufig(s)) return true;
+    return min > LIVE_MIN + 15;
+  }
+  const obenListe = () => heuteSpiele().filter(({t, s}) => !abgehakt(t, s));
+  // Live-Endstand als Ergebnis (aus Sicht nuLiga: Heim:Gast), bis der nächste Abruf das echte bringt
+  function mitLiveErgebnis(x) {
+    if (x.s.ergebnis && !vorlaeufig(x.s)) return x;
+    const d = live[schl(x.t, x.s)];
+    if (d && d.ende) return {t: x.t, s: {...x.s, ergebnis: daheim(x.t, x.s) ? d.stand : d.stand.split(":").reverse().join(":"), meeting: null}};
+    return x.s.ergebnis ? x : null;
+  }
+
   function heute() {
-    const jetzt = new Date(), heuteL = heuteSpiele();
-    if (!heuteL.length) {
-      const naechst = G.filter(x => !x.s.ergebnis && wann(x.s) > jetzt).sort((a,b) => wann(a.s)-wann(b.s));
-      if (!naechst.length) return "";
-      const tag = wann(naechst[0].s).toDateString(), anz = naechst.filter(x => wann(x.s).toDateString() === tag).length;
-      return `<div class="note heute" id="heute">Heute keine Spiele. Nächster Spieltag: <b>${tagLang(wann(naechst[0].s))}</b> mit ${anz} ${anz===1?"Spiel":"Spielen"}.</div>`;
-    }
+    const jetzt = new Date(), liste = obenListe();
+    if (!liste.length) return "";
     let irgendLive = false;
-    const zeilen = heuteL.map(({t, s}) => {
+    const zeilen = liste.map(({t, s}) => {
       const min = (jetzt - wann(s)) / 6e4, d = live[schl(t,s)];
       let status, info = "";
-      if (s.ergebnis && !vorlaeufig(s)) status = `<span class="score ${wertung(t,s)}">${esc(ausSicht(t,s,s.ergebnis))}</span>`;
-      else if (d && d.ende) { const [a,b] = d.stand.split(":").map(Number); status = `<span class="score ${a>b?"s":a<b?"n":"u"}">${esc(d.stand)}</span>`; info = "Spielende"; }
+      if (d && d.ende) { const [a,b] = d.stand.split(":").map(Number); status = `<span class="score ${a>b?"s":a<b?"n":"u"}">${esc(d.stand)}</span>`; info = "Spielende"; }
       else if (d && d.laeuft) { irgendLive = true; status = `<span class="lv an">${esc(d.stand)}</span>`;
-        info = d.letzte ? `<span class="lz">${esc(d.letzte.zeit)}</span> · ${esc(d.letzte.text)}` : "Läuft"; }
+        info = d.letzte ? `<span class="lz" data-uhr="${esc(schl(t,s))}">${esc(schaetze(d))}</span> · ${esc(d.letzte.text)} <small>(${esc(d.letzte.zeit)})</small>` : "Läuft"; }
       else if (vorlaeufig(s) && min > LIVE_MIN) { status = `<span class="lv">${esc(ausSicht(t,s,s.ergebnis))}</span>`; info = "Ende, Ergebnis folgt mit dem nächsten Abruf"; }
       else if (vorlaeufig(s)) { irgendLive = true; status = `<span class="lv an">${esc(ausSicht(t,s,s.ergebnis))}</span>`; info = "Zwischenstand"; }
       else if (min >= 0 && min <= LIVE_MIN) { irgendLive = true; status = `<span class="lv an">Live</span>`; }
@@ -341,15 +364,23 @@ nav.tabs button[aria-current="page"]{color:var(--gold);font-weight:700}
     }).join("");
     const uhr = proxy && kandidaten().length ? `<span class="uhr" id="countdown" aria-live="off">↻ ${rest} s</span>` : "";
     return `<section class="heute" id="heute"><h2>Heute${irgendLive?' <span class="lv an">Live</span>':""}${uhr}</h2><div class="card games">${zeilen}</div>
-      <div class="tip">${proxy ? "Laufende Spiele aktualisieren sich jede Minute. Antippen öffnet den offiziellen Ticker." : "Antippen öffnet den offiziellen Live-Ticker von nuLiga. Ergebnisse erscheinen hier nach dem nächsten Datenabruf."}</div></section>`;
+      <div class="tip">${proxy ? "Laufende Spiele aktualisieren sich jede Minute, die Spielzeit ist geschätzt. Antippen öffnet den offiziellen Ticker." : "Antippen öffnet den offiziellen Live-Ticker von nuLiga. Ergebnisse erscheinen hier nach dem nächsten Datenabruf."}</div></section>`;
   }
-  function zeichneHeute() { const el = $("#heute"); if (el && !team && ansicht === "start") el.outerHTML = heute(); }
+  let obenSig = "";
+  function zeichneHeute() {
+    if (team || ansicht !== "start") return;
+    const sig = obenListe().map(({t,s}) => schl(t,s) + (live[schl(t,s)]?.ende ? "E" : "")).join(",");
+    const el = $("#heute");
+    if (sig !== obenSig || !el) { obenSig = sig; render(); } else el.outerHTML = heute();
+  }
   function starteTakt() {
     clearInterval(takt);
     takt = setInterval(async () => {
       if (team || ansicht !== "start" || document.hidden) return;
       rest--;
       const c = $("#countdown"); if (c) c.textContent = `↻ ${Math.max(rest,0)} s`;
+      document.querySelectorAll("[data-uhr]").forEach(el => { el.textContent = schaetze(live[el.dataset.uhr]); });
+      if (rest % 15 === 0) zeichneHeute();   // Spiele rutschen auch ohne Live-Daten rechtzeitig nach unten
       if (rest <= 0) { rest = TAKT; await holeLive(); zeichneHeute(); }
     }, 1000);
   }
