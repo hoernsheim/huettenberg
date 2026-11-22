@@ -115,6 +115,19 @@ def lade_tabelle(team):
     return tabelle, titel
 
 
+def laeuft_vielleicht(datum, zeit, minuten=110):
+    """True, wenn das Spiel vor weniger als `minuten` Minuten angepfiffen wurde.
+    nuLiga zeigt bei laufenden Spielen schon Zwischenstaende, die kein Endergebnis sind."""
+    try:
+        from zoneinfo import ZoneInfo
+        berlin = ZoneInfo("Europe/Berlin")
+        anpfiff = datetime.strptime(f"{datum} {zeit or '00:00'}", "%d.%m.%Y %H:%M").replace(tzinfo=berlin)
+        vergangen = (datetime.now(berlin) - anpfiff).total_seconds() / 60
+        return -30 <= vergangen < minuten
+    except Exception:
+        return False
+
+
 def lade_spiele(team, eigener_name):
     url = f"{BASE}groupPage?displayTyp=vorrunde&displayDetail=meetings&{url_param(team)}"
     soup = hole(url)
@@ -137,7 +150,7 @@ def lade_spiele(team, eigener_name):
         if link:
             m = re.search(r"meeting=(\d+)", link["href"])
             meeting = m.group(1) if m else None
-            if re.match(r"^\d+:\d+$", text(link)):
+            if re.match(r"^\d+:\d+$", text(link)) and not laeuft_vielleicht(datum, uhrzeit(wert(c, idx, "Zeit"))):
                 ergebnis = text(link)
         spiele.append({
             "tag": tag, "datum": datum, "zeit": uhrzeit(wert(c, idx, "Zeit")),
