@@ -1,5 +1,5 @@
 {
- "aktualisiert": "2026-11-22T22:36+00:00",
+ "aktualisiert": "2026-11-23T17:15+00:00",
  "verein": "TV Hüttenberg",
  "titel": "Handball in Hüttenberg",
  "leitsatz": "Für alle, die in Hüttenberg Handball leben: auf der Tribüne, an der Seitenlinie und vor allem für unsere Jugend. Ihr sorgt dafür, dass in unseren Hallen jedes Wochenende Leben ist.",
@@ -5619,7 +5619,7 @@
      "gast": "TV Hüttenberg",
      "ergebnis": "25:28",
      "meeting": "8380512",
-     "genehmigt": false,
+     "genehmigt": true,
      "halbzeit": "12:14",
      "ort": "Sporthalle Aßlar-Werdorf"
     },
@@ -9165,7 +9165,7 @@
      "gast": "HSG Herborn/Seelbach",
      "ergebnis": "17:8",
      "meeting": "8381878",
-     "genehmigt": false,
+     "genehmigt": true,
      "halbzeit": "12:3",
      "ort": "Sporthalle Hüttenberg"
     },
@@ -9481,8 +9481,8 @@
      "s": 6,
      "u": 0,
      "n": 0,
-     "tore": "70:2",
-     "diff": "+68",
+     "tore": "30:0",
+     "diff": "+30",
      "punkte": "12:0"
     },
     {
@@ -9492,8 +9492,8 @@
      "s": 4,
      "u": 0,
      "n": 1,
-     "tore": "22:45",
-     "diff": "-23",
+     "tore": "20:5",
+     "diff": "+15",
      "punkte": "8:2"
     },
     {
@@ -9503,8 +9503,8 @@
      "s": 2,
      "u": 0,
      "n": 3,
-     "tore": "20:22",
-     "diff": "-2",
+     "tore": "10:15",
+     "diff": "-5",
      "punkte": "4:6"
     },
     {
@@ -9514,8 +9514,8 @@
      "s": 2,
      "u": 0,
      "n": 3,
-     "tore": "25:28",
-     "diff": "-3",
+     "tore": "10:15",
+     "diff": "-5",
      "punkte": "4:6"
     },
     {
@@ -9536,8 +9536,8 @@
      "s": 2,
      "u": 0,
      "n": 3,
-     "tore": "23:30",
-     "diff": "-7",
+     "tore": "10:15",
+     "diff": "-5",
      "punkte": "4:6"
     },
     {
@@ -9547,8 +9547,8 @@
      "s": 0,
      "u": 0,
      "n": 5,
-     "tore": "7:35",
-     "diff": "-28",
+     "tore": "0:25",
+     "diff": "-25",
      "punkte": "0:10"
     }
    ],
@@ -9627,8 +9627,8 @@
      "gast": "TV Hüttenberg",
      "ergebnis": "0:2",
      "meeting": "8382158",
-     "genehmigt": false,
-     "halbzeit": "2:22",
+     "genehmigt": true,
+     "halbzeit": "0:0",
      "ort": "Schäferstadthalle Hungen"
     },
     {
@@ -9849,8 +9849,8 @@
      "s": 8,
      "u": 0,
      "n": 0,
-     "tore": "54:5",
-     "diff": "+49",
+     "tore": "40:0",
+     "diff": "+40",
      "punkte": "16:0"
     },
     {
@@ -9904,8 +9904,8 @@
      "s": 4,
      "u": 0,
      "n": 3,
-     "tore": "32:35",
-     "diff": "-3",
+     "tore": "27:21",
+     "diff": "+6",
      "punkte": "8:6"
     },
     {
