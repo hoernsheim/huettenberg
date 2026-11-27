@@ -1,5 +1,5 @@
 {
- "aktualisiert": "2026-11-23T17:15+00:00",
+ "aktualisiert": "2026-11-27T22:11+00:00",
  "verein": "TV Hüttenberg",
  "titel": "Handball in Hüttenberg",
  "leitsatz": "Für alle, die in Hüttenberg Handball leben: auf der Tribüne, an der Seitenlinie und vor allem für unsere Jugend. Ihr sorgt dafür, dass in unseren Hallen jedes Wochenende Leben ist.",
@@ -25,16 +25,27 @@
     {
      "rang": 1,
      "mannschaft": "HSG Gr.-Bieberau/Modau",
-     "spiele": 8,
+     "spiele": 9,
      "s": 7,
-     "u": 0,
+     "u": 1,
      "n": 1,
-     "tore": "274:221",
+     "tore": "302:249",
      "diff": "+53",
-     "punkte": "14:2"
+     "punkte": "15:3"
     },
     {
      "rang": 2,
+     "mannschaft": "TSG Offenbach-Bürgel",
+     "spiele": 10,
+     "s": 6,
+     "u": 2,
+     "n": 2,
+     "tore": "320:299",
+     "diff": "+21",
+     "punkte": "14:6"
+    },
+    {
+     "rang": 3,
      "mannschaft": "HSG Breckenh./Wallau/Massenh.",
      "spiele": 9,
      "s": 6,
@@ -42,17 +53,6 @@
      "n": 2,
      "tore": "254:219",
      "diff": "+35",
-     "punkte": "13:5"
-    },
-    {
-     "rang": 3,
-     "mannschaft": "TSG Offenbach-Bürgel",
-     "spiele": 9,
-     "s": 6,
-     "u": 1,
-     "n": 2,
-     "tore": "292:271",
-     "diff": "+21",
      "punkte": "13:5"
     },
     {
@@ -749,13 +749,13 @@
     {
      "rang": 5,
      "mannschaft": "TSG 1883 Lollar",
-     "spiele": 10,
-     "s": 5,
+     "spiele": 11,
+     "s": 6,
      "u": 1,
      "n": 4,
-     "tore": "302:299",
-     "diff": "+3",
-     "punkte": "11:9"
+     "tore": "332:327",
+     "diff": "+5",
+     "punkte": "13:9"
     },
     {
      "rang": 6,
@@ -771,13 +771,13 @@
     {
      "rang": 7,
      "mannschaft": "HSG Hungen/Lich",
-     "spiele": 10,
+     "spiele": 11,
      "s": 5,
      "u": 0,
-     "n": 5,
-     "tore": "324:326",
-     "diff": "-2",
-     "punkte": "10:10"
+     "n": 6,
+     "tore": "352:356",
+     "diff": "-4",
+     "punkte": "10:12"
     },
     {
      "rang": 8,
@@ -4903,13 +4903,13 @@
     {
      "rang": 1,
      "mannschaft": "TSV Södel",
-     "spiele": 7,
-     "s": 6,
+     "spiele": 8,
+     "s": 7,
      "u": 1,
      "n": 0,
      "tore": "207:161",
      "diff": "+46",
-     "punkte": "13:1"
+     "punkte": "15:1"
     },
     {
      "rang": 2,
@@ -4969,13 +4969,13 @@
     {
      "rang": 7,
      "mannschaft": "HSG Pohlheim II",
-     "spiele": 7,
+     "spiele": 8,
      "s": 2,
      "u": 1,
-     "n": 4,
+     "n": 5,
      "tore": "188:240",
      "diff": "-52",
-     "punkte": "5:9"
+     "punkte": "5:11"
     },
     {
      "rang": 8,
@@ -5117,7 +5117,7 @@
     {
      "tag": "Sa",
      "datum": "05.12.2026",
-     "zeit": "17:00",
+     "zeit": "11:30",
      "nr": "47",
      "heim": "TSV Södel",
      "gast": "TV Hüttenberg III",
@@ -8473,13 +8473,13 @@
     {
      "rang": 1,
      "mannschaft": "HSG Dutenh./Münchholzh.",
-     "spiele": 8,
-     "s": 8,
+     "spiele": 9,
+     "s": 9,
      "u": 0,
      "n": 0,
-     "tore": "252:171",
-     "diff": "+81",
-     "punkte": "16:0"
+     "tore": "300:186",
+     "diff": "+114",
+     "punkte": "18:0"
     },
     {
      "rang": 2,
@@ -8572,13 +8572,13 @@
     {
      "rang": 10,
      "mannschaft": "HSG Lumdatal II",
-     "spiele": 8,
+     "spiele": 9,
      "s": 0,
      "u": 1,
-     "n": 7,
-     "tore": "151:245",
-     "diff": "-94",
-     "punkte": "1:15"
+     "n": 8,
+     "tore": "166:293",
+     "diff": "-127",
+     "punkte": "1:17"
     }
    ],
    "spiele": [
@@ -8682,7 +8682,7 @@
      "gast": "TV Hüttenberg",
      "ergebnis": "15:29",
      "meeting": "8381603",
-     "genehmigt": false,
+     "genehmigt": true,
      "halbzeit": "8:15",
      "ort": "Lumdatalhalle Rabenau"
     },
@@ -9015,13 +9015,13 @@
     {
      "rang": 2,
      "mannschaft": "TV Homberg",
-     "spiele": 5,
-     "s": 5,
+     "spiele": 6,
+     "s": 6,
      "u": 0,
      "n": 0,
-     "tore": "114:68",
-     "diff": "+46",
-     "punkte": "10:0"
+     "tore": "134:77",
+     "diff": "+57",
+     "punkte": "12:0"
     },
     {
      "rang": 3,
@@ -9059,13 +9059,13 @@
     {
      "rang": 6,
      "mannschaft": "HSG Butzbach II",
-     "spiele": 5,
+     "spiele": 6,
      "s": 1,
      "u": 0,
-     "n": 4,
-     "tore": "62:88",
-     "diff": "-26",
-     "punkte": "2:8"
+     "n": 5,
+     "tore": "71:108",
+     "diff": "-37",
+     "punkte": "2:10"
     },
     {
      "rang": 7,
@@ -9860,8 +9860,8 @@
      "s": 7,
      "u": 0,
      "n": 1,
-     "tore": "47:16",
-     "diff": "+31",
+     "tore": "35:5",
+     "diff": "+30",
      "punkte": "14:2"
     },
     {
@@ -9871,8 +9871,8 @@
      "s": 5,
      "u": 1,
      "n": 2,
-     "tore": "44:31",
-     "diff": "+13",
+     "tore": "27:12",
+     "diff": "+15",
      "punkte": "11:5"
     },
     {
@@ -9882,7 +9882,7 @@
      "s": 5,
      "u": 0,
      "n": 3,
-     "tore": "33:23",
+     "tore": "25:15",
      "diff": "+10",
      "punkte": "10:6"
     },
@@ -9893,8 +9893,8 @@
      "s": 4,
      "u": 1,
      "n": 3,
-     "tore": "51:39",
-     "diff": "+12",
+     "tore": "37:28",
+     "diff": "+9",
      "punkte": "9:7"
     },
     {
@@ -9904,8 +9904,8 @@
      "s": 4,
      "u": 0,
      "n": 3,
-     "tore": "27:21",
-     "diff": "+6",
+     "tore": "20:15",
+     "diff": "+5",
      "punkte": "8:6"
     },
     {
@@ -9915,8 +9915,8 @@
      "s": 3,
      "u": 0,
      "n": 5,
-     "tore": "26:39",
-     "diff": "-13",
+     "tore": "15:25",
+     "diff": "-10",
      "punkte": "6:10"
     },
     {
@@ -9926,8 +9926,8 @@
      "s": 1,
      "u": 0,
      "n": 7,
-     "tore": "14:46",
-     "diff": "-32",
+     "tore": "5:35",
+     "diff": "-30",
      "punkte": "2:14"
     },
     {
@@ -9937,7 +9937,7 @@
      "s": 1,
      "u": 0,
      "n": 7,
-     "tore": "24:58",
+     "tore": "16:50",
      "diff": "-34",
      "punkte": "2:14"
     },
@@ -9948,8 +9948,8 @@
      "s": 0,
      "u": 0,
      "n": 7,
-     "tore": "11:44",
-     "diff": "-33",
+     "tore": "0:35",
+     "diff": "-35",
      "punkte": "0:14"
     }
    ],
@@ -10041,8 +10041,8 @@
      "gast": "TV Hüttenberg II",
      "ergebnis": "0:2",
      "meeting": "8382355",
-     "genehmigt": false,
-     "halbzeit": "2:6",
+     "genehmigt": true,
+     "halbzeit": "0:0",
      "ort": "Mehrzweckhalle Kirch-/Pohlgöns"
     },
     {
@@ -10054,8 +10054,8 @@
      "gast": "HSG Wettertal",
      "ergebnis": "0:2",
      "meeting": "8382318",
-     "genehmigt": false,
-     "halbzeit": "4:9",
+     "genehmigt": true,
+     "halbzeit": "0:0",
      "ort": "Sporthalle Hüttenberg"
     },
     {
